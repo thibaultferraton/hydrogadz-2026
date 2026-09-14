@@ -1,0 +1,10 @@
+# Fins de ligne homogènes, que l'équipe soit sur Windows, macOS ou Linux
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary

@@ -1,0 +1,25 @@
+# Systèmes d'exploitation
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Éditeurs
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+
+# Dépendances et builds (si on ajoute des outils plus tard)
+node_modules/
+dist/
+build/
+.cache/
+
+# Logs et fichiers temporaires
+*.log
+npm-debug.log*
+*.tmp
+
+# Secrets
+.env
+.env.*
