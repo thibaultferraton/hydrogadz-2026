@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr" class="sans-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Devenir partenaire — Hydrogadz</title>
+  <meta name="description" content="Associez votre marque à Hydrogadz et au Monaco Energy Boat Challenge : visibilité, image zéro émission et accès à de futurs ingénieurs Arts et Métiers.">
+  <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body class="page-interieure">
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+  <div data-layout="header"></div>
+
+  <main id="contenu">
+
+    <header class="page-tete">
+      <div class="conteneur">
+        <span class="surtitre">Partenariat</span>
+        <h1>Associez votre marque à l'aventure</h1>
+        <p>Nous cherchons des partenaires pour nous accompagner jusqu'au Monaco Energy Boat Challenge 2027.</p>
+      </div>
+    </header>
+
+    <!-- AVANTAGES -->
+    <section class="section">
+      <div class="conteneur">
+        <div class="section__tete">
+          <span class="surtitre">Pourquoi nous soutenir</span>
+          <h2>Ce que vous y gagnez</h2>
+        </div>
+        <div class="grille" data-render="avantages"></div>
+      </div>
+    </section>
+
+    <!-- PARTENAIRES ACTUELS -->
+    <section class="section section--douce">
+      <div class="conteneur">
+        <div class="section__tete section__tete--centre">
+          <span class="surtitre">Ils sont déjà à bord</span>
+          <h2>Nos partenaires</h2>
+        </div>
+        <div class="logos" data-render="logos"></div>
+      </div>
+    </section>
+
+    <!-- DOSSIER + FORMULAIRE -->
+    <section class="section" id="contact">
+      <div class="conteneur duo" style="align-items: start">
+        <div class="apparition">
+          <span class="surtitre">Parlons-en</span>
+          <h2>Recevez notre dossier de sponsoring</h2>
+          <p class="texte-doux" style="margin-top: var(--esp-3)">
+            Laissez-nous vos coordonnées : on vous envoie le dossier complet et on revient vers vous
+            pour construire un partenariat qui vous ressemble.
+          </p>
+          <div class="emplacement" style="margin-top: var(--esp-4)">
+            <strong>Dossier de sponsoring (PDF) à venir</strong>
+            À déposer dans assets/docs/ quand il sera prêt
+          </div>
+        </div>
+
+        <!-- Formulaire Web3Forms : les réponses arrivent par email.
+             La clé est publique par conception, elle peut rester ici.
+             Sans JavaScript, le formulaire s'envoie quand même (Web3Forms affiche sa page de confirmation). -->
+        <form class="formulaire apparition" data-formulaire action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="9b56320d-e0bc-4bfd-af3e-0cbd3334756e">
+          <input type="hidden" name="subject" value="Nouveau contact partenaire depuis le site Hydrogadz">
+          <input type="hidden" name="from_name" value="Site Hydrogadz">
+          <!-- Piège à robots : un humain ne le voit pas, donc ne le coche pas -->
+          <input type="checkbox" name="botcheck" class="formulaire__piege" tabindex="-1" autocomplete="off">
+
+          <div class="formulaire__ligne">
+            <div class="champ">
+              <label for="prenom">Prénom</label>
+              <input id="prenom" name="prenom" autocomplete="given-name" required>
+            </div>
+            <div class="champ">
+              <label for="nom">Nom</label>
+              <input id="nom" name="nom" autocomplete="family-name" required>
+            </div>
+          </div>
+          <div class="formulaire__ligne">
+            <div class="champ">
+              <label for="email">Email professionnel</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="champ">
+              <label for="entreprise">Entreprise</label>
+              <input id="entreprise" name="entreprise" autocomplete="organization" required>
+            </div>
+          </div>
+          <div class="formulaire__ligne">
+            <div class="champ">
+              <label for="fonction">Fonction</label>
+              <input id="fonction" name="fonction" autocomplete="organization-title">
+            </div>
+            <div class="champ">
+              <label for="type">Type de partenariat</label>
+              <select id="type" name="type_de_partenariat">
+                <option value="">Choisir…</option>
+                <option>Partenaire financier</option>
+                <option>Partenaire technique (matériel, pièces)</option>
+                <option>Mécénat de compétences</option>
+                <option>Autre</option>
+              </select>
+            </div>
+          </div>
+          <div class="champ">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Parlez-nous de votre projet de partenariat…"></textarea>
+          </div>
+
+          <p class="formulaire__message" role="status" hidden></p>
+          <button class="bouton bouton--principal" type="submit">Envoyer</button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-layout="footer"></div>
+
+  <script src="content/site.js"></script>
+  <script src="content/partenaires.js"></script>
+  <script src="js/outils.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/formulaire.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
