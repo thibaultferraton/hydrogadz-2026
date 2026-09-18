@@ -23,3 +23,6 @@ npm-debug.log*
 # Secrets
 .env
 .env.*
+
+# Photos originales (lourdes) : elles restent sur le Drive, seules les .webp optimisées vont sur GitHub
+assets/photos/_originaux/

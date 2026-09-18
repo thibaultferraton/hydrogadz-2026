@@ -1,0 +1,13 @@
+{
+  "name": "hydrogadz-2026",
+  "private": true,
+  "description": "Site Hydrogadz. Node n'est PAS nécessaire pour faire tourner le site : seulement pour optimiser les photos.",
+  "type": "module",
+  "scripts": {
+    "images": "node tools/optimiser-images.mjs",
+    "serve": "npx --yes serve ."
+  },
+  "devDependencies": {
+    "sharp": "^0.34.0"
+  }
+}
