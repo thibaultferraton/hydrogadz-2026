@@ -17,6 +17,7 @@ HG.site = {
     { titre: "Le bateau", lien: "bateau.html" },
     { titre: "L'équipe", lien: "equipe.html" },
     { titre: "Historique", lien: "historique.html" },
+    { titre: "Nous soutenir", lien: "soutenir.html" },
   ],
   // Bouton mis en avant à droite du menu.
   boutonMenu: { titre: "Devenir partenaire", lien: "partenaires.html" },

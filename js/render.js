@@ -24,15 +24,54 @@
         .map((a) => `<article class="carte apparition"><h3>${esc(a.titre)}</h3><p>${esc(a.texte)}</p></article>`)
         .join(""),
 
-    chantiers: () =>
-      HG.bateau.chantiers
+    "bateau-general": () =>
+      HG.bateau.general
         .map((c) => `<article class="carte apparition"><h3>${esc(c.titre)}</h3><p>${esc(c.texte)}</p></article>`)
         .join(""),
 
-    fiche: () =>
-      HG.bateau.fiche
-        .map((l) => `<div><dt>${esc(l.label)}</dt><dd>${l.valeur ? esc(l.valeur) : aCompleter()}</dd></div>`)
+    "dons-usages": () =>
+      HG.dons.usages
+        .map((u) => `<article class="carte apparition"><h3>${esc(u.titre)}</h3><p>${esc(u.texte)}</p></article>`)
         .join(""),
+
+    // Moyens de don : n'affiche que ce qui est réellement renseigné.
+    "dons-moyens": () => {
+      const { helloasso, virement } = HG.dons;
+      const blocs = [];
+
+      blocs.push(
+        helloasso
+          ? `<div class="carte apparition">
+               <h3>Don en ligne</h3>
+               <p>Paiement sécurisé par HelloAsso, sans frais pour l'association.</p>
+               <div class="groupe-boutons" style="margin-top: var(--esp-4)">
+                 <a class="bouton bouton--principal" href="${esc(helloasso)}" target="_blank" rel="noopener">Faire un don</a>
+               </div>
+             </div>`
+          : `<div class="emplacement apparition">
+               <strong>Don en ligne à mettre en place</strong>
+               Créer la collecte sur helloasso.com, puis coller le lien dans content/dons.js
+             </div>`
+      );
+
+      blocs.push(
+        virement.iban
+          ? `<div class="carte apparition">
+               <h3>Virement bancaire</h3>
+               <dl class="fiche" style="margin-top: var(--esp-3)">
+                 <div><dt>Titulaire</dt><dd>${esc(virement.titulaire)}</dd></div>
+                 <div><dt>IBAN</dt><dd>${esc(virement.iban)}</dd></div>
+                 ${virement.bic ? `<div><dt>BIC</dt><dd>${esc(virement.bic)}</dd></div>` : ""}
+               </dl>
+             </div>`
+          : `<div class="emplacement apparition">
+               <strong>Coordonnées bancaires à compléter</strong>
+               À renseigner dans content/dons.js une fois la décision prise en bureau
+             </div>`
+      );
+
+      return blocs.join("");
+    },
 
     poles: () =>
       HG.equipe.poles

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr" class="sans-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nous soutenir — Hydrogadz</title>
+  <meta name="description" content="Soutenez Hydrogadz, l'équipe Arts et Métiers engagée au Monaco Energy Boat Challenge : don ponctuel ou partenariat d'entreprise.">
+  <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body class="page-interieure">
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+  <div data-layout="header"></div>
+
+  <main id="contenu">
+
+    <header class="page-tete">
+      <div class="conteneur">
+        <span class="surtitre">Nous soutenir</span>
+        <h1>Une saison, ça se finance</h1>
+        <p>
+          Hydrogadz est une association étudiante. Construire un bateau et l'emmener courir à Monaco
+          coûte cher, et nous n'y arrivons pas seuls. Chaque soutien compte, du don de 10 € au partenariat d'entreprise.
+        </p>
+      </div>
+    </header>
+
+    <!-- À QUOI SERT L'ARGENT -->
+    <section class="section">
+      <div class="conteneur">
+        <div class="section__tete">
+          <span class="surtitre">Transparence</span>
+          <h2>Où va votre argent</h2>
+          <p class="texte-doux">
+            Rien ne finance de fonctionnement interne : tout part dans le bateau et dans la course.
+          </p>
+        </div>
+        <div class="grille" data-render="dons-usages"></div>
+      </div>
+    </section>
+
+    <!-- COMMENT DONNER -->
+    <section class="section section--douce" id="donner">
+      <div class="conteneur">
+        <div class="section__tete">
+          <span class="surtitre">Faire un don</span>
+          <h2>Deux façons de nous aider</h2>
+        </div>
+        <div class="grille grille--2" data-render="dons-moyens"></div>
+      </div>
+    </section>
+
+    <!-- ENTREPRISES -->
+    <section class="section section--sombre">
+      <div class="conteneur duo">
+        <div class="apparition">
+          <span class="surtitre">Vous êtes une entreprise ?</span>
+          <h2>Devenez partenaire</h2>
+          <p class="texte-doux" style="margin-top: var(--esp-3)">
+            Un partenariat, ce n'est pas un don : c'est un échange. Votre marque gagne en visibilité
+            sur le bateau, sur nos réseaux et à Monaco, et vous rencontrez de futurs ingénieurs
+            Arts et Métiers. Parlons-en.
+          </p>
+          <div class="groupe-boutons" style="margin-top: var(--esp-4)">
+            <a class="bouton bouton--principal" href="partenaires.html">Voir le partenariat</a>
+          </div>
+        </div>
+        <div class="photo photo--paysage apparition">
+          <img src="assets/photos/bateau-05-monaco.webp" alt="Le bateau Hydrogadz en mer devant Monaco" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-layout="footer"></div>
+
+  <script src="content/site.js"></script>
+  <script src="content/dons.js"></script>
+  <script src="js/outils.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -650,3 +650,14 @@
   opacity: 1;
   transform: none;
 }
+
+/* Crédit sous la vue 3D (quand le modèle affiché n'est pas le nôtre) */
+.credit-3d {
+  margin-top: var(--esp-2);
+  font-size: var(--taille-xs);
+  color: var(--texte-doux);
+}
+
+.credit-3d[hidden] {
+  display: none;
+}
