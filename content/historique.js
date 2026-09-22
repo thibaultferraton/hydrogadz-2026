@@ -47,6 +47,7 @@ HG.galerie = [
   { photo: "assets/photos/bateau-en-course.webp", legende: "En course à Monaco" },
   { photo: "assets/photos/mebc-course.webp", legende: "La flotte du MEBC en pleine course" },
   { photo: "assets/photos/atelier-cockpit.webp", legende: "À l'atelier" },
+  { photo: "assets/photos/cockpit-exterieur.webp", legende: "Le cockpit et les coques avant remontage" },
   { photo: "assets/photos/monaco-port.webp", legende: "Le port de Monaco" },
   { photo: "assets/photos/cockpit-hangar.webp", legende: "Le cockpit au hangar" },
 ];

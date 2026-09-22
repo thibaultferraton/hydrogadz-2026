@@ -27,6 +27,13 @@
     return;
   }
 
+  // Crédit affiché sous la vue quand le modèle n'est pas le nôtre.
+  const credit = document.querySelector("[data-credit-3d]");
+  if (credit && modele.credit) {
+    credit.textContent = modele.credit;
+    credit.hidden = false;
+  }
+
   const script = document.createElement("script");
   script.type = "module";
   script.src = "https://cdn.jsdelivr.net/npm/@google/model-viewer@4/dist/model-viewer.min.js";
@@ -46,5 +53,6 @@
 
   conteneur.querySelector("model-viewer").addEventListener("error", () => {
     emplacement(`Fichier introuvable : ${modele.fichier}`);
+    if (credit) credit.hidden = true;
   });
 })();

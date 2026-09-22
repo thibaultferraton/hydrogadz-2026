@@ -24,15 +24,54 @@
         .map((a) => `<article class="carte apparition"><h3>${esc(a.titre)}</h3><p>${esc(a.texte)}</p></article>`)
         .join(""),
 
-    chantiers: () =>
-      HG.bateau.chantiers
+    "bateau-general": () =>
+      HG.bateau.general
         .map((c) => `<article class="carte apparition"><h3>${esc(c.titre)}</h3><p>${esc(c.texte)}</p></article>`)
         .join(""),
 
-    fiche: () =>
-      HG.bateau.fiche
-        .map((l) => `<div><dt>${esc(l.label)}</dt><dd>${l.valeur ? esc(l.valeur) : aCompleter()}</dd></div>`)
+    "dons-usages": () =>
+      HG.dons.usages
+        .map((u) => `<article class="carte apparition"><h3>${esc(u.titre)}</h3><p>${esc(u.texte)}</p></article>`)
         .join(""),
+
+    // Moyens de don : n'affiche que ce qui est réellement renseigné.
+    "dons-moyens": () => {
+      const { helloasso, virement } = HG.dons;
+      const blocs = [];
+
+      blocs.push(
+        helloasso
+          ? `<div class="carte apparition">
+               <h3>Don en ligne</h3>
+               <p>Paiement sécurisé par HelloAsso, sans frais pour l'association.</p>
+               <div class="groupe-boutons" style="margin-top: var(--esp-4)">
+                 <a class="bouton bouton--principal" href="${esc(helloasso)}" target="_blank" rel="noopener">Faire un don</a>
+               </div>
+             </div>`
+          : `<div class="emplacement apparition">
+               <strong>Don en ligne à mettre en place</strong>
+               Créer la collecte sur helloasso.com, puis coller le lien dans content/dons.js
+             </div>`
+      );
+
+      blocs.push(
+        virement.iban
+          ? `<div class="carte apparition">
+               <h3>Virement bancaire</h3>
+               <dl class="fiche" style="margin-top: var(--esp-3)">
+                 <div><dt>Titulaire</dt><dd>${esc(virement.titulaire)}</dd></div>
+                 <div><dt>IBAN</dt><dd>${esc(virement.iban)}</dd></div>
+                 ${virement.bic ? `<div><dt>BIC</dt><dd>${esc(virement.bic)}</dd></div>` : ""}
+               </dl>
+             </div>`
+          : `<div class="emplacement apparition">
+               <strong>Coordonnées bancaires à compléter</strong>
+               À renseigner dans content/dons.js une fois la décision prise en bureau
+             </div>`
+      );
+
+      return blocs.join("");
+    },
 
     poles: () =>
       HG.equipe.poles
@@ -40,11 +79,11 @@
         .join(""),
 
     membres: () => {
+      // Pas de membres renseignés : on masque toute la section plutôt que
+      // d'afficher une grille vide au visiteur.
       if (HG.equipe.membres.length === 0) {
-        return `<div class="emplacement" style="grid-column: 1 / -1">
-          <strong>Le trombinoscope arrive</strong>
-          Ajouter les membres dans content/equipe.js
-        </div>`;
+        document.querySelector("[data-section-membres]")?.remove();
+        return "";
       }
       return HG.equipe.membres
         .map((m) => {
@@ -61,6 +100,8 @@
         .join("");
     },
 
+    // Une saison sans récit affiche juste l'année et sa photo : mieux qu'un
+    // « à compléter » visible par les sponsors.
     frise: () =>
       HG.historique
         .map(
@@ -69,8 +110,8 @@
             <div class="saison__annee">${esc(s.annee)}</div>
             <div class="saison__corps">
               <h3>${esc(s.titre)}${s.statut === "en-cours" ? '<span class="saison__statut">En cours</span>' : ""}</h3>
-              <p>${s.texte ? esc(s.texte) : aCompleter("Récit de la saison à compléter")}</p>
-              ${s.statut === "termine" ? `<p><strong>Résultats :</strong> ${s.resultats ? esc(s.resultats) : aCompleter()}</p>` : ""}
+              ${s.texte ? `<p>${esc(s.texte)}</p>` : aCompleter("Récit de la saison à compléter")}
+              ${s.resultats ? `<p><strong>Résultats :</strong> ${esc(s.resultats)}</p>` : ""}
             </div>
             ${photo(s.photo, s.titre)}
           </li>`

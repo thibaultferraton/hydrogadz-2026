@@ -6,6 +6,12 @@
 (function () {
   document.documentElement.classList.remove("sans-js");
 
+  // Mode travail : ajouter ?todo à l'adresse d'une page fait apparaître
+  // les repères « À compléter ». Les visiteurs ne les voient jamais.
+  if (location.search.includes("todo")) {
+    document.documentElement.classList.add("mode-todo");
+  }
+
   // Fait apparaître les blocs .apparition quand ils entrent à l'écran
   const observateur = new IntersectionObserver(
     (entrees) => {

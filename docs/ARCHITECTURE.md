@@ -116,3 +116,21 @@ elle ne donne accès à rien). Le domaine déclaré côté Web3Forms est `thibau
 - Remplir les « À compléter » (voir `content/` et `mentions-legales.html`).
 - Remplacer les photos basse résolution (voir `docs/PHOTOS.md`).
 - Obtenir les logos partenaires officiels en SVG.
+
+## Confidentialité : ce qu'on n'écrit pas sur le site
+
+Le site est public et lu par les équipes concurrentes. **Le détail technique du projet n'y figure pas** :
+pas de choix de conception, pas de specs, pas de fournisseurs, pas de chantiers en cours.
+On reste au niveau « catamaran électrique conçu par des étudiants ». En cas de doute, on n'écrit rien.
+
+Le message principal du site est simple : **nous cherchons des soutiens**.
+
+## Dons : HelloAsso plutôt que l'IBAN
+
+`content/dons.js` prévoit deux moyens de don. Recommandation :
+
+- **HelloAsso** (gratuit pour les associations, sans commission) gère le paiement par carte, les reçus
+  et la comptabilité. C'est la voie à privilégier.
+- **L'IBAN affiché en clair** sur un site public est à décider en bureau : c'est courant pour une
+  association, mais ça expose le compte à des tentatives de fraude. Tant que `iban` vaut `null`,
+  la page affiche un emplacement réservé au lieu d'informations inventées.

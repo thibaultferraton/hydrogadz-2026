@@ -7,13 +7,13 @@
   <meta name="description" content="Hydrogadz, l'association étudiante Arts et Métiers d'Aix-en-Provence qui conçoit et pilote un bateau électrique au Monaco Energy Boat Challenge.">
   <meta property="og:title" content="Hydrogadz — cap sur le MEBC 2027">
   <meta property="og:description" content="L'équipe Arts et Métiers d'Aix-en-Provence au Monaco Energy Boat Challenge.">
-  <meta property="og:image" content="assets/photos/bateau-05-monaco.webp">
+  <meta property="og:image" content="assets/photos/cockpit-exterieur-large.webp">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/icons/favicon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -27,7 +27,7 @@
 
     <!-- HERO -->
     <section class="hero">
-      <img class="hero__image" src="assets/photos/bateau-05-monaco.webp" alt="Le catamaran Hydrogadz numéro 05 en mer devant Monaco" fetchpriority="high">
+      <img class="hero__image" src="assets/photos/cockpit-exterieur-large.webp" alt="Le bateau Hydrogadz posé sur ses tréteaux devant le bâtiment des Arts et Métiers" fetchpriority="high" width="1920" height="1280">
       <div class="conteneur hero__contenu">
         <span class="surtitre">Arts et Métiers · Aix-en-Provence</span>
         <h1>Cap sur Monaco 2027</h1>
@@ -51,8 +51,7 @@
             face à des écoles venues du monde entier.
           </p>
           <p class="texte-doux" style="margin-top: var(--esp-3)">
-            Transmission, batterie, cockpit, hélice, télémétrie : chaque pièce est pensée,
-            dessinée et testée par l'équipe.
+            De la conception aux essais en mer, tout est fait par l'équipe, entre les cours.
           </p>
         </div>
         <div class="photo photo--paysage apparition">
@@ -65,20 +64,20 @@
     <section class="section section--douce">
       <div class="conteneur">
         <div class="chiffres">
-          <div class="apparition">
+          <div class="chiffre apparition">
             <span class="chiffre__valeur">3</span>
             <span class="chiffre__label">participations au MEBC, de 2024 à 2026</span>
           </div>
-          <div class="apparition">
+          <div class="chiffre apparition">
             <!-- Chiffre repris de la présentation interne : à vérifier auprès du Yacht Club de Monaco -->
             <span class="chiffre__valeur">~46</span>
             <span class="chiffre__label">écoles au départ</span>
           </div>
-          <div class="apparition">
+          <div class="chiffre apparition">
             <span class="chiffre__valeur">4</span>
             <span class="chiffre__label">épreuves en mer</span>
           </div>
-          <div class="apparition">
+          <div class="chiffre apparition">
             <span class="chiffre__valeur">2027</span>
             <span class="chiffre__label">notre prochaine édition</span>
           </div>
@@ -110,6 +109,11 @@
       </div>
     </section>
 
+    <!-- BANDEAU -->
+    <figure class="bandeau-photo">
+      <img src="assets/photos/monaco-ponton.webp" alt="Le bateau Hydrogadz sur l'eau à Monaco, devant les yachts du port Hercule" loading="lazy">
+    </figure>
+
     <!-- LE BATEAU (aperçu) -->
     <section class="section">
       <div class="conteneur duo duo--inverse">
@@ -117,30 +121,43 @@
           <span class="surtitre">Le bateau</span>
           <h2>Pensé et construit à l'atelier</h2>
           <p class="texte-doux" style="margin-top: var(--esp-3)">
-            Cette année, l'équipe travaille sur trois grands projets techniques (transmission, batterie et cockpit)
-            ainsi que sur l'hélice et la télémétrie embarquée.
+            Une coque de catamaran identique pour tout le monde, une propulsion électrique à inventer :
+            c'est là que se joue la course.
           </p>
           <div class="groupe-boutons" style="margin-top: var(--esp-4)">
             <a class="bouton bouton--principal" href="bateau.html">Voir le bateau</a>
           </div>
         </div>
         <div class="photo photo--paysage apparition">
-          <img src="assets/photos/cockpit-hangar.webp" alt="Le cockpit du bateau Hydrogadz au hangar" loading="lazy">
+          <img src="assets/photos/hero-atelier.webp" alt="Le cockpit et les coques du bateau à l'atelier" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- APPEL AU SOUTIEN -->
+    <section class="section section--douce" id="soutien">
+      <div class="conteneur section__tete section__tete--centre" style="margin-bottom: 0">
+        <span class="surtitre">On a besoin de vous</span>
+        <h2>Nous cherchons des soutiens pour 2027</h2>
+        <p class="texte-doux">
+          Construire le bateau, l'emmener à Monaco et courir une semaine, ça se finance.
+          Nous cherchons des partenaires entreprises, et tout don nous fait avancer.
+        </p>
+        <div class="groupe-boutons" style="justify-content: center; margin-top: var(--esp-5)">
+          <a class="bouton bouton--principal" href="partenaires.html">Devenir partenaire</a>
+          <a class="bouton bouton--contour" href="soutenir.html" style="color: var(--texte)">Faire un don</a>
         </div>
       </div>
     </section>
 
     <!-- PARTENAIRES -->
-    <section class="section section--douce">
+    <section class="section">
       <div class="conteneur">
         <div class="section__tete section__tete--centre">
           <span class="surtitre">Ils nous soutiennent</span>
           <h2>Nos partenaires</h2>
         </div>
         <div class="logos" data-render="logos"></div>
-        <div class="groupe-boutons" style="justify-content: center; margin-top: var(--esp-5)">
-          <a class="bouton bouton--principal" href="partenaires.html">Rejoindre l'aventure</a>
-        </div>
       </div>
     </section>
 
