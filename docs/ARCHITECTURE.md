@@ -7,17 +7,18 @@ on recharge la page. Node.js ne sert qu'à optimiser les photos (optionnel).
 
 ```
 hydrogadz-2026/
-├── index.html              Accueil : hero, projet, chiffres, MEBC, aperçu bateau, partenaires
-├── bateau.html             Le bateau : vue 3D (emplacement), fiche technique, chantiers, atelier
+├── index.html              Accueil : photo, bande de chiffres, projet, MEBC, appel au soutien
+├── projets.html            Nos trois chantiers : batterie, cockpit, transmission (+ vue 3D)
 ├── equipe.html             L'équipe : pôles, trombinoscope, recrutement
 ├── historique.html         Les saisons au MEBC (frise) + galerie
-├── partenaires.html        Devenir partenaire : avantages, logos, formulaire de contact
+├── partenaires.html        Devenir partenaire, formulaire de contact, et faire un don
 ├── mentions-legales.html   Obligatoire en France : éditeur, hébergeur, données, crédits
 ├── 404.html                Page d'erreur (servie automatiquement par GitHub Pages)
 │
 ├── content/                ← LES TEXTES ET LES LISTES. Modifiables sans savoir coder.
-│   ├── site.js             Nom, menu, contact, réseaux sociaux
-│   ├── bateau.js           Modèle 3D, chantiers, fiche technique
+│   ├── site.js             Nom, menu, contact, réseaux, bande de chiffres de l'accueil
+│   ├── projets.js          Les trois chantiers + le modèle 3D
+│   ├── dons.js             HelloAsso, virement, à quoi sert l'argent
 │   ├── equipe.js           Pôles et membres
 │   ├── historique.js       Saisons + galerie photo
 │   └── partenaires.js      Partenaires actuels + avantages

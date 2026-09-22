@@ -6,9 +6,12 @@ HTML, CSS et JavaScript, sans outil de build.
 ## Structure
 
 ```
-index.html, bateau.html, equipe.html,
-historique.html, partenaires.html,
-soutenir.html, mentions-legales.html   → les pages
+index.html      → l'accueil
+projets.html    → la batterie, le cockpit, la transmission
+equipe.html     → l'équipe
+historique.html → les saisons au MEBC
+partenaires.html→ devenir partenaire + faire un don
+mentions-legales.html, 404.html
 content/                               → les textes et les listes (modifiables sans coder)
 css/                                   → le style (tokens.css = couleurs, polices, tailles)
 js/                                    → le header/footer commun et les interactions

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr" class="sans-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nos projets — Hydrogadz</title>
+  <meta name="description" content="Les trois chantiers de la saison Hydrogadz : la batterie, le cockpit et la transmission du catamaran électrique engagé au Monaco Energy Boat Challenge.">
+  <meta property="og:title" content="Nos projets — Hydrogadz">
+  <meta property="og:description" content="Batterie, cockpit, transmission : les trois chantiers de notre catamaran électrique.">
+  <meta property="og:image" content="assets/photos/cockpit-exterieur-large.webp">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body class="page-interieure">
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+  <div data-layout="header"></div>
+
+  <main id="contenu">
+
+    <header class="page-tete">
+      <div class="conteneur">
+        <span class="surtitre">Nos projets</span>
+        <h1>Trois chantiers, un bateau</h1>
+        <p>
+          En Energy Class, toutes les équipes reçoivent la même coque de catamaran. Tout le reste
+          est à concevoir. Cette saison, l'équipe se concentre sur trois ensembles.
+        </p>
+      </div>
+    </header>
+
+    <!-- LES TROIS CHANTIERS -->
+    <section class="section">
+      <div class="conteneur">
+        <div class="chantiers" data-render="chantiers"></div>
+      </div>
+    </section>
+
+    <!-- VUE 3D (apparaît quand la CAO est disponible) -->
+    <section class="section section--douce" data-section-3d>
+      <div class="conteneur duo">
+        <div class="apparition">
+          <div class="vue-3d" data-vue-3d></div>
+          <p class="credit-3d" data-credit-3d hidden></p>
+        </div>
+        <div class="apparition">
+          <span class="surtitre">En trois dimensions</span>
+          <h2>Le bateau vu de tous les angles</h2>
+          <p class="texte-doux" style="margin-top: var(--esp-3)">
+            Faites tourner le modèle avec la souris, zoomez avec la molette.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- APPEL -->
+    <section class="section section--sombre">
+      <div class="conteneur section__tete section__tete--centre" style="margin-bottom: 0">
+        <span class="surtitre">Nous accompagner</span>
+        <h2>Ces chantiers ont besoin de moyens</h2>
+        <p class="texte-doux">
+          Matériaux, composants, usinage, essais en mer : chaque projet a un coût.
+          C'est là que nos partenaires interviennent.
+        </p>
+        <div class="groupe-boutons" style="justify-content: center; margin-top: var(--esp-5)">
+          <a class="bouton bouton--principal" href="partenaires.html">Devenir partenaire</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-layout="footer"></div>
+
+  <script src="content/site.js"></script>
+  <script src="content/projets.js"></script>
+  <script src="js/outils.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/vue-3d.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -12,7 +12,7 @@
   if (!conteneur) return;
 
   const { esc } = HG.outils;
-  const modele = HG.bateau.modele3d;
+  const modele = HG.projets.modele3d;
 
   const emplacement = (message) => {
     conteneur.innerHTML = `

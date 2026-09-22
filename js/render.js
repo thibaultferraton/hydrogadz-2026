@@ -8,6 +8,18 @@
   const { esc, aCompleter, photo } = HG.outils;
 
   const RENDUS = {
+    // Bande de chiffres sous la photo d'accueil
+    "chiffres-cles": () =>
+      HG.site.chiffresCles
+        .map(
+          (c) => `
+          <div class="bande-chiffres__cellule">
+            <span class="bande-chiffres__valeur">${esc(c.valeur)}<span class="bande-chiffres__exposant">${esc(c.exposant)}</span></span>
+            <span class="bande-chiffres__label">${esc(c.label)}</span>
+          </div>`
+        )
+        .join(""),
+
     // Bandeau de logos (accueil, partenaires)
     logos: () =>
       HG.partenaires.actuels
@@ -24,9 +36,21 @@
         .map((a) => `<article class="carte apparition"><h3>${esc(a.titre)}</h3><p>${esc(a.texte)}</p></article>`)
         .join(""),
 
-    "bateau-general": () =>
-      HG.bateau.general
-        .map((c) => `<article class="carte apparition"><h3>${esc(c.titre)}</h3><p>${esc(c.texte)}</p></article>`)
+    // Les trois chantiers : texte à gauche, photo à droite, en alternance.
+    chantiers: () =>
+      HG.projets.chantiers
+        .map(
+          (c) => `
+          <article class="chantier${c.photo ? "" : " chantier--sans-photo"} apparition">
+            <div class="chantier__texte">
+              <span class="chantier__numero">${esc(c.numero)}</span>
+              <h2>${esc(c.titre)}</h2>
+              <p class="chantier__accroche">${esc(c.accroche)}</p>
+              <p class="texte-doux">${esc(c.texte)}</p>
+            </div>
+            ${c.photo ? photo(c.photo, c.titre, "photo chantier__photo") : ""}
+          </article>`
+        )
         .join(""),
 
     "dons-usages": () =>

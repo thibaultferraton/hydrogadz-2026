@@ -179,9 +179,11 @@
 .hero {
   position: relative;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  justify-content: flex-end;
   min-height: 100svh;
-  padding-block: calc(var(--hauteur-header) + var(--esp-6)) var(--esp-6);
+  /* la marge basse laisse la place à la bande de chiffres, en position absolue */
+  padding-block: calc(var(--hauteur-header) + var(--esp-6)) calc(var(--esp-6) + 120px);
   color: var(--texte-sur-sombre);
   background: var(--fond-sombre);
   overflow: hidden;
@@ -206,6 +208,7 @@
 .hero__contenu {
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 .hero__contenu h1 {
@@ -725,4 +728,158 @@
 .sans-js .apparition {
   opacity: 1;
   transform: none;
+}
+
+/* ---------- Logo dans la photo d'accueil ---------- */
+
+.hero__logo {
+  height: clamp(44px, 6vw, 68px);
+  width: auto;
+  margin-bottom: var(--esp-5);
+  filter: drop-shadow(0 2px 16px rgba(8, 23, 38, 0.55));
+}
+
+/* Le logo est déjà en grand dans la photo : on masque celui du header
+   tant qu'on est en haut de l'accueil, il réapparaît au défilement. */
+.page-accueil .header:not(.header--plein) .header__logo {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.header__logo {
+  transition: opacity 0.25s ease;
+}
+
+/* ---------- Bande de chiffres (bas de la photo d'accueil) ---------- */
+
+.bande-chiffres {
+  position: absolute;
+  inset: auto 0 0;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  background: rgba(251, 250, 248, 0.92);
+  backdrop-filter: blur(6px);
+  color: var(--encre);
+}
+
+.bande-chiffres__cellule {
+  padding: var(--esp-4) var(--esp-3);
+  text-align: center;
+  border-left: 1px solid var(--bordure);
+}
+
+.bande-chiffres__cellule:first-child {
+  border-left: 0;
+}
+
+.bande-chiffres__valeur {
+  display: block;
+  font-family: var(--police-titre);
+  font-size: clamp(1.1rem, 0.7rem + 1.4vw, 2rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  white-space: nowrap;
+}
+
+.bande-chiffres__exposant {
+  font-size: 0.62em;
+  font-weight: 600;
+}
+
+.bande-chiffres__label {
+  display: block;
+  margin-top: var(--esp-2);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--texte-doux);
+}
+
+/* Sur téléphone, la bande passe sous la photo et se met sur deux colonnes */
+@media (max-width: 767px) {
+  .hero {
+    padding-bottom: var(--esp-5);
+  }
+
+  .bande-chiffres {
+    position: static;
+    grid-template-columns: repeat(2, 1fr);
+    background: var(--fond);
+  }
+
+  .bande-chiffres__cellule {
+    border-top: 1px solid var(--bordure);
+  }
+
+  .bande-chiffres__cellule:nth-child(odd) {
+    border-left: 0;
+  }
+
+  .bande-chiffres__cellule:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- Chantiers (page projets) ---------- */
+
+.chantiers {
+  display: grid;
+  gap: var(--esp-6);
+}
+
+.chantier {
+  display: grid;
+  gap: var(--esp-5);
+  padding-top: var(--esp-5);
+  border-top: 1px solid var(--bordure);
+}
+
+@media (min-width: 900px) {
+  .chantier {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  /* une fois sur deux, la photo passe à gauche */
+  .chantier:nth-child(even) .chantier__texte {
+    order: 2;
+  }
+
+  /* un chantier sans photo occupe toute la largeur plutôt que la moitié */
+  .chantier--sans-photo {
+    grid-template-columns: 1fr;
+  }
+
+  .chantier--sans-photo .chantier__texte {
+    max-width: 62ch;
+  }
+}
+
+.chantier__numero {
+  display: block;
+  margin-bottom: var(--esp-3);
+  font-family: var(--police-titre);
+  font-size: var(--taille-s);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+}
+
+.chantier__texte h2 {
+  letter-spacing: -0.03em;
+}
+
+.chantier__accroche {
+  margin-block: var(--esp-2) var(--esp-3);
+  font-family: var(--police-titre);
+  font-size: var(--taille-l);
+  font-weight: 500;
+  color: var(--texte);
+}
+
+.chantier__photo {
+  aspect-ratio: 4 / 3;
 }
