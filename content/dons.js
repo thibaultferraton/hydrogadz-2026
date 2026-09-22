@@ -1,5 +1,5 @@
 // ============================================================================
-//  NOUS SOUTENIR — page soutenir.html
+//  DONS — section « Faire un don » de la page partenaires.html
 //  Tant qu'une valeur vaut null, la page affiche « À compléter » au lieu
 //  d'informations bancaires inventées.
 // ============================================================================
