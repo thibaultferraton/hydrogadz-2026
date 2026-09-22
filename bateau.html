@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="fr" class="sans-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Le bateau — Hydrogadz</title>
+  <meta name="description" content="Le catamaran électrique Hydrogadz : transmission, batterie, cockpit, hélice et télémétrie, conçus par les élèves ingénieurs Arts et Métiers.">
+  <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body class="page-interieure">
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+  <div data-layout="header"></div>
+
+  <main id="contenu">
+
+    <header class="page-tete">
+      <div class="conteneur">
+        <span class="surtitre">Le bateau</span>
+        <h1>Notre catamaran électrique</h1>
+        <p>Une coque commune à toutes les équipes, et tout le reste à inventer : c'est là que l'équipe fait la différence.</p>
+      </div>
+    </header>
+
+    <!-- VUE 3D + FICHE TECHNIQUE -->
+    <section class="section">
+      <div class="conteneur duo">
+        <div class="vue-3d apparition" data-vue-3d></div>
+        <div class="apparition">
+          <span class="surtitre">Fiche technique</span>
+          <h2>En chiffres</h2>
+          <dl class="fiche" data-render="fiche" style="margin-top: var(--esp-4)"></dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHANTIERS -->
+    <section class="section section--douce">
+      <div class="conteneur">
+        <div class="section__tete">
+          <span class="surtitre">Cette saison</span>
+          <h2>Nos chantiers techniques</h2>
+          <p class="texte-doux">Chaque pôle porte un morceau du bateau, de la conception jusqu'aux essais en mer.</p>
+        </div>
+        <div class="grille" data-render="chantiers"></div>
+      </div>
+    </section>
+
+    <!-- ATELIER -->
+    <section class="section">
+      <div class="conteneur">
+        <div class="section__tete">
+          <span class="surtitre">À l'atelier</span>
+          <h2>Du banc d'essai à l'eau</h2>
+        </div>
+        <div class="grille grille--2">
+          <figure class="apparition" style="margin: 0">
+            <div class="photo photo--paysage">
+              <img src="assets/photos/banc-propulsion.webp" alt="Le banc d'essai de la chaîne de propulsion à l'atelier" loading="lazy">
+            </div>
+          </figure>
+          <figure class="apparition" style="margin: 0">
+            <div class="photo photo--paysage">
+              <img src="assets/photos/atelier-cockpit.webp" alt="L'équipe au travail autour du cockpit à l'atelier" loading="lazy">
+            </div>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-layout="footer"></div>
+
+  <script src="content/site.js"></script>
+  <script src="content/bateau.js"></script>
+  <script src="js/outils.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/vue-3d.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

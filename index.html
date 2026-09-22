@@ -1,51 +1,158 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="sans-js">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hydrogadz 2026</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hydrogadz — Arts et Métiers au Monaco Energy Boat Challenge</title>
+  <meta name="description" content="Hydrogadz, l'association étudiante Arts et Métiers d'Aix-en-Provence qui conçoit et pilote un bateau électrique au Monaco Energy Boat Challenge.">
+  <meta property="og:title" content="Hydrogadz — cap sur le MEBC 2027">
+  <meta property="og:description" content="L'équipe Arts et Métiers d'Aix-en-Provence au Monaco Energy Boat Challenge.">
+  <meta property="og:image" content="assets/photos/bateau-05-monaco.webp">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/favicon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
 </head>
-<body>
-  <header class="nav">
-    <a class="logo" href="#">Hydrogadz<span>2026</span></a>
-    <nav>
-      <a href="#projet">Le projet</a>
-      <a href="#equipe">L'équipe</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+<body class="page-accueil">
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+  <div data-layout="header"></div>
 
-  <main>
+  <main id="contenu">
+
+    <!-- HERO -->
     <section class="hero">
-      <h1>Hydrogadz <span class="accent">2026</span></h1>
-      <p>Le site est en construction. Revenez bientôt.</p>
-      <a class="btn" href="#projet">Découvrir</a>
+      <img class="hero__image" src="assets/photos/bateau-05-monaco.webp" alt="Le catamaran Hydrogadz numéro 05 en mer devant Monaco" fetchpriority="high">
+      <div class="conteneur hero__contenu">
+        <span class="surtitre">Arts et Métiers · Aix-en-Provence</span>
+        <h1>Cap sur Monaco 2027</h1>
+        <p>Des élèves ingénieurs qui conçoivent, construisent et pilotent leur propre bateau électrique au Monaco Energy Boat Challenge.</p>
+        <div class="groupe-boutons">
+          <a class="bouton bouton--principal" href="partenaires.html">Devenir partenaire</a>
+          <a class="bouton bouton--contour" href="bateau.html">Découvrir le bateau</a>
+        </div>
+      </div>
     </section>
 
-    <section id="projet" class="section reveal">
-      <h2>Le projet</h2>
-      <p>Présentation du projet à venir.</p>
+    <!-- LE PROJET -->
+    <section class="section" id="projet">
+      <div class="conteneur duo">
+        <div class="apparition">
+          <span class="surtitre">Le projet</span>
+          <h2>Une association étudiante, un bateau zéro émission</h2>
+          <p class="texte-doux" style="margin-top: var(--esp-3)">
+            Hydrogadz réunit des élèves ingénieurs des Arts et Métiers autour d'un objectif :
+            concevoir un bateau électrique performant et le mener en course au Monaco Energy Boat Challenge,
+            face à des écoles venues du monde entier.
+          </p>
+          <p class="texte-doux" style="margin-top: var(--esp-3)">
+            Transmission, batterie, cockpit, hélice, télémétrie : chaque pièce est pensée,
+            dessinée et testée par l'équipe.
+          </p>
+        </div>
+        <div class="photo photo--paysage apparition">
+          <img src="assets/photos/pilote-et-equipier.webp" alt="Un membre de l'équipe briefe la pilote installée dans le cockpit" loading="lazy">
+        </div>
+      </div>
     </section>
 
-    <section id="equipe" class="section reveal">
-      <h2>L'équipe</h2>
-      <p>Les membres de l'équipe à venir.</p>
+    <!-- CHIFFRES CLÉS -->
+    <section class="section section--douce">
+      <div class="conteneur">
+        <div class="chiffres">
+          <div class="apparition">
+            <span class="chiffre__valeur">3</span>
+            <span class="chiffre__label">participations au MEBC, de 2024 à 2026</span>
+          </div>
+          <div class="apparition">
+            <!-- Chiffre repris de la présentation interne : à vérifier auprès du Yacht Club de Monaco -->
+            <span class="chiffre__valeur">~46</span>
+            <span class="chiffre__label">écoles au départ</span>
+          </div>
+          <div class="apparition">
+            <span class="chiffre__valeur">4</span>
+            <span class="chiffre__label">épreuves en mer</span>
+          </div>
+          <div class="apparition">
+            <span class="chiffre__valeur">2027</span>
+            <span class="chiffre__label">notre prochaine édition</span>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="contact" class="section reveal">
-      <h2>Contact</h2>
-      <p>Informations de contact à venir.</p>
+    <!-- LE MEBC -->
+    <section class="section section--sombre" id="mebc">
+      <div class="conteneur duo">
+        <div class="apparition">
+          <span class="surtitre">La compétition</span>
+          <h2>Le Monaco Energy Boat Challenge</h2>
+          <p class="texte-doux" style="margin-top: var(--esp-3)">
+            Organisé chaque été par le Yacht Club de Monaco, le MEBC rassemble des équipes universitaires
+            du monde entier autour de bateaux à propulsion zéro émission. En Energy Class, toutes les équipes
+            partent de la même coque de catamaran : la différence se fait sur la propulsion, l'énergie et le pilotage.
+          </p>
+          <div class="grille grille--compacte" style="margin-top: var(--esp-5)">
+            <div class="carte"><h3>Endurance</h3><p>Aller le plus loin possible avec l'énergie embarquée.</p></div>
+            <div class="carte"><h3>Sprint</h3><p>La vitesse pure.</p></div>
+            <div class="carte"><h3>Slalom</h3><p>La maniabilité entre les bouées.</p></div>
+            <div class="carte"><h3>Championnat</h3><p>Les duels pour le titre.</p></div>
+          </div>
+        </div>
+        <div class="photo photo--paysage apparition">
+          <img src="assets/photos/mebc-flotte.webp" alt="Vue aérienne de la flotte du MEBC sur l'eau" loading="lazy">
+        </div>
+      </div>
     </section>
+
+    <!-- LE BATEAU (aperçu) -->
+    <section class="section">
+      <div class="conteneur duo duo--inverse">
+        <div class="apparition">
+          <span class="surtitre">Le bateau</span>
+          <h2>Pensé et construit à l'atelier</h2>
+          <p class="texte-doux" style="margin-top: var(--esp-3)">
+            Cette année, l'équipe travaille sur trois grands projets techniques (transmission, batterie et cockpit)
+            ainsi que sur l'hélice et la télémétrie embarquée.
+          </p>
+          <div class="groupe-boutons" style="margin-top: var(--esp-4)">
+            <a class="bouton bouton--principal" href="bateau.html">Voir le bateau</a>
+          </div>
+        </div>
+        <div class="photo photo--paysage apparition">
+          <img src="assets/photos/cockpit-hangar.webp" alt="Le cockpit du bateau Hydrogadz au hangar" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTENAIRES -->
+    <section class="section section--douce">
+      <div class="conteneur">
+        <div class="section__tete section__tete--centre">
+          <span class="surtitre">Ils nous soutiennent</span>
+          <h2>Nos partenaires</h2>
+        </div>
+        <div class="logos" data-render="logos"></div>
+        <div class="groupe-boutons" style="justify-content: center; margin-top: var(--esp-5)">
+          <a class="bouton bouton--principal" href="partenaires.html">Rejoindre l'aventure</a>
+        </div>
+      </div>
+    </section>
+
   </main>
 
-  <footer class="footer">
-    <p>© <span id="year"></span> Hydrogadz</p>
-  </footer>
+  <div data-layout="footer"></div>
 
-  <script src="script.js"></script>
+  <script src="content/site.js"></script>
+  <script src="content/partenaires.js"></script>
+  <script src="js/outils.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

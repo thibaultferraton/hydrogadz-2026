@@ -1,0 +1,652 @@
+/* ============================================================================
+   COMPOSANTS — chaque bloc réutilisable du site, dans l'ordre d'apparition.
+   ========================================================================= */
+
+/* ---------- Header ---------- */
+
+.header {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 50;
+  height: var(--hauteur-header);
+  background: var(--fond-sombre);
+  color: var(--texte-sur-sombre);
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+/* Sur l'accueil, le header est transparent au-dessus du hero puis devient plein */
+.page-accueil .header:not(.header--plein) {
+  background: transparent;
+}
+
+.header--plein {
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.header__barre {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--esp-4);
+  height: 100%;
+}
+
+.header__logo img {
+  height: 34px;
+  width: auto;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-4);
+}
+
+.nav__lien {
+  color: var(--texte-doux-sur-sombre);
+  text-decoration: none;
+  font-size: var(--taille-s);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav__lien:hover,
+.nav__lien[aria-current="page"] {
+  color: var(--texte-sur-sombre);
+}
+
+.nav__bouton-menu {
+  display: none;
+  padding: var(--esp-2);
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+}
+
+.nav__bouton-menu svg {
+  width: 28px;
+  height: 28px;
+}
+
+@media (max-width: 859px) {
+  .nav__bouton-menu {
+    display: block;
+  }
+
+  .nav__liste {
+    position: fixed;
+    inset: var(--hauteur-header) 0 auto;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--esp-3) var(--marge-laterale) var(--esp-5);
+    background: var(--fond-sombre);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav__liste.est-ouvert {
+    display: flex;
+  }
+
+  .nav__liste .nav__lien {
+    padding: var(--esp-3) 0;
+    font-size: var(--taille-m);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .nav__liste .bouton {
+    margin-top: var(--esp-4);
+  }
+}
+
+@media (min-width: 860px) {
+  .nav__liste {
+    display: flex;
+    align-items: center;
+    gap: var(--esp-4);
+  }
+}
+
+/* ---------- Boutons ---------- */
+
+.bouton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--esp-2);
+  padding: 0.8rem 1.5rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font-family: var(--police-titre);
+  font-size: var(--taille-s);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.bouton--principal {
+  background: var(--accent-degrade);
+  color: #fff;
+}
+
+.bouton--principal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(47, 91, 255, 0.35);
+}
+
+.bouton--contour {
+  border-color: currentColor;
+  color: inherit;
+  background: transparent;
+}
+
+.bouton--contour:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.groupe-boutons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-3);
+}
+
+/* ---------- Hero de l'accueil ---------- */
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  min-height: 100svh;
+  padding-block: calc(var(--hauteur-header) + var(--esp-6)) var(--esp-6);
+  color: var(--texte-sur-sombre);
+  background: var(--fond-sombre);
+  overflow: hidden;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Voile pour garder le texte lisible sur n'importe quelle photo */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 26, 46, 0.55) 0%, rgba(11, 26, 46, 0.2) 40%, rgba(11, 26, 46, 0.92) 100%);
+}
+
+.hero__contenu {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__contenu h1 {
+  max-width: 14ch;
+}
+
+.hero__contenu p {
+  max-width: 560px;
+  margin-block: var(--esp-4) var(--esp-5);
+  font-size: var(--taille-l);
+  color: var(--texte-sur-sombre);
+}
+
+/* ---------- En-tête des pages intérieures ---------- */
+
+.page-tete {
+  padding-block: var(--esp-6) var(--esp-5);
+  background: var(--fond-sombre);
+  color: var(--texte-sur-sombre);
+}
+
+.page-tete p {
+  max-width: 640px;
+  margin-top: var(--esp-3);
+  color: var(--texte-doux-sur-sombre);
+  font-size: var(--taille-l);
+}
+
+/* ---------- Chiffres clés ---------- */
+
+.chiffres {
+  display: grid;
+  gap: var(--esp-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr));
+}
+
+.chiffre__valeur {
+  display: block;
+  font-family: var(--police-titre);
+  font-size: var(--taille-xl);
+  font-weight: 700;
+  line-height: 1;
+  background: var(--accent-degrade);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.chiffre__label {
+  display: block;
+  margin-top: var(--esp-2);
+  font-size: var(--taille-s);
+}
+
+/* ---------- Cartes ---------- */
+
+.carte {
+  padding: var(--esp-4);
+  background: var(--fond);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon-l);
+}
+
+.carte h3 {
+  margin-bottom: var(--esp-2);
+}
+
+.carte p {
+  color: var(--texte-doux);
+  font-size: var(--taille-s);
+}
+
+.section--sombre .carte {
+  background: var(--marine-2);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.section--sombre .carte p {
+  color: var(--texte-doux-sur-sombre);
+}
+
+/* ---------- Photo ---------- */
+
+.photo {
+  overflow: hidden;
+  border-radius: var(--rayon-l);
+  background: var(--fond-doux);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo--paysage {
+  aspect-ratio: 4 / 3;
+}
+
+/* ---------- « À compléter » ----------
+   Signale visuellement un contenu manquant. Quand tout sera rempli,
+   plus aucun de ces blocs n'apparaîtra sur le site. */
+
+.a-completer {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-2);
+  padding: 0.15em 0.6em;
+  border: 1px dashed currentColor;
+  border-radius: 6px;
+  color: var(--a-completer);
+  font-size: var(--taille-xs);
+  font-weight: 600;
+}
+
+.emplacement {
+  display: grid;
+  place-items: center;
+  gap: var(--esp-2);
+  padding: var(--esp-5) var(--esp-4);
+  border: 2px dashed var(--bordure);
+  border-radius: var(--rayon-l);
+  color: var(--texte-doux);
+  text-align: center;
+  font-size: var(--taille-s);
+}
+
+.emplacement strong {
+  font-family: var(--police-titre);
+  font-size: var(--taille-m);
+  color: var(--texte);
+}
+
+/* ---------- Mur de logos partenaires ---------- */
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--esp-5) var(--esp-6);
+}
+
+.logos a {
+  display: block;
+  transition: opacity 0.2s;
+}
+
+.logos a:hover {
+  opacity: 0.75;
+}
+
+.logos img {
+  height: 44px;
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+}
+
+/* ---------- Frise historique ---------- */
+
+.frise {
+  display: grid;
+  gap: var(--esp-5);
+  padding: 0;
+  list-style: none;
+}
+
+.saison {
+  display: grid;
+  gap: var(--esp-4);
+  padding-bottom: var(--esp-5);
+  border-bottom: 1px solid var(--bordure);
+}
+
+@media (min-width: 800px) {
+  .saison {
+    grid-template-columns: 140px 1fr 320px;
+    align-items: start;
+  }
+}
+
+.saison__annee {
+  font-family: var(--police-titre);
+  font-size: var(--taille-xl);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.saison__statut {
+  display: inline-block;
+  margin-left: var(--esp-2);
+  padding: 0.1em 0.6em;
+  border-radius: 999px;
+  background: var(--fond-doux);
+  font-size: var(--taille-xs);
+  font-weight: 600;
+  vertical-align: middle;
+}
+
+.saison__corps p {
+  margin-top: var(--esp-2);
+}
+
+.saison .photo {
+  aspect-ratio: 4 / 3;
+}
+
+/* ---------- Galerie ---------- */
+
+.galerie {
+  display: grid;
+  gap: var(--esp-3);
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+}
+
+.galerie figure {
+  margin: 0;
+}
+
+.galerie .photo {
+  aspect-ratio: 4 / 3;
+}
+
+.galerie figcaption {
+  margin-top: var(--esp-2);
+  font-size: var(--taille-xs);
+  color: var(--texte-doux);
+}
+
+/* ---------- Fiche technique ---------- */
+
+.fiche {
+  display: grid;
+  margin: 0;
+  border-top: 1px solid var(--bordure);
+}
+
+.fiche > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--esp-3);
+  padding-block: var(--esp-3);
+  border-bottom: 1px solid var(--bordure);
+}
+
+.fiche dt {
+  color: var(--texte-doux);
+}
+
+.fiche dd {
+  margin: 0;
+  font-weight: 600;
+  text-align: right;
+}
+
+/* ---------- Emplacement 3D ---------- */
+
+.vue-3d {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: var(--rayon-l);
+  background: radial-gradient(circle at 50% 40%, var(--marine-2), var(--marine));
+  color: var(--texte-sur-sombre);
+}
+
+.vue-3d model-viewer {
+  width: 100%;
+  height: 100%;
+  --poster-color: transparent;
+}
+
+.vue-3d .emplacement {
+  position: absolute;
+  inset: var(--esp-4);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--texte-doux-sur-sombre);
+}
+
+.vue-3d .emplacement strong {
+  color: var(--texte-sur-sombre);
+}
+
+/* ---------- Membres ---------- */
+
+.membre {
+  text-align: center;
+}
+
+.membre__photo {
+  display: grid;
+  place-items: center;
+  width: 120px;
+  aspect-ratio: 1;
+  margin: 0 auto var(--esp-3);
+  overflow: hidden;
+  border-radius: 50%;
+  background: var(--accent-degrade);
+  color: #fff;
+  font-family: var(--police-titre);
+  font-size: var(--taille-l);
+  font-weight: 700;
+}
+
+.membre__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.membre__role {
+  color: var(--accent);
+  font-size: var(--taille-s);
+  font-weight: 600;
+}
+
+/* ---------- Formulaire ---------- */
+
+.formulaire {
+  display: grid;
+  gap: var(--esp-4);
+  padding: var(--esp-5);
+  background: var(--fond);
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon-l);
+  box-shadow: var(--ombre);
+}
+
+.formulaire__ligne {
+  display: grid;
+  gap: var(--esp-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+}
+
+.champ {
+  display: grid;
+  gap: var(--esp-1);
+}
+
+.champ label {
+  font-size: var(--taille-xs);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.champ input,
+.champ select,
+.champ textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon);
+  background: var(--fond-doux);
+  color: var(--texte);
+}
+
+.champ textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.champ input:focus,
+.champ select:focus,
+.champ textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(47, 91, 255, 0.2);
+}
+
+.formulaire__piege {
+  display: none;
+}
+
+.formulaire__message {
+  padding: var(--esp-3);
+  border-radius: var(--rayon);
+  font-size: var(--taille-s);
+}
+
+.formulaire__message[hidden] {
+  display: none;
+}
+
+.formulaire__message--ok {
+  background: #e7f7ee;
+  color: #11643a;
+}
+
+.formulaire__message--erreur {
+  background: #fdecec;
+  color: #9b1c1c;
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  padding-block: var(--esp-6) var(--esp-4);
+  background: var(--fond-sombre);
+  color: var(--texte-doux-sur-sombre);
+  font-size: var(--taille-s);
+}
+
+.footer__grille {
+  display: grid;
+  gap: var(--esp-5);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+}
+
+.footer img {
+  height: 30px;
+  width: auto;
+  margin-bottom: var(--esp-3);
+}
+
+.footer h2 {
+  margin-bottom: var(--esp-3);
+  color: var(--texte-sur-sombre);
+  font-size: var(--taille-s);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.footer ul {
+  display: grid;
+  gap: var(--esp-2);
+  padding: 0;
+  list-style: none;
+}
+
+.footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: var(--texte-sur-sombre);
+}
+
+.footer__bas {
+  margin-top: var(--esp-5);
+  padding-top: var(--esp-4);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: var(--taille-xs);
+}
+
+/* ---------- Apparition au défilement ---------- */
+
+.apparition {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.apparition.est-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Sans JavaScript, tout reste visible */
+.sans-js .apparition {
+  opacity: 1;
+  transform: none;
+}
