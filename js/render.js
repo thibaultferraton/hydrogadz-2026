@@ -79,11 +79,11 @@
         .join(""),
 
     membres: () => {
+      // Pas de membres renseignés : on masque toute la section plutôt que
+      // d'afficher une grille vide au visiteur.
       if (HG.equipe.membres.length === 0) {
-        return `<div class="emplacement" style="grid-column: 1 / -1">
-          <strong>Le trombinoscope arrive</strong>
-          Ajouter les membres dans content/equipe.js
-        </div>`;
+        document.querySelector("[data-section-membres]")?.remove();
+        return "";
       }
       return HG.equipe.membres
         .map((m) => {
@@ -100,6 +100,8 @@
         .join("");
     },
 
+    // Une saison sans récit affiche juste l'année et sa photo : mieux qu'un
+    // « à compléter » visible par les sponsors.
     frise: () =>
       HG.historique
         .map(
@@ -108,8 +110,8 @@
             <div class="saison__annee">${esc(s.annee)}</div>
             <div class="saison__corps">
               <h3>${esc(s.titre)}${s.statut === "en-cours" ? '<span class="saison__statut">En cours</span>' : ""}</h3>
-              <p>${s.texte ? esc(s.texte) : aCompleter("Récit de la saison à compléter")}</p>
-              ${s.statut === "termine" ? `<p><strong>Résultats :</strong> ${s.resultats ? esc(s.resultats) : aCompleter()}</p>` : ""}
+              ${s.texte ? `<p>${esc(s.texte)}</p>` : aCompleter("Récit de la saison à compléter")}
+              ${s.resultats ? `<p><strong>Résultats :</strong> ${esc(s.resultats)}</p>` : ""}
             </div>
             ${photo(s.photo, s.titre)}
           </li>`

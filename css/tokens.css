@@ -1,39 +1,43 @@
 /* ============================================================================
    TOKENS — les réglages visuels de tout le site.
-   Changer une valeur ici la change partout. C'est le point d'entrée
-   de la future passe esthétique.
+   Changer une valeur ici la change partout.
+
+   Parti pris : du contraste, des angles nets, de grandes photos, peu d'effets.
+   Pas de dégradés décoratifs, pas d'ombres portées molles, pas de coins très
+   arrondis : ce sont les tics des sites faits à la va-vite, et ça sonne faux
+   face à des sponsors industriels.
    ========================================================================= */
 
 :root {
-  /* Couleurs tirées du logo */
+  /* Couleurs tirées du logo et des photos (bleu du bateau, ocre du bâtiment) */
   --bleu-clair: #2a9dff;
-  --bleu: #2f5bff;
-  --ardoise: #363d4a;
-  --marine: #0b1a2e;
-  --marine-2: #12263f;
+  --bleu: #1f4fd8;
+  --marine: #081726;
+  --marine-2: #0f2740;
+  --encre: #17202b;
 
-  /* Rôles (utiliser ceux-là dans les composants, pas les couleurs brutes) */
-  --fond: #ffffff;
-  --fond-doux: #f3f6fa;
-  --texte: var(--ardoise);
-  --texte-doux: #5d6675;
+  /* Rôles — utiliser ceux-là dans les composants */
+  --fond: #fbfaf8;          /* blanc cassé, pas blanc pur : moins clinique */
+  --fond-doux: #f0ede8;     /* papier */
+  --texte: var(--encre);
+  --texte-doux: #5b6675;
   --accent: var(--bleu);
-  --accent-degrade: linear-gradient(90deg, var(--bleu-clair), var(--bleu));
-  --bordure: #dfe5ee;
+  --bordure: #ddd7cf;
+  --bordure-forte: var(--encre);
   --fond-sombre: var(--marine);
-  --texte-sur-sombre: #eaf2ff;
-  --texte-doux-sur-sombre: #9fb2cc;
+  --texte-sur-sombre: #f2f6fb;
+  --texte-doux-sur-sombre: #9db0c6;
   --a-completer: #b45309;
 
   /* Typographie */
-  --police-titre: "Space Grotesk", system-ui, sans-serif;
-  --police-texte: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --taille-xs: 0.8125rem;
+  --police-titre: "Archivo", system-ui, sans-serif;
+  --police-texte: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --taille-xs: 0.75rem;
   --taille-s: 0.9375rem;
   --taille-m: 1.0625rem;
-  --taille-l: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
-  --taille-xl: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
-  --taille-xxl: clamp(2.5rem, 1.6rem + 4.5vw, 5rem);
+  --taille-l: clamp(1.2rem, 1.05rem + 0.7vw, 1.6rem);
+  --taille-xl: clamp(1.9rem, 1.4rem + 2.2vw, 3.2rem);
+  --taille-xxl: clamp(2.8rem, 1.5rem + 6vw, 6.5rem);
 
   /* Espacements */
   --esp-1: 0.25rem;
@@ -42,15 +46,14 @@
   --esp-4: 1.5rem;
   --esp-5: 2.5rem;
   --esp-6: 4rem;
-  --esp-section: clamp(4rem, 3rem + 5vw, 7rem);
+  --esp-section: clamp(4.5rem, 3rem + 6vw, 8rem);
 
-  /* Formes */
-  --rayon: 12px;
-  --rayon-l: 20px;
-  --ombre: 0 8px 30px rgba(11, 26, 46, 0.08);
+  /* Formes — presque carré */
+  --rayon: 3px;
+  --rayon-l: 4px;
 
   /* Mise en page */
-  --largeur-max: 1180px;
-  --marge-laterale: clamp(1rem, 4vw, 2.5rem);
-  --hauteur-header: 72px;
+  --largeur-max: 1220px;
+  --marge-laterale: clamp(1.25rem, 5vw, 3.5rem);
+  --hauteur-header: 76px;
 }
