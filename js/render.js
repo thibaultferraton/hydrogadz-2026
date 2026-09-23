@@ -20,6 +20,22 @@
         )
         .join(""),
 
+    // Frise « De l'atelier à Monaco » (accueil)
+    roadmap: () => {
+      const libelle = { termine: "Terminé", "en-cours": "En cours", "a-venir": "À venir" };
+      return HG.roadmap
+        .map(
+          (e) => `
+          <li class="etape etape--${esc(e.statut)} apparition">
+            <span class="etape__periode">${esc(e.periode)}</span>
+            <h3 class="etape__titre">${esc(e.titre)}</h3>
+            <p class="etape__texte">${esc(e.texte)}</p>
+            <span class="etape__statut">${esc(libelle[e.statut] ?? "")}</span>
+          </li>`
+        )
+        .join("");
+    },
+
     // Bandeau de logos (accueil, partenaires)
     logos: () =>
       HG.partenaires.actuels

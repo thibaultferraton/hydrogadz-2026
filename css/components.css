@@ -883,3 +883,108 @@
 .chantier__photo {
   aspect-ratio: 4 / 3;
 }
+
+/* ---------- Feuille de route (accueil) ---------- */
+
+.roadmap {
+  display: grid;
+  gap: var(--esp-5);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  counter-reset: etape;
+}
+
+@media (min-width: 600px) {
+  .roadmap {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--esp-5) var(--esp-4);
+  }
+}
+
+@media (min-width: 900px) {
+  .roadmap {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* On s'arrête à trois colonnes : au-delà, les étapes deviennent trop étroites
+   pour que le texte reste lisible. Deux rangées de trois, c'est plus clair. */
+
+.etape {
+  position: relative;
+  padding-top: var(--esp-4);
+  border-top: 2px solid var(--bordure);
+}
+
+/* Le jalon sur la ligne */
+.etape::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bordure);
+}
+
+.etape--termine {
+  border-top-color: var(--accent);
+}
+
+.etape--termine::before {
+  background: var(--accent);
+}
+
+.etape--en-cours {
+  border-top-color: var(--encre);
+}
+
+.etape--en-cours::before {
+  background: var(--encre);
+  box-shadow: 0 0 0 5px rgba(23, 32, 43, 0.14);
+}
+
+.etape__periode {
+  display: block;
+  font-family: var(--police-titre);
+  font-size: var(--taille-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--texte-doux);
+}
+
+.etape--en-cours .etape__periode {
+  color: var(--encre);
+}
+
+.etape__titre {
+  margin-top: var(--esp-2);
+  font-size: var(--taille-m);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.etape__texte {
+  margin-top: var(--esp-2);
+  font-size: var(--taille-s);
+  color: var(--texte-doux);
+}
+
+.etape__statut {
+  display: inline-block;
+  margin-top: var(--esp-3);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--texte-doux);
+}
+
+.etape--en-cours .etape__statut {
+  padding: 0.25em 0.7em;
+  background: var(--encre);
+  color: var(--fond);
+}
