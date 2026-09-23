@@ -18,6 +18,7 @@ hydrogadz-2026/
 ├── content/                ← LES TEXTES ET LES LISTES. Modifiables sans savoir coder.
 │   ├── site.js             Nom, menu, contact, réseaux, bande de chiffres de l'accueil
 │   ├── projets.js          Les trois chantiers + le modèle 3D
+│   ├── roadmap.js          La feuille de route de l'accueil ⚠️ dates provisoires
 │   ├── dons.js             HelloAsso, virement, à quoi sert l'argent
 │   ├── equipe.js           Pôles et membres
 │   ├── historique.js       Saisons + galerie photo
