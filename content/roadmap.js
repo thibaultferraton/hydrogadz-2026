@@ -1,10 +1,10 @@
 // ============================================================================
-//  ROADMAP — la frise « De l'atelier à Monaco » sur la page d'accueil.
+//  ROADMAP — la frise « De l'atelier à Port Hercule » sur la page d'accueil.
 //
-//  ⚠️ ATTENTION : ces étapes et ces dates ont été rédigées à titre provisoire,
-//  elles ne viennent PAS du planning réel de l'association. À relire et à
-//  corriger en bureau avant de démarcher des sponsors : une roadmap fausse
-//  se retourne contre nous si un partenaire la prend au mot.
+//  Dates officielles (Yacht Club de Monaco, annonce des MEBC World Series,
+//  juillet 2026) : qualification européenne au lac de Côme en avril 2027,
+//  finale à Monaco du 29 juin au 3 juillet 2027. Les autres dates sont notre
+//  planning interne : à ajuster en bureau au fil de la saison.
 //
 //  statut : "termine" | "en-cours" | "a-venir"
 // ============================================================================
@@ -15,37 +15,37 @@ HG.roadmap = [
   {
     periode: "Sept. 2026",
     titre: "Constitution de l'équipe",
-    texte: "Recrutement des membres de la saison, répartition des pôles et lancement des trois projets techniques.",
+    texte: "Quinze étudiants, un bureau de quatre membres et la répartition des projets techniques de la saison.",
+    statut: "termine",
+  },
+  {
+    periode: "Sept. — Déc. 2026",
+    titre: "Conception",
+    texte: "Calculs, CAO et choix des solutions pour un bateau plus léger, plus fiable et plus performant. On valide avant de fabriquer.",
     statut: "en-cours",
   },
   {
-    periode: "Oct. — Déc. 2026",
-    titre: "Conception",
-    texte: "Architecture énergétique, modélisation du cockpit, calculs et simulations. On valide les concepts avant d'acheter quoi que ce soit.",
-    statut: "a-venir",
+    periode: "Sept. 2026 — Mars 2027",
+    titre: "Recherche de partenaires",
+    texte: "C'est maintenant : nous cherchons les entreprises qui financeront, équiperont ou conseilleront l'équipe cette saison.",
+    statut: "en-cours",
   },
   {
     periode: "Janv. — Mars 2027",
-    titre: "Achats et inscription",
-    texte: "Commande des composants et dépôt du dossier d'inscription auprès du Yacht Club de Monaco.",
+    titre: "Fabrication et essais",
+    texte: "Fabrication dans les ateliers de l'école, assemblage, puis premières sorties sur l'eau pour fiabiliser le bateau.",
     statut: "a-venir",
   },
   {
-    periode: "Mars — Mai 2027",
-    titre: "Construction",
-    texte: "Fabrication du cockpit, intégration de la chaîne de propulsion et assemblage du bateau à l'atelier.",
+    periode: "Avril 2027",
+    titre: "Qualification au lac de Côme",
+    texte: "L'épreuve sélective européenne, en Italie (dates à confirmer). Un bateau fiable et testé pour décrocher notre place.",
     statut: "a-venir",
   },
   {
-    periode: "Mai — Juin 2027",
-    titre: "Essais en mer",
-    texte: "Premières sorties, réglages, mesures et validation du dossier technique exigé par l'organisation.",
-    statut: "a-venir",
-  },
-  {
-    periode: "Juil. 2027",
+    periode: "29 juin — 3 juil. 2027",
     titre: "Monaco",
-    texte: "Une semaine de course à Port Hercule : endurance, sprint, slalom, championnat.",
+    texte: "La finale du Monaco Energy Boat Challenge à Port Hercule : endurance, vitesse et manœuvrabilité.",
     statut: "a-venir",
   },
 ];

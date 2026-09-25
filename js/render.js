@@ -52,6 +52,75 @@
         .map((a) => `<article class="carte apparition"><h3>${esc(a.titre)}</h3><p>${esc(a.texte)}</p></article>`)
         .join(""),
 
+    // Objectif de financement : montant + nombre de façons de nous soutenir
+    objectif: () => {
+      const { objectif, moyens } = HG.partenaires;
+      const facons = moyens.length;
+      return `
+        <div>
+          <span class="objectif__montant">${esc(objectif.montant)}</span>
+          <span class="objectif__label">Notre objectif de financement pour la saison</span>
+        </div>
+        <p class="objectif__facons"><strong>${facons}</strong> façons de<br>nous soutenir</p>
+        <p class="objectif__texte">${esc(objectif.texte)}</p>`;
+    },
+
+    // Les façons de nous soutenir, numérotées
+    moyens: () =>
+      HG.partenaires.moyens
+        .map(
+          (m, i) => `
+          <li class="moyen apparition">
+            <span class="moyen__numero">${String(i + 1).padStart(2, "0")}</span>
+            <h3>${esc(m.titre)}</h3>
+            <p>${esc(m.texte)}</p>
+          </li>`
+        )
+        .join(""),
+
+    // « Votre contribution » : les moyens sans le don, qui a sa propre section
+    contributions: () =>
+      HG.partenaires.moyens
+        .filter((m) => !m.don)
+        .map((m) => `<li class="carte"><h3>${esc(m.titre)}</h3><p>${esc(m.texte)}</p></li>`)
+        .join(""),
+
+    engagements: () =>
+      HG.partenaires.engagements
+        .map((e) => `<li class="carte carte--sable"><h3>${esc(e.titre)}</h3><p>${esc(e.texte)}</p></li>`)
+        .join(""),
+
+    niveaux: () =>
+      HG.partenaires.niveaux
+        .map(
+          (n) => `
+          <li class="niveau apparition">
+            <div>
+              <span class="niveau__montant">${esc(n.montant)}</span>
+              <span class="niveau__nom">${esc(n.nom)}</span>
+              ${n.note ? `<span class="niveau__note">${esc(n.note)}</span>` : ""}
+            </div>
+            <p>${esc(n.texte)}</p>
+          </li>`
+        )
+        .join(""),
+
+    // Barres horizontales : la plus grande part occupe toute la largeur
+    budget: () => {
+      const max = Math.max(...HG.partenaires.budget.map((b) => b.part));
+      const format = (n) => n.toLocaleString("fr-FR", { minimumFractionDigits: 1 }) + " %";
+      return HG.partenaires.budget
+        .map(
+          (b, i) => `
+          <li class="budget__ligne${i === 0 ? " budget__ligne--principale" : ""}" title="${esc(b.poste)} : ${format(b.part)} du budget">
+            <span>${esc(b.poste)}</span>
+            <span class="budget__piste"><span class="budget__barre" style="--part: ${((b.part / max) * 100).toFixed(1)}%"></span></span>
+            <span class="budget__valeur">${format(b.part)}</span>
+          </li>`
+        )
+        .join("");
+    },
+
     // Les trois chantiers : texte à gauche, photo à droite, en alternance.
     chantiers: () =>
       HG.projets.chantiers

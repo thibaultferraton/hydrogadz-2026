@@ -40,9 +40,18 @@ h2,
 h3,
 h4 {
   font-family: var(--police-titre);
+  font-weight: var(--graisse-titre);
   line-height: 1.15;
-  color: inherit;
+  color: var(--titre);
   text-wrap: balance;
+}
+
+/* Sur fond sombre (bandeaux pétrole, photo d'accueil), les titres passent en clair */
+.section--sombre :is(h1, h2, h3, h4),
+.hero :is(h1, h2, h3, h4),
+.page-tete :is(h1, h2, h3, h4),
+.footer :is(h1, h2, h3, h4) {
+  color: inherit;
 }
 
 h1 { font-size: var(--taille-xxl); }
@@ -65,7 +74,7 @@ textarea {
 }
 
 :focus-visible {
-  outline: 3px solid var(--bleu-clair);
+  outline: 3px solid var(--sable);
   outline-offset: 3px;
 }
 

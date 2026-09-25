@@ -18,14 +18,15 @@ hydrogadz-2026/
 ├── content/                ← LES TEXTES ET LES LISTES. Modifiables sans savoir coder.
 │   ├── site.js             Nom, menu, contact, réseaux, bande de chiffres de l'accueil
 │   ├── projets.js          Les trois chantiers + le modèle 3D
-│   ├── roadmap.js          La feuille de route de l'accueil ⚠️ dates provisoires
+│   ├── roadmap.js          La feuille de route de l'accueil (dates MEBC officielles, le reste en interne)
 │   ├── dons.js             HelloAsso, virement, à quoi sert l'argent
 │   ├── equipe.js           Pôles et membres
 │   ├── historique.js       Saisons + galerie photo
-│   └── partenaires.js      Partenaires actuels + avantages
+│   └── partenaires.js      Partenaires, objectif de financement, façons de soutenir,
+│                           niveaux de partenariat, budget prévisionnel (repris de la plaquette)
 │
 ├── css/                    Chargés dans cet ordre dans chaque page :
-│   ├── tokens.css          Couleurs, polices, tailles, espacements. ← la passe esthétique commence ici
+│   ├── tokens.css          Couleurs, polices, tailles, espacements (charte de la plaquette partenaires)
 │   ├── base.css            Remise à zéro + styles des balises
 │   ├── layout.css          Conteneurs, sections, grilles
 │   └── components.css      Header, boutons, cartes, frise, formulaire, footer…
@@ -43,6 +44,7 @@ hydrogadz-2026/
 │   ├── photos/             Photos optimisées (.webp). Voir docs/PHOTOS.md
 │   │   └── _originaux/     Photos brutes, NON envoyées sur GitHub
 │   ├── models/             Modèle 3D .glb de la CAO (à venir)
+│   ├── decor/              Boussole et lignes de vagues de la plaquette (SVG)
 │   └── icons/              Favicons
 │
 ├── tools/

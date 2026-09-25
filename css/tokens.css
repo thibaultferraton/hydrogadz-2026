@@ -2,42 +2,55 @@
    TOKENS — les réglages visuels de tout le site.
    Changer une valeur ici la change partout.
 
-   Parti pris : du contraste, des angles nets, de grandes photos, peu d'effets.
-   Pas de dégradés décoratifs, pas d'ombres portées molles, pas de coins très
-   arrondis : ce sont les tics des sites faits à la va-vite, et ça sonne faux
-   face à des sponsors industriels.
+   Parti pris : la charte de la plaquette partenaires 2026-2027. Un bleu pétrole
+   profond, un turquoise d'eau calme, une touche de sable ; des titres fins et
+   aérés, des cartes aux coins doux sur fond menthe ou sable, et des vagues
+   pour séparer les grandes sections. Toujours peu d'effets : pas d'ombres
+   portées molles, pas de dégradés décoratifs en dehors des photos.
    ========================================================================= */
 
+/* Les polices sont chargées ici, pour toutes les pages d'un coup */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap");
+
 :root {
-  /* Couleurs tirées du logo et des photos (bleu du bateau, ocre du bâtiment) */
-  --bleu-clair: #2a9dff;
-  --bleu: #1f4fd8;
-  --marine: #081726;
-  --marine-2: #0f2740;
-  --encre: #17202b;
+  /* Couleurs tirées de la plaquette partenaires */
+  --petrole: #173f53;       /* le bleu profond des titres et des bandeaux */
+  --petrole-2: #1f4d63;
+  --turquoise: #387f89;     /* sur-titres, liens, boutons */
+  --turquoise-fonce: #2b6670;
+  --lagon: #a2d4d5;         /* la vague claire */
+  --menthe: #edf6f5;        /* fond des cartes « contribution » */
+  --sable: #c2ab7d;         /* les petites touches dorées */
+  --sable-clair: #f5f1e8;   /* fond des cartes « engagement » */
+  --marine: var(--petrole);
+  --marine-2: var(--petrole-2);
+  --encre: var(--petrole);
 
   /* Rôles — utiliser ceux-là dans les composants */
-  --fond: #fbfaf8;          /* blanc cassé, pas blanc pur : moins clinique */
-  --fond-doux: #f0ede8;     /* papier */
-  --texte: var(--encre);
-  --texte-doux: #5b6675;
-  --accent: var(--bleu);
-  --bordure: #ddd7cf;
-  --bordure-forte: var(--encre);
-  --fond-sombre: var(--marine);
-  --texte-sur-sombre: #f2f6fb;
-  --texte-doux-sur-sombre: #9db0c6;
+  --fond: #fbfcfc;
+  --fond-doux: var(--menthe);
+  --texte: #3e5058;
+  --texte-doux: #64777e;
+  --titre: var(--petrole);
+  --accent: var(--turquoise);
+  --bordure: #d8e6e5;
+  --bordure-forte: var(--petrole);
+  --fond-sombre: var(--petrole);
+  --texte-sur-sombre: #f2f8f8;
+  --texte-doux-sur-sombre: #b5d3d6;
+  --bleu-clair: var(--lagon); /* accent sur fond sombre */
   --a-completer: #b45309;
 
-  /* Typographie */
-  --police-titre: "Archivo", system-ui, sans-serif;
-  --police-texte: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --taille-xs: 0.75rem;
+  /* Typographie : titres fins comme sur la plaquette, texte très lisible */
+  --police-titre: "Outfit", system-ui, sans-serif;
+  --police-texte: "Nunito Sans", system-ui, -apple-system, "Segoe UI", Verdana, sans-serif;
+  --graisse-titre: 400;
+  --taille-xs: 0.78rem;
   --taille-s: 0.9375rem;
   --taille-m: 1.0625rem;
-  --taille-l: clamp(1.2rem, 1.05rem + 0.7vw, 1.6rem);
-  --taille-xl: clamp(1.9rem, 1.4rem + 2.2vw, 3.2rem);
-  --taille-xxl: clamp(2.8rem, 1.5rem + 6vw, 6.5rem);
+  --taille-l: clamp(1.2rem, 1.05rem + 0.7vw, 1.55rem);
+  --taille-xl: clamp(1.9rem, 1.4rem + 2.2vw, 3.1rem);
+  --taille-xxl: clamp(2.7rem, 1.5rem + 5.4vw, 6rem);
 
   /* Espacements */
   --esp-1: 0.25rem;
@@ -48,9 +61,10 @@
   --esp-6: 4rem;
   --esp-section: clamp(4.5rem, 3rem + 6vw, 8rem);
 
-  /* Formes — presque carré */
-  --rayon: 3px;
-  --rayon-l: 4px;
+  /* Formes — des coins doux, comme les cartes de la plaquette */
+  --rayon: 10px;
+  --rayon-l: 18px;
+  --rayon-bouton: 999px;
 
   /* Mise en page */
   --largeur-max: 1220px;

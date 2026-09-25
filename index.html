@@ -13,7 +13,6 @@
   <link rel="apple-touch-icon" href="assets/icons/favicon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -74,6 +73,10 @@
             du monde entier autour de bateaux à propulsion zéro émission. En Energy Class, toutes les équipes
             partent de la même coque de catamaran : la différence se fait sur la propulsion, l'énergie et le pilotage.
           </p>
+          <p class="texte-doux" style="margin-top: var(--esp-3)">
+            En 2026, 54 équipes de 21 nations étaient au départ. Nouveauté 2027 : une épreuve qualificative
+            au lac de Côme, en Italie, avant la finale de Monaco.
+          </p>
           <div class="grille grille--compacte" style="margin-top: var(--esp-5)">
             <div class="carte"><h3>Endurance</h3><p>Aller le plus loin possible avec l'énergie embarquée.</p></div>
             <div class="carte"><h3>Sprint</h3><p>La vitesse pure.</p></div>
@@ -88,8 +91,8 @@
     </section>
 
     <!-- BANDEAU -->
-    <figure class="bandeau-photo">
-      <img src="assets/photos/monaco-ponton.webp" alt="Le bateau Hydrogadz sur l'eau à Monaco, devant les yachts du port Hercule" loading="lazy">
+    <figure class="bandeau-photo" style="--cadrage: 50% 55%">
+      <img src="assets/photos/monaco-yachts.webp" alt="Le bateau Hydrogadz et son pilote sur l'eau à Monaco, drapeau français au vent, devant un yacht du port Hercule" loading="lazy" width="1920" height="1440">
     </figure>
 
     <!-- LE BATEAU (aperçu) -->
@@ -119,7 +122,8 @@
           <span class="surtitre">Feuille de route</span>
           <h2>De l'atelier à Port Hercule</h2>
           <p class="texte-doux">
-            Dix mois entre la première réunion de la saison et la ligne de départ à Monaco.
+            De la première réunion à la finale de Monaco, en passant par la qualification au lac de Côme.
+            Nous en sommes à la conception du bateau et à la recherche de partenaires.
           </p>
         </div>
         <ol class="roadmap" data-render="roadmap"></ol>
@@ -128,15 +132,20 @@
 
     <!-- APPEL AU SOUTIEN -->
     <section class="section section--sombre" id="soutien">
-      <div class="conteneur section__tete section__tete--centre" style="margin-bottom: 0">
-        <span class="surtitre">On a besoin de vous</span>
-        <h2>Nous cherchons des soutiens pour 2027</h2>
-        <p class="texte-doux">
-          Construire le bateau, l'emmener à Monaco et courir une semaine, ça se finance.
-          Nous cherchons des partenaires entreprises, et tout don nous fait avancer.
-        </p>
-        <div class="groupe-boutons" style="justify-content: center; margin-top: var(--esp-5)">
+      <div class="conteneur">
+        <div class="section__tete">
+          <span class="surtitre">Nous soutenir</span>
+          <h2>Faisons avancer le bateau ensemble</h2>
+          <p class="texte-doux">
+            Concevoir le bateau, se qualifier au lac de Côme puis courir à Monaco, ça se finance.
+            Entreprises ou particuliers, voici comment embarquer avec nous.
+          </p>
+        </div>
+        <div class="objectif apparition" data-render="objectif"></div>
+        <ol class="moyens" data-render="moyens" style="margin-top: var(--esp-4)"></ol>
+        <div class="groupe-boutons" style="margin-top: var(--esp-5)">
           <a class="bouton bouton--principal" href="partenaires.html">Devenir partenaire</a>
+          <a class="bouton bouton--contour" href="partenaires.html#niveaux">Voir les niveaux de partenariat</a>
           <a class="bouton bouton--contour" href="partenaires.html#don">Faire un don</a>
         </div>
       </div>
