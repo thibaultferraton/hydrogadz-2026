@@ -18,8 +18,20 @@
 }
 
 .section--sombre {
+  position: relative;
   background: var(--fond-sombre);
   color: var(--texte-sur-sombre);
+}
+
+/* Une vague (turquoise clair puis pétrole) coiffe chaque bandeau sombre,
+   comme en bas des pages de la plaquette. */
+.section--sombre::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 100%;
+  height: clamp(28px, 4vw, 56px);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0 34C360 4 720 6 1080 24s300 16 360 8v28H0z' fill='%23a2d4d5'/%3E%3Cpath d='M0 50c420-26 800-22 1120-8 160 7 260 6 320 2v16H0z' fill='%23173f53'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
+  pointer-events: none;
 }
 
 .section--sombre .texte-doux {
@@ -28,12 +40,12 @@
 
 /* En-tête de section : sur-titre + titre + intro */
 .section__tete {
-  max-width: 34ch;
+  max-width: 44ch;
   margin-bottom: var(--esp-6);
 }
 
 .section__tete h2 {
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
 }
 
 .section__tete p {
@@ -53,42 +65,40 @@
 .surtitre {
   display: flex;
   align-items: center;
-  gap: var(--esp-3);
+  gap: var(--esp-2);
   margin-bottom: var(--esp-4);
   font-family: var(--police-texte);
   font-size: var(--taille-xs);
-  font-weight: 600;
-  letter-spacing: 0.16em;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--accent);
 }
 
-/* Trait qui prolonge le sur-titre : repère graphique récurrent du site */
-.surtitre::after {
+/* Le petit trait terminé par un point, repris de la plaquette : « —• Devenir partenaire » */
+.surtitre::before {
   content: "";
-  flex: 1;
-  height: 1px;
-  max-width: 80px;
-  background: currentColor;
-  opacity: 0.4;
+  flex: none;
+  width: 30px;
+  height: 7px;
+  background:
+    radial-gradient(circle, currentColor 3px, transparent 3.5px) right center / 7px 7px no-repeat,
+    linear-gradient(currentColor, currentColor) left center / 24px 1.5px no-repeat;
 }
 
 .section__tete--centre .surtitre {
   justify-content: center;
 }
 
-.section__tete--centre .surtitre::after {
-  display: none;
+.section--sombre .surtitre,
+.page-tete .surtitre {
+  color: var(--lagon);
 }
 
-.section--sombre .surtitre {
-  color: var(--bleu-clair);
-}
-
-/* Sur la photo d'accueil, le bleu ne tient pas : on passe en blanc */
+/* Sur la photo d'accueil, on passe en blanc pour rester lisible */
 .hero .surtitre {
   color: #fff;
-  text-shadow: 0 1px 12px rgba(8, 23, 38, 0.6);
+  text-shadow: 0 1px 12px rgba(23, 63, 83, 0.7);
 }
 
 .section__tete p {

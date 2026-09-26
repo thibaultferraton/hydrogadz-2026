@@ -21,7 +21,7 @@
 }
 
 .header--plein {
-  border-bottom-color: rgba(255, 255, 255, 0.14);
+  border-bottom-color: rgba(162, 212, 213, 0.22);
 }
 
 .header__barre {
@@ -49,7 +49,7 @@
   color: var(--texte-doux-sur-sombre);
   text-decoration: none;
   font-size: var(--taille-s);
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.2s;
 }
 
@@ -59,8 +59,8 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  height: 1px;
-  background: currentColor;
+  height: 1.5px;
+  background: var(--lagon);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s ease;
@@ -103,7 +103,7 @@
     align-items: stretch;
     padding: var(--esp-3) var(--marge-laterale) var(--esp-5);
     background: var(--fond-sombre);
-    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    border-top: 1px solid rgba(162, 212, 213, 0.22);
   }
 
   .nav__liste.est-ouvert {
@@ -114,7 +114,8 @@
     padding: var(--esp-3) 0;
     font-family: var(--police-titre);
     font-size: var(--taille-l);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 400;
+    border-bottom: 1px solid rgba(162, 212, 213, 0.16);
   }
 
   .nav__liste .bouton {
@@ -137,12 +138,12 @@
   align-items: center;
   justify-content: center;
   gap: var(--esp-2);
-  padding: 0.85rem 1.6rem;
-  border: 1px solid transparent;
-  border-radius: var(--rayon);
-  font-family: var(--police-titre);
+  padding: 0.8rem 1.6rem;
+  border: 1.5px solid transparent;
+  border-radius: var(--rayon-bouton);
+  font-family: var(--police-texte);
   font-size: var(--taille-s);
-  font-weight: 600;
+  font-weight: 700;
   text-decoration: none;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
@@ -154,7 +155,7 @@
 }
 
 .bouton--principal:hover {
-  background: var(--encre);
+  background: var(--turquoise-fonce);
 }
 
 .bouton--contour {
@@ -164,8 +165,16 @@
 }
 
 .bouton--contour:hover {
-  background: currentColor;
-  color: var(--fond-sombre);
+  background: var(--texte-sur-sombre);
+  border-color: var(--texte-sur-sombre);
+  color: var(--petrole);
+}
+
+/* Un bouton contour sur fond clair se remplit en pétrole */
+.section:not(.section--sombre) .bouton--contour:hover {
+  background: var(--petrole);
+  border-color: var(--petrole);
+  color: #fff;
 }
 
 .groupe-boutons {
@@ -202,7 +211,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(8, 23, 38, 0.6) 0%, rgba(8, 23, 38, 0.15) 35%, rgba(8, 23, 38, 0.95) 100%);
+  background: linear-gradient(180deg, rgba(23, 63, 83, 0.62) 0%, rgba(23, 63, 83, 0.12) 38%, rgba(23, 63, 83, 0.94) 100%);
 }
 
 .hero__contenu {
@@ -213,7 +222,8 @@
 
 .hero__contenu h1 {
   max-width: 12ch;
-  letter-spacing: -0.03em;
+  font-weight: 300;
+  letter-spacing: -0.02em;
 }
 
 .hero__contenu p {
@@ -226,13 +236,27 @@
 /* ---------- En-tête des pages intérieures ---------- */
 
 .page-tete {
-  padding-block: var(--esp-6) var(--esp-5);
-  background: var(--fond-sombre);
+  position: relative;
+  padding-block: var(--esp-6) calc(var(--esp-6) + 30px);
+  background:
+    url("../assets/decor/boussole.svg") right var(--marge-laterale) top var(--esp-5) / 64px no-repeat,
+    var(--fond-sombre);
   color: var(--texte-sur-sombre);
+  overflow: hidden;
+}
+
+/* La vague qui ferme l'en-tête, reprise de la couverture de la plaquette */
+.page-tete::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 -1px;
+  height: clamp(28px, 4vw, 56px);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0 30C300 6 700 4 1040 22c180 10 320 12 400 6v32H0z' fill='%23a2d4d5' fill-opacity='.55'/%3E%3Cpath d='M0 44c360-22 760-24 1100-8 160 8 270 8 340 4v20H0z' fill='%23fbfcfc'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
 }
 
 .page-tete h1 {
-  letter-spacing: -0.03em;
+  font-weight: 300;
+  letter-spacing: -0.02em;
 }
 
 .page-tete p {
@@ -240,6 +264,13 @@
   margin-top: var(--esp-4);
   color: var(--texte-doux-sur-sombre);
   font-size: var(--taille-l);
+}
+
+@media (max-width: 599px) {
+  .page-tete {
+    background-size: 44px, auto;
+    background-position: right var(--marge-laterale) top var(--esp-3), 0 0;
+  }
 }
 
 /* ---------- Chiffres clés ---------- */
@@ -252,17 +283,17 @@
 
 .chiffre {
   padding-top: var(--esp-3);
-  border-top: 2px solid var(--bordure-forte);
+  border-top: 2px solid var(--lagon);
 }
 
 .chiffre__valeur {
   display: block;
   font-family: var(--police-titre);
   font-size: clamp(2.6rem, 1.6rem + 3.4vw, 4.4rem);
-  font-weight: 700;
+  font-weight: 300;
   line-height: 0.95;
-  letter-spacing: -0.04em;
-  color: var(--encre);
+  letter-spacing: -0.03em;
+  color: var(--titre);
 }
 
 .chiffre__label {
@@ -270,27 +301,51 @@
   max-width: 24ch;
   margin-top: var(--esp-3);
   font-size: var(--taille-s);
-  color: var(--texte-doux);
-}
-
-.section--sombre .chiffre {
-  border-top-color: var(--bleu-clair);
+  color: var(--accent);
 }
 
 .section--sombre .chiffre__valeur {
   color: var(--texte-sur-sombre);
 }
 
-/* ---------- Cartes ---------- */
+.section--sombre .chiffre__label {
+  color: var(--lagon);
+}
+
+/* ---------- Cartes ----------
+   Fond menthe, coins doux et un petit point en haut à gauche,
+   comme les encadrés de la plaquette. */
 
 .carte {
-  padding: var(--esp-4) 0 0;
-  border-top: 1px solid var(--bordure);
-  background: none;
+  position: relative;
+  padding: var(--esp-4) var(--esp-4) var(--esp-4);
+  padding-top: calc(var(--esp-4) + 10px);
+  border-radius: var(--rayon-l);
+  background: var(--menthe);
+}
+
+.carte::before {
+  content: "";
+  position: absolute;
+  top: var(--esp-3);
+  left: var(--esp-4);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.carte--sable {
+  background: var(--sable-clair);
+}
+
+.carte--sable::before {
+  background: var(--sable);
 }
 
 .carte h3 {
   margin-bottom: var(--esp-2);
+  font-family: var(--police-texte);
   font-size: var(--taille-m);
   font-weight: 700;
 }
@@ -300,8 +355,21 @@
   font-size: var(--taille-s);
 }
 
+/* Sur fond menthe, les cartes passent en blanc pour se détacher */
+.section--douce .carte {
+  background: var(--fond);
+}
+
+.section--douce .carte--sable {
+  background: var(--sable-clair);
+}
+
 .section--sombre .carte {
-  border-top-color: rgba(255, 255, 255, 0.18);
+  background: rgba(162, 212, 213, 0.1);
+}
+
+.section--sombre .carte::before {
+  background: var(--lagon);
 }
 
 .section--sombre .carte p {
@@ -312,6 +380,7 @@
 
 .photo {
   overflow: hidden;
+  border-radius: var(--rayon-l);
   background: var(--fond-doux);
 }
 
@@ -327,7 +396,9 @@
 
 /* Image pleine largeur entre deux sections */
 .bandeau-photo {
-  height: clamp(280px, 52vh, 620px);
+  position: relative;
+  margin: 0;
+  height: clamp(300px, 58vh, 660px);
   background: var(--marine);
 }
 
@@ -335,6 +406,18 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: var(--cadrage, 50% 50%);
+}
+
+.bandeau-photo figcaption {
+  position: absolute;
+  right: var(--marge-laterale);
+  bottom: var(--esp-3);
+  padding: 0.3em 0.9em;
+  border-radius: var(--rayon-bouton);
+  background: rgba(23, 63, 83, 0.7);
+  color: var(--texte-sur-sombre);
+  font-size: var(--taille-xs);
 }
 
 /* ---------- Repères de travail ----------
@@ -364,6 +447,7 @@
   gap: var(--esp-2);
   padding: var(--esp-5) var(--esp-4);
   border: 2px dashed var(--bordure);
+  border-radius: var(--rayon-l);
   color: var(--texte-doux);
   text-align: center;
   font-size: var(--taille-s);
@@ -431,21 +515,22 @@
 .saison__annee {
   font-family: var(--police-titre);
   font-size: clamp(2rem, 1.4rem + 2vw, 3rem);
-  font-weight: 700;
+  font-weight: 300;
   line-height: 1;
-  letter-spacing: -0.04em;
-  color: var(--encre);
+  letter-spacing: -0.03em;
+  color: var(--titre);
 }
 
 .saison__statut {
   display: inline-block;
   margin-left: var(--esp-2);
-  padding: 0.25em 0.7em;
-  background: var(--accent);
-  color: #fff;
+  padding: 0.3em 0.8em;
+  border-radius: var(--rayon-bouton);
+  background: var(--sable-clair);
+  color: var(--petrole);
   font-family: var(--police-texte);
   font-size: var(--taille-xs);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   vertical-align: middle;
@@ -515,8 +600,16 @@
 
 .fiche dd {
   margin: 0;
-  font-weight: 600;
+  font-weight: 700;
   text-align: right;
+}
+
+.section--sombre .fiche > div {
+  border-bottom-color: rgba(162, 212, 213, 0.2);
+}
+
+.section--sombre .fiche dt {
+  color: var(--texte-doux-sur-sombre);
 }
 
 /* ---------- Vue 3D ---------- */
@@ -525,6 +618,7 @@
   position: relative;
   aspect-ratio: 4 / 3;
   overflow: hidden;
+  border-radius: var(--rayon-l);
   background: var(--marine-2);
   color: var(--texte-sur-sombre);
 }
@@ -558,11 +652,12 @@
   aspect-ratio: 1;
   margin-bottom: var(--esp-3);
   overflow: hidden;
+  border-radius: var(--rayon-l);
   background: var(--marine);
   color: var(--texte-sur-sombre);
   font-family: var(--police-titre);
   font-size: var(--taille-xl);
-  font-weight: 700;
+  font-weight: 300;
 }
 
 .membre__photo img {
@@ -573,12 +668,13 @@
 
 .membre h3 {
   font-size: var(--taille-m);
+  font-weight: 500;
 }
 
 .membre__role {
   color: var(--accent);
   font-size: var(--taille-s);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* ---------- Formulaire ---------- */
@@ -587,8 +683,8 @@
   display: grid;
   gap: var(--esp-4);
   padding: var(--esp-5);
-  background: var(--fond);
-  border: 1px solid var(--bordure-forte);
+  border-radius: var(--rayon-l);
+  background: var(--menthe);
 }
 
 .formulaire__ligne {
@@ -604,20 +700,20 @@
 
 .champ label {
   font-size: var(--taille-xs);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--texte-doux);
+  color: var(--accent);
 }
 
 .champ input,
 .champ select,
 .champ textarea {
   width: 100%;
-  padding: 0.7rem 0.85rem;
+  padding: 0.7rem 0.9rem;
   border: 1px solid var(--bordure);
   border-radius: var(--rayon);
-  background: var(--fond-doux);
+  background: var(--fond);
   color: var(--texte);
 }
 
@@ -631,7 +727,7 @@
 .champ textarea:focus {
   border-color: var(--accent);
   outline: none;
-  box-shadow: inset 0 -2px 0 var(--accent);
+  box-shadow: 0 0 0 3px rgba(56, 127, 137, 0.18);
 }
 
 .formulaire__piege {
@@ -640,6 +736,7 @@
 
 .formulaire__message {
   padding: var(--esp-3);
+  border-radius: var(--rayon);
   font-size: var(--taille-s);
 }
 
@@ -648,7 +745,7 @@
 }
 
 .formulaire__message--ok {
-  background: #e6f4ea;
+  background: #e3f3ec;
   color: #14532d;
 }
 
@@ -660,10 +757,22 @@
 /* ---------- Footer ---------- */
 
 .footer {
+  position: relative;
   padding-block: var(--esp-6) var(--esp-4);
   background: var(--fond-sombre);
   color: var(--texte-doux-sur-sombre);
   font-size: var(--taille-s);
+}
+
+/* La double vague de bas de page de la plaquette. Elle mord sur le bas de la
+   dernière section, qui a toujours assez de marge pour l'accueillir. */
+.footer::before {
+  content: "";
+  position: absolute;
+  inset: auto 0 100%;
+  height: clamp(28px, 4vw, 56px);
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0 34C360 4 720 6 1080 24s300 16 360 8v28H0z' fill='%23a2d4d5'/%3E%3Cpath d='M0 50c420-26 800-22 1120-8 160 7 260 6 320 2v16H0z' fill='%23173f53'/%3E%3C/svg%3E") bottom / 100% 100% no-repeat;
+  pointer-events: none;
 }
 
 .footer__grille {
@@ -680,9 +789,10 @@
 
 .footer h2 {
   margin-bottom: var(--esp-3);
-  color: var(--texte-sur-sombre);
+  color: var(--lagon);
+  font-family: var(--police-texte);
   font-size: var(--taille-xs);
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.14em;
   text-transform: uppercase;
 }
@@ -708,7 +818,7 @@
 .footer__bas {
   margin-top: var(--esp-6);
   padding-top: var(--esp-4);
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-top: 1px solid rgba(162, 212, 213, 0.2);
   font-size: var(--taille-xs);
 }
 
@@ -736,7 +846,7 @@
   height: clamp(44px, 6vw, 68px);
   width: auto;
   margin-bottom: var(--esp-5);
-  filter: drop-shadow(0 2px 16px rgba(8, 23, 38, 0.55));
+  filter: drop-shadow(0 2px 16px rgba(23, 63, 83, 0.55));
 }
 
 /* Le logo est déjà en grand dans la photo : on masque celui du header
@@ -758,9 +868,9 @@
   z-index: 1;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  background: rgba(251, 250, 248, 0.92);
+  background: rgba(237, 246, 245, 0.93);
   backdrop-filter: blur(6px);
-  color: var(--encre);
+  color: var(--petrole);
 }
 
 .bande-chiffres__cellule {
@@ -777,37 +887,41 @@
   display: block;
   font-family: var(--police-titre);
   font-size: clamp(1.1rem, 0.7rem + 1.4vw, 2rem);
-  font-weight: 700;
+  font-weight: 400;
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
   white-space: nowrap;
 }
 
 .bande-chiffres__exposant {
   font-size: 0.62em;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .bande-chiffres__label {
   display: block;
   margin-top: var(--esp-2);
-  font-size: 0.62rem;
-  font-weight: 600;
+  font-size: 0.64rem;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--texte-doux);
+  color: var(--accent);
 }
 
 /* Sur téléphone, la bande passe sous la photo et se met sur deux colonnes */
 @media (max-width: 767px) {
   .hero {
-    padding-bottom: var(--esp-5);
+    padding-bottom: 0;
+  }
+
+  .hero__contenu {
+    margin-bottom: var(--esp-5);
   }
 
   .bande-chiffres {
     position: static;
     grid-template-columns: repeat(2, 1fr);
-    background: var(--fond);
+    background: var(--menthe);
   }
 
   .bande-chiffres__cellule {
@@ -862,22 +976,22 @@
   display: block;
   margin-bottom: var(--esp-3);
   font-family: var(--police-titre);
-  font-size: var(--taille-s);
-  font-weight: 700;
-  letter-spacing: 0.1em;
+  font-size: var(--taille-l);
+  font-weight: 300;
+  letter-spacing: 0.04em;
   color: var(--accent);
 }
 
 .chantier__texte h2 {
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
 }
 
 .chantier__accroche {
   margin-block: var(--esp-2) var(--esp-3);
   font-family: var(--police-titre);
   font-size: var(--taille-l);
-  font-weight: 500;
-  color: var(--texte);
+  font-weight: 400;
+  color: var(--accent);
 }
 
 .chantier__photo {
@@ -937,18 +1051,19 @@
   background: var(--accent);
 }
 
+/* L'étape en cours porte le point sable, comme la page active de la plaquette */
 .etape--en-cours {
-  border-top-color: var(--encre);
+  border-top-color: var(--sable);
 }
 
 .etape--en-cours::before {
-  background: var(--encre);
-  box-shadow: 0 0 0 5px rgba(23, 32, 43, 0.14);
+  background: var(--sable);
+  box-shadow: 0 0 0 5px rgba(194, 171, 125, 0.28);
 }
 
 .etape__periode {
   display: block;
-  font-family: var(--police-titre);
+  font-family: var(--police-texte);
   font-size: var(--taille-xs);
   font-weight: 700;
   letter-spacing: 0.1em;
@@ -957,14 +1072,13 @@
 }
 
 .etape--en-cours .etape__periode {
-  color: var(--encre);
+  color: var(--petrole);
 }
 
 .etape__titre {
   margin-top: var(--esp-2);
-  font-size: var(--taille-m);
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-size: var(--taille-l);
+  font-weight: 400;
 }
 
 .etape__texte {
@@ -977,14 +1091,354 @@
   display: inline-block;
   margin-top: var(--esp-3);
   font-size: 0.68rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--texte-doux);
 }
 
+.etape--termine .etape__statut {
+  color: var(--accent);
+}
+
 .etape--en-cours .etape__statut {
-  padding: 0.25em 0.7em;
-  background: var(--encre);
-  color: var(--fond);
+  padding: 0.3em 0.8em;
+  border-radius: var(--rayon-bouton);
+  background: var(--sable-clair);
+  color: var(--petrole);
+  box-shadow: inset 0 0 0 1px var(--sable);
+}
+
+/* ============================================================================
+   BLOCS DE LA PAGE PARTENAIRES (et de l'appel au soutien de l'accueil)
+   ========================================================================= */
+
+/* ---------- Objectif de financement : le grand encadré menthe ---------- */
+
+.objectif {
+  display: grid;
+  gap: var(--esp-4) var(--esp-5);
+  padding: clamp(1.5rem, 1rem + 2.5vw, 3rem);
+  border-radius: var(--rayon-l);
+  background:
+    url("../assets/decor/lignes-vagues.svg") right -20px bottom 12px / 220px no-repeat,
+    var(--menthe);
+}
+
+@media (min-width: 760px) {
+  .objectif {
+    grid-template-columns: 1fr auto;
+    align-items: end;
+  }
+}
+
+.objectif__montant {
+  display: block;
+  font-family: var(--police-titre);
+  font-size: clamp(3rem, 2rem + 4vw, 5.2rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--titre);
+}
+
+.objectif__label {
+  display: block;
+  margin-top: var(--esp-2);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.objectif__texte {
+  max-width: 62ch;
+  grid-column: 1 / -1;
+  color: var(--texte);
+}
+
+.objectif__facons {
+  display: flex;
+  align-items: center;
+  gap: var(--esp-3);
+  color: var(--accent);
+  font-size: var(--taille-s);
+  line-height: 1.3;
+}
+
+.objectif__facons strong {
+  font-family: var(--police-titre);
+  font-size: clamp(2.4rem, 1.8rem + 2vw, 3.4rem);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--titre);
+}
+
+.section--sombre .objectif {
+  background:
+    url("../assets/decor/lignes-vagues.svg") right -20px bottom 12px / 220px no-repeat,
+    rgba(162, 212, 213, 0.1);
+}
+
+.section--sombre .objectif__montant,
+.section--sombre .objectif__facons strong,
+.section--sombre .objectif__texte {
+  color: var(--texte-sur-sombre);
+}
+
+.section--sombre .objectif__label,
+.section--sombre .objectif__facons {
+  color: var(--lagon);
+}
+
+/* ---------- Deux colonnes « Votre contribution » / « Notre engagement » ---------- */
+
+.echange {
+  display: grid;
+  gap: var(--esp-5) var(--esp-4);
+}
+
+@media (min-width: 860px) {
+  .echange {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.echange h3 {
+  margin-bottom: var(--esp-4);
+  font-size: var(--taille-l);
+}
+
+.echange__liste {
+  display: grid;
+  gap: var(--esp-3);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* ---------- Moyens de soutien (accueil + partenaires) ---------- */
+
+.moyens {
+  display: grid;
+  gap: var(--esp-4);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
+}
+
+.moyen {
+  display: flex;
+  flex-direction: column;
+  gap: var(--esp-2);
+  padding: var(--esp-4);
+  border-radius: var(--rayon-l);
+  background: var(--menthe);
+}
+
+.moyen__numero {
+  font-family: var(--police-titre);
+  font-size: var(--taille-l);
+  font-weight: 300;
+  color: var(--accent);
+}
+
+.moyen h3 {
+  font-size: var(--taille-l);
+}
+
+.moyen p {
+  color: var(--texte-doux);
+  font-size: var(--taille-s);
+}
+
+.section--sombre .moyen {
+  background: rgba(162, 212, 213, 0.1);
+}
+
+.section--sombre .moyen__numero {
+  color: var(--lagon);
+}
+
+.section--sombre .moyen p {
+  color: var(--texte-doux-sur-sombre);
+}
+
+/* ---------- Niveaux de partenariat ---------- */
+
+.niveaux {
+  display: grid;
+  gap: var(--esp-3);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.niveau {
+  display: grid;
+  gap: var(--esp-2) var(--esp-5);
+  padding: var(--esp-4) clamp(1.25rem, 0.8rem + 2vw, 2.5rem);
+  border-radius: var(--rayon-l);
+  background: var(--menthe);
+}
+
+/* Une ligne sur deux en sable, comme dans la plaquette */
+.niveau:nth-child(even) {
+  background: var(--sable-clair);
+}
+
+@media (min-width: 760px) {
+  .niveau {
+    grid-template-columns: 260px 1fr;
+    align-items: start;
+  }
+}
+
+.niveau__montant {
+  display: block;
+  font-family: var(--police-titre);
+  font-size: var(--taille-l);
+  font-weight: 400;
+  color: var(--titre);
+}
+
+.niveau__nom {
+  display: block;
+  margin-top: var(--esp-1);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.niveau__note {
+  display: block;
+  margin-top: var(--esp-1);
+  color: var(--texte-doux);
+  font-size: var(--taille-xs);
+}
+
+.niveau p {
+  color: var(--texte);
+  font-size: var(--taille-s);
+}
+
+.note {
+  margin-top: var(--esp-4);
+  color: var(--texte-doux);
+  font-size: var(--taille-xs);
+}
+
+/* ---------- Budget prévisionnel : barres horizontales ----------
+   Une seule série, une seule couleur : la valeur est écrite à côté
+   de chaque barre, pas besoin de légende. */
+
+.budget {
+  display: grid;
+  gap: var(--esp-3);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.budget__ligne {
+  display: grid;
+  grid-template-columns: minmax(9rem, 12rem) 1fr 3.8rem;
+  gap: var(--esp-3);
+  align-items: center;
+  font-size: var(--taille-s);
+}
+
+.budget__piste {
+  height: 14px;
+  border-radius: 4px;
+  background: var(--fond);
+}
+
+.budget__barre {
+  display: block;
+  width: var(--part);
+  height: 100%;
+  border-radius: 4px;
+  background: var(--turquoise);
+  transition: background 0.2s;
+}
+
+.budget__ligne--principale .budget__barre {
+  background: var(--petrole);
+}
+
+.budget__ligne:hover .budget__barre {
+  background: var(--petrole-2);
+}
+
+.budget__valeur {
+  font-weight: 700;
+  color: var(--titre);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 520px) {
+  .budget__ligne {
+    grid-template-columns: 1fr auto;
+  }
+
+  .budget__ligne {
+    gap: var(--esp-1) var(--esp-3);
+  }
+
+  .budget__piste {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+/* ---------- Encadré texte (pourquoi nous soutenir, contacts) ---------- */
+
+.encadre {
+  padding: clamp(1.5rem, 1rem + 2vw, 2.5rem);
+  border-radius: var(--rayon-l);
+  background: var(--menthe);
+}
+
+.encadre--sable {
+  background: var(--sable-clair);
+}
+
+.encadre p + p {
+  margin-top: var(--esp-3);
+}
+
+.contacts {
+  display: grid;
+  gap: var(--esp-4);
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  margin-top: var(--esp-4);
+}
+
+.contacts h3 {
+  margin-bottom: var(--esp-2);
+  color: var(--accent);
+  font-family: var(--police-texte);
+  font-size: var(--taille-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contacts ul {
+  display: grid;
+  gap: var(--esp-1);
+  padding: 0;
+  list-style: none;
+  font-size: var(--taille-s);
+}
+
+.contacts__email {
+  font-family: var(--police-titre);
+  font-size: var(--taille-l);
+  text-decoration: none;
+}
+
+.contacts__email:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }

@@ -14,7 +14,7 @@ Pas de Node sur ton ordi ? Envoie les photos à la personne qui gère le site.
 | Fichier | Contenu | Taille | Où |
 | --- | --- | --- | --- |
 | `cockpit-exterieur-large.webp` | Le bateau sur ses tréteaux devant le bâtiment | 1920 px ✅ | **Photo d'accueil**, partage réseaux |
-| `monaco-ponton.webp` | Le bateau sur l'eau à Monaco | 1170 px | Bandeau pleine largeur de l'accueil |
+| `monaco-yachts.webp` | Le bateau 10 et son pilote devant un yacht, à Monaco (photo iPhone) | 1920 px ✅ | Bandeau pleine largeur de l'accueil (cadrage réglé par `--cadrage` dans index.html), partage de la page partenaires |
 | `cockpit-exterieur.webp` | Le cockpit et les coques sur une bâche | 1920 px ✅ | Galerie |
 | `hero-atelier.webp` | Recadrage large de la photo précédente | 1920 px ✅ | Accueil, section bateau |
 | `bateau-05-monaco.webp` | Le bateau 05 en mer devant Monaco | 646 px ⚠️ | Historique 2026, page soutenir |
