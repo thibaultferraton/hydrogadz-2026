@@ -13,14 +13,18 @@ Pas de Node sur ton ordi ? Envoie les photos à la personne qui gère le site.
 
 | Fichier | Contenu | Taille | Où |
 | --- | --- | --- | --- |
-| `bateau-05-monaco.webp` | Le bateau 05 en mer devant Monaco (MEBC 2025) | 646 px ⚠️ | Hero de l'accueil |
+| `cockpit-exterieur-large.webp` | Le bateau sur ses tréteaux devant le bâtiment | 1920 px ✅ | **Photo d'accueil**, projets, partage réseaux |
+| `monaco-yachts.webp` | Le bateau 10 et son pilote devant un yacht, à Monaco (photo iPhone) | 1920 px ✅ | Bandeau pleine largeur de l'accueil (cadrage réglé par `--cadrage` dans index.html), page partenaires |
+| `cockpit-exterieur.webp` | Le cockpit et les coques sur une bâche | 1920 px ✅ | Projets, galerie de l'historique |
+| `hero-atelier.webp` | Recadrage large de la photo précédente | 1920 px ✅ | Accueil, section bateau |
 | `pilote-et-equipier.webp` | Briefing pilote dans le cockpit | 676 px | Accueil |
-| `cockpit-hangar.webp` | Cockpit au hangar | 652 px | Accueil, bateau (aperçu 3D) |
-| `bateau-en-course.webp` | Cockpit bleu en course (recadré d'un collage) | 343 px ⚠️ | Non utilisée pour l'instant |
-| `atelier-cockpit.webp` | L'équipe à l'atelier (recadré d'un collage) | 414 px ⚠️ | Bateau |
-| `banc-propulsion.webp` | Banc d'essai de la propulsion (date inconnue) | 1920 px ✅ | Bateau |
-| `monaco-port.webp` | Le port de Monaco (recadré d'un collage) | 362 px ⚠️ | Non utilisée pour l'instant |
+| `cockpit-hangar.webp` | Cockpit au hangar | 652 px | Projets |
+| `banc-propulsion.webp` | Banc d'essai de la propulsion (date inconnue) | 1920 px ✅ | Projets |
 | `mebc-flotte.webp` | La flotte vue du ciel | 1920 px ✅ | Accueil (section MEBC) |
+| `bateau-05-monaco.webp` | Le bateau 05 en mer devant Monaco (MEBC 2025, pas 2026) | 646 px ⚠️ | Non utilisée pour l'instant |
+| `bateau-en-course.webp` | Cockpit bleu en course (recadré d'un collage) | 343 px ⚠️ | Non utilisée pour l'instant |
+| `atelier-cockpit.webp` | L'équipe à l'atelier (recadré d'un collage) | 414 px ⚠️ | Non utilisée pour l'instant |
+| `monaco-port.webp` | Le port de Monaco (recadré d'un collage) | 362 px ⚠️ | Non utilisée pour l'instant |
 | `mebc-depart.webp` | Départ de course avec le public | 1920 px ✅ | Non utilisée pour l'instant |
 | `mebc-course.webp` | Plusieurs bateaux en course | 675 px | Non utilisée pour l'instant |
 
@@ -59,7 +63,8 @@ et compléter les crédits dans `mentions-legales.html`.
 
 ## Photos à faire en priorité
 
-1. **Le bateau en mer, format paysage, en haute définition**. C'est la photo du hero, la première chose que voit un sponsor.
+1. **Le bateau en mer, format paysage, en haute définition.** On a maintenant une bonne photo à quai,
+   mais aucune photo de course nette : c'est ce qui manque le plus pour l'accueil.
 2. **Une photo de groupe** de l'équipe 2026-2027, en extérieur, fond dégagé.
 3. **Un portrait par membre** pour le trombinoscope : même cadrage, même fond, format carré.
 4. **Des détails techniques** en gros plan : moteur, hélice, pack batterie, électronique.

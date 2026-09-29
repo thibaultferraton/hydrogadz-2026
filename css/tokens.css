@@ -1,39 +1,56 @@
 /* ============================================================================
    TOKENS — les réglages visuels de tout le site.
-   Changer une valeur ici la change partout. C'est le point d'entrée
-   de la future passe esthétique.
+   Changer une valeur ici la change partout.
+
+   Parti pris : la charte de la plaquette partenaires 2026-2027. Un bleu pétrole
+   profond, un turquoise d'eau calme, une touche de sable ; des titres fins et
+   aérés, des cartes aux coins doux sur fond menthe ou sable, et des vagues
+   pour séparer les grandes sections. Toujours peu d'effets : pas d'ombres
+   portées molles, pas de dégradés décoratifs en dehors des photos.
    ========================================================================= */
 
-:root {
-  /* Couleurs tirées du logo */
-  --bleu-clair: #2a9dff;
-  --bleu: #2f5bff;
-  --ardoise: #363d4a;
-  --marine: #0b1a2e;
-  --marine-2: #12263f;
+/* Les polices sont chargées ici, pour toutes les pages d'un coup */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700&display=swap");
 
-  /* Rôles (utiliser ceux-là dans les composants, pas les couleurs brutes) */
-  --fond: #ffffff;
-  --fond-doux: #f3f6fa;
-  --texte: var(--ardoise);
-  --texte-doux: #5d6675;
-  --accent: var(--bleu);
-  --accent-degrade: linear-gradient(90deg, var(--bleu-clair), var(--bleu));
-  --bordure: #dfe5ee;
-  --fond-sombre: var(--marine);
-  --texte-sur-sombre: #eaf2ff;
-  --texte-doux-sur-sombre: #9fb2cc;
+:root {
+  /* Couleurs tirées de la plaquette partenaires */
+  --petrole: #173f53;       /* le bleu profond des titres et des bandeaux */
+  --petrole-2: #1f4d63;
+  --turquoise: #387f89;     /* sur-titres, liens, boutons */
+  --turquoise-fonce: #2b6670;
+  --lagon: #a2d4d5;         /* la vague claire */
+  --menthe: #edf6f5;        /* fond des cartes « contribution » */
+  --sable: #c2ab7d;         /* les petites touches dorées */
+  --sable-clair: #f5f1e8;   /* fond des cartes « engagement » */
+  --marine: var(--petrole);
+  --marine-2: var(--petrole-2);
+  --encre: var(--petrole);
+
+  /* Rôles — utiliser ceux-là dans les composants */
+  --fond: #fbfcfc;
+  --fond-doux: var(--menthe);
+  --texte: #3e5058;
+  --texte-doux: #64777e;
+  --titre: var(--petrole);
+  --accent: var(--turquoise);
+  --bordure: #d8e6e5;
+  --bordure-forte: var(--petrole);
+  --fond-sombre: var(--petrole);
+  --texte-sur-sombre: #f2f8f8;
+  --texte-doux-sur-sombre: #b5d3d6;
+  --bleu-clair: var(--lagon); /* accent sur fond sombre */
   --a-completer: #b45309;
 
-  /* Typographie */
-  --police-titre: "Space Grotesk", system-ui, sans-serif;
-  --police-texte: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --taille-xs: 0.8125rem;
+  /* Typographie : titres fins comme sur la plaquette, texte très lisible */
+  --police-titre: "Outfit", system-ui, sans-serif;
+  --police-texte: "Nunito Sans", system-ui, -apple-system, "Segoe UI", Verdana, sans-serif;
+  --graisse-titre: 400;
+  --taille-xs: 0.78rem;
   --taille-s: 0.9375rem;
   --taille-m: 1.0625rem;
-  --taille-l: clamp(1.25rem, 1.1rem + 0.6vw, 1.5rem);
-  --taille-xl: clamp(1.75rem, 1.4rem + 1.6vw, 2.5rem);
-  --taille-xxl: clamp(2.5rem, 1.6rem + 4.5vw, 5rem);
+  --taille-l: clamp(1.2rem, 1.05rem + 0.7vw, 1.55rem);
+  --taille-xl: clamp(1.9rem, 1.4rem + 2.2vw, 3.1rem);
+  --taille-xxl: clamp(2.7rem, 1.5rem + 5.4vw, 6rem);
 
   /* Espacements */
   --esp-1: 0.25rem;
@@ -42,15 +59,15 @@
   --esp-4: 1.5rem;
   --esp-5: 2.5rem;
   --esp-6: 4rem;
-  --esp-section: clamp(4rem, 3rem + 5vw, 7rem);
+  --esp-section: clamp(4.5rem, 3rem + 6vw, 8rem);
 
-  /* Formes */
-  --rayon: 12px;
-  --rayon-l: 20px;
-  --ombre: 0 8px 30px rgba(11, 26, 46, 0.08);
+  /* Formes — des coins doux, comme les cartes de la plaquette */
+  --rayon: 10px;
+  --rayon-l: 18px;
+  --rayon-bouton: 999px;
 
   /* Mise en page */
-  --largeur-max: 1180px;
-  --marge-laterale: clamp(1rem, 4vw, 2.5rem);
-  --hauteur-header: 72px;
+  --largeur-max: 1220px;
+  --marge-laterale: clamp(1.25rem, 5vw, 3.5rem);
+  --hauteur-header: 76px;
 }

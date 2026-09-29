@@ -12,7 +12,7 @@
   if (!conteneur) return;
 
   const { esc } = HG.outils;
-  const modele = HG.bateau.modele3d;
+  const modele = HG.projets.modele3d;
 
   const emplacement = (message) => {
     conteneur.innerHTML = `
@@ -25,6 +25,13 @@
   if (!modele.fichier) {
     emplacement("Déposer l'export .glb de la CAO dans assets/models/ puis le déclarer dans content/bateau.js");
     return;
+  }
+
+  // Crédit affiché sous la vue quand le modèle n'est pas le nôtre.
+  const credit = document.querySelector("[data-credit-3d]");
+  if (credit && modele.credit) {
+    credit.textContent = modele.credit;
+    credit.hidden = false;
   }
 
   const script = document.createElement("script");
@@ -46,5 +53,6 @@
 
   conteneur.querySelector("model-viewer").addEventListener("error", () => {
     emplacement(`Fichier introuvable : ${modele.fichier}`);
+    if (credit) credit.hidden = true;
   });
 })();

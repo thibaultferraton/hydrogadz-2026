@@ -10,7 +10,8 @@
 // restent sur le Drive de l'asso.
 
 import sharp from "sharp";
-import { readdir, stat } from "node:fs/promises";
+import heicConvert from "heic-convert";
+import { readdir, stat, readFile } from "node:fs/promises";
 import path from "node:path";
 
 const SOURCE = "assets/photos/_originaux";
@@ -33,7 +34,13 @@ for (const fichier of fichiers) {
   const entree = path.join(SOURCE, fichier);
   const sortie = path.join(SORTIE, `${nom}.webp`);
 
-  const info = await sharp(entree)
+  // Les photos iPhone (.HEIC) doivent être décodées avant d'être traitées
+  const estHeic = [".heic", ".heif"].includes(path.extname(fichier).toLowerCase());
+  const source = estHeic
+    ? Buffer.from(await heicConvert({ buffer: await readFile(entree), format: "JPEG", quality: 1 }))
+    : entree;
+
+  const info = await sharp(source)
     .rotate() // respecte l'orientation EXIF des photos de téléphone
     .resize({ width: LARGEUR_MAX, withoutEnlargement: true })
     .webp({ quality: QUALITE })

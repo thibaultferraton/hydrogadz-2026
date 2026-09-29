@@ -6,7 +6,7 @@
 2. **Une branche par tâche** : `feature/nom-de-la-tache` (ou `prenom/nom-de-la-tache`).
 3. **Des commits fréquents et clairs** : un commit = un petit changement qu'on peut décrire en une phrase.
 4. **Une Pull Request (PR) dès que la tâche est prête**, même si elle est petite.
-5. **On relit rapidement les PR des autres** avant de merger.
+5. **Pas de relecture obligatoire** : chacun merge sa PR lui-même dès qu'elle est prête.
 
 ## Le workflow pas à pas
 
@@ -51,10 +51,10 @@ gh pr create --fill
 
 Dans la description, dire en deux lignes ce qui change et comment le vérifier.
 
-### 6. Relecture et merge
+### 6. Merge
 
-- Quelqu'un d'autre relit la PR, laisse des commentaires ou clique sur **Approve**.
-- Une fois approuvée, on clique sur **Merge pull request**, puis **Delete branch**.
+- Pas besoin d'attendre une relecture : on clique soi-même sur **Merge pull request**, puis **Delete branch**.
+- Le site en ligne se met à jour tout seul après le merge.
 - Chacun récupère ensuite la nouvelle version : `git checkout main && git pull`.
 
 ## En cas de conflit

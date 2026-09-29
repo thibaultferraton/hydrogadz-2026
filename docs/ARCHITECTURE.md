@@ -7,23 +7,26 @@ on recharge la page. Node.js ne sert qu'à optimiser les photos (optionnel).
 
 ```
 hydrogadz-2026/
-├── index.html              Accueil : hero, projet, chiffres, MEBC, aperçu bateau, partenaires
-├── bateau.html             Le bateau : vue 3D (emplacement), fiche technique, chantiers, atelier
+├── index.html              Accueil : photo, bande de chiffres, projet, MEBC, appel au soutien
+├── projets.html            Nos trois chantiers : batterie, cockpit, transmission (+ vue 3D)
 ├── equipe.html             L'équipe : pôles, trombinoscope, recrutement
 ├── historique.html         Chiffres, genèse, frise des saisons, évolution du bateau, partenaires, galerie
-├── partenaires.html        Devenir partenaire : avantages, logos, formulaire de contact
+├── partenaires.html        Devenir partenaire, formulaire de contact, et faire un don
 ├── mentions-legales.html   Obligatoire en France : éditeur, hébergeur, données, crédits
 ├── 404.html                Page d'erreur (servie automatiquement par GitHub Pages)
 │
 ├── content/                ← LES TEXTES ET LES LISTES. Modifiables sans savoir coder.
-│   ├── site.js             Nom, menu, contact, réseaux sociaux
-│   ├── bateau.js           Modèle 3D, chantiers, fiche technique
+│   ├── site.js             Nom, menu, contact, réseaux, bande de chiffres de l'accueil
+│   ├── projets.js          Les trois chantiers + le modèle 3D
+│   ├── roadmap.js          La feuille de route de l'accueil (dates MEBC officielles, le reste en interne)
+│   ├── dons.js             HelloAsso, virement, à quoi sert l'argent
 │   ├── equipe.js           Pôles et membres
 │   ├── historique.js       Chiffres, genèse, saisons, bateaux, partenaires passés + galerie
-│   └── partenaires.js      Partenaires actuels + avantages
+│   └── partenaires.js      Partenaires, objectif de financement, façons de soutenir,
+│                           niveaux de partenariat, budget prévisionnel (repris de la plaquette)
 │
 ├── css/                    Chargés dans cet ordre dans chaque page :
-│   ├── tokens.css          Couleurs, polices, tailles, espacements. ← la passe esthétique commence ici
+│   ├── tokens.css          Couleurs, polices, tailles, espacements (charte de la plaquette partenaires)
 │   ├── base.css            Remise à zéro + styles des balises
 │   ├── layout.css          Conteneurs, sections, grilles
 │   └── components.css      Header, boutons, cartes, frise, formulaire, footer…
@@ -41,6 +44,7 @@ hydrogadz-2026/
 │   ├── photos/             Photos optimisées (.webp). Voir docs/PHOTOS.md
 │   │   └── _originaux/     Photos brutes, NON envoyées sur GitHub
 │   ├── models/             Modèle 3D .glb de la CAO (à venir)
+│   ├── decor/              Boussole et lignes de vagues de la plaquette (SVG)
 │   └── icons/              Favicons
 │
 ├── tools/
@@ -116,3 +120,21 @@ elle ne donne accès à rien). Le domaine déclaré côté Web3Forms est `thibau
 - Remplir les « À compléter » (voir `content/` et `mentions-legales.html`).
 - Remplacer les photos basse résolution (voir `docs/PHOTOS.md`).
 - Obtenir les logos partenaires officiels en SVG.
+
+## Confidentialité : ce qu'on n'écrit pas sur le site
+
+Le site est public et lu par les équipes concurrentes. **Le détail technique du projet n'y figure pas** :
+pas de choix de conception, pas de specs, pas de fournisseurs, pas de chantiers en cours.
+On reste au niveau « catamaran électrique conçu par des étudiants ». En cas de doute, on n'écrit rien.
+
+Le message principal du site est simple : **nous cherchons des soutiens**.
+
+## Dons : HelloAsso plutôt que l'IBAN
+
+`content/dons.js` prévoit deux moyens de don. Recommandation :
+
+- **HelloAsso** (gratuit pour les associations, sans commission) gère le paiement par carte, les reçus
+  et la comptabilité. C'est la voie à privilégier.
+- **L'IBAN affiché en clair** sur un site public est à décider en bureau : c'est courant pour une
+  association, mais ça expose le compte à des tentatives de fraude. Tant que `iban` vaut `null`,
+  la page affiche un emplacement réservé au lieu d'informations inventées.

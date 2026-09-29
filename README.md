@@ -6,8 +6,12 @@ HTML, CSS et JavaScript, sans outil de build.
 ## Structure
 
 ```
-index.html, bateau.html, equipe.html,
-historique.html, partenaires.html      → les pages
+index.html      → l'accueil
+projets.html    → la batterie, le cockpit, la transmission
+equipe.html     → l'équipe
+historique.html → les saisons au MEBC
+partenaires.html→ devenir partenaire + faire un don
+mentions-legales.html, 404.html
 content/                               → les textes et les listes (modifiables sans coder)
 css/                                   → le style (tokens.css = couleurs, polices, tailles)
 js/                                    → le header/footer commun et les interactions
@@ -21,8 +25,11 @@ docs/                                  → comment tout ça fonctionne
 ## Modifier un contenu sans coder
 
 Membres, partenaires, saisons, fiche technique : tout est dans le dossier `content/`.
-On ouvre le fichier, on change le texte entre guillemets, on enregistre. Les valeurs à `null`
-s'affichent en orange « À compléter » sur le site : c'est la liste de ce qu'il reste à remplir.
+On ouvre le fichier, on change le texte entre guillemets, on enregistre.
+
+**Voir ce qu'il reste à remplir** : ajoutez `?todo` à la fin de l'adresse d'une page
+(par exemple `index.html?todo`). Les informations manquantes apparaissent alors en orange.
+Les visiteurs, eux, ne voient jamais ces repères : une info absente est simplement masquée.
 
 ## Lancer le site en local
 

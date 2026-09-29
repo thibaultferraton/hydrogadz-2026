@@ -8,6 +8,7 @@
     "serve": "npx --yes serve ."
   },
   "devDependencies": {
+    "heic-convert": "^2.1.0",
     "sharp": "^0.34.0"
   }
 }
