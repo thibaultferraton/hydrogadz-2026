@@ -10,7 +10,7 @@ hydrogadz-2026/
 ├── index.html              Accueil : hero, projet, chiffres, MEBC, aperçu bateau, partenaires
 ├── bateau.html             Le bateau : vue 3D (emplacement), fiche technique, chantiers, atelier
 ├── equipe.html             L'équipe : pôles, trombinoscope, recrutement
-├── historique.html         Les saisons au MEBC (frise) + galerie
+├── historique.html         Chiffres, genèse, frise des saisons, évolution du bateau, partenaires, galerie
 ├── partenaires.html        Devenir partenaire : avantages, logos, formulaire de contact
 ├── mentions-legales.html   Obligatoire en France : éditeur, hébergeur, données, crédits
 ├── 404.html                Page d'erreur (servie automatiquement par GitHub Pages)
@@ -19,7 +19,7 @@ hydrogadz-2026/
 │   ├── site.js             Nom, menu, contact, réseaux sociaux
 │   ├── bateau.js           Modèle 3D, chantiers, fiche technique
 │   ├── equipe.js           Pôles et membres
-│   ├── historique.js       Saisons + galerie photo
+│   ├── historique.js       Chiffres, genèse, saisons, bateaux, partenaires passés + galerie
 │   └── partenaires.js      Partenaires actuels + avantages
 │
 ├── css/                    Chargés dans cet ordre dans chaque page :

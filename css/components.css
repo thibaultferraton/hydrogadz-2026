@@ -393,6 +393,62 @@
   aspect-ratio: 4 / 3;
 }
 
+.saison__corps .saison__mandat {
+  margin-top: var(--esp-1);
+  color: var(--texte-doux);
+  font-size: var(--taille-xs);
+  font-weight: 600;
+}
+
+.saison__bureau {
+  color: var(--texte-doux);
+  font-size: var(--taille-s);
+}
+
+/* Année sans équipe : en retrait */
+.saison--pause .saison__annee {
+  color: var(--texte-doux);
+}
+
+/* ---------- Jalons (genèse) ---------- */
+
+.jalons {
+  display: grid;
+  gap: var(--esp-4);
+  margin: 0;
+  padding: 0 0 0 var(--esp-4);
+  list-style: none;
+  border-left: 2px solid var(--bordure);
+}
+
+.jalon {
+  position: relative;
+}
+
+.jalon::before {
+  content: "";
+  position: absolute;
+  top: 0.3em;
+  left: calc(-1 * var(--esp-4) - 7px);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.jalon__date {
+  font-family: var(--police-titre);
+  font-size: var(--taille-s);
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.jalon p {
+  margin-top: var(--esp-1);
+  color: var(--texte-doux);
+  font-size: var(--taille-s);
+}
+
 /* ---------- Galerie ---------- */
 
 .galerie {
@@ -401,7 +457,8 @@
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
 }
 
-.galerie figure {
+.galerie figure,
+.figure-legendee {
   margin: 0;
 }
 
@@ -409,7 +466,8 @@
   aspect-ratio: 4 / 3;
 }
 
-.galerie figcaption {
+.galerie figcaption,
+.figure-legendee figcaption {
   margin-top: var(--esp-2);
   font-size: var(--taille-xs);
   color: var(--texte-doux);
