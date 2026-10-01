@@ -552,6 +552,38 @@
   font-weight: 600;
 }
 
+.saison__corps .saison__mebc {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--esp-2);
+  margin-top: var(--esp-2);
+  padding: 0.2em 0.8em;
+  border: 1px solid var(--bordure);
+  border-radius: 999px;
+  background: var(--fond);
+  color: var(--texte-doux);
+  font-size: var(--taille-xs);
+  font-weight: 600;
+}
+
+.saison__mebc::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+}
+
+.saison__corps .saison__mebc--couru {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--fond);
+}
+
+.saison__mebc--couru::before {
+  background: currentColor;
+}
+
 .saison__bureau {
   color: var(--texte-doux);
   font-size: var(--taille-s);
@@ -618,13 +650,16 @@
   aspect-ratio: 4 / 3;
 }
 
-/* Une photo sur trois prend deux colonnes : la grille respire */
+/* Une grande photo par rangée, à gauche puis à droite (1re, 4e, 5e, 8e, 9e…) :
+   la grille respire et chaque rangée de trois colonnes reste pleine */
 @media (min-width: 900px) {
-  .galerie figure:nth-child(3n + 1) {
+  .galerie figure:nth-child(4n + 1),
+  .galerie figure:nth-child(4n) {
     grid-column: span 2;
   }
 
-  .galerie figure:nth-child(3n + 1) .photo {
+  .galerie figure:nth-child(4n + 1) .photo,
+  .galerie figure:nth-child(4n) .photo {
     aspect-ratio: 16 / 9;
   }
 }

@@ -51,7 +51,13 @@ Photos tirées du Drive (`Burss/`). Les originaux convertis en JPG (sans métado
 | `galerie-2025-finale.webp` | Duel de finale, 5 juil. 2025 | 1920 px ✅ | `6 - Dépôt/PHOTO MEBC 2025/IMG_9199.CR2` |
 | `galerie-2025-equipe.webp` | L'équipe au MEBC 2025 | 1920 px ✅ | `6 - Dépôt/PHOTO MEBC 2025/IMG_9226.CR2` |
 
-Manquent encore : une photo du MEBC 2024, une du MEBC 2026 et une de l'équipe 2026-2027.
+| `saison-2026-equipe.webp` | L'équipe 2025-2026 en tenue sur le campus | 1920 px ✅ | Fiche HydroGadz du site du MEBC (`phototeamsourir`, fournie par l'équipe) |
+| `galerie-2019-fabrication-cockpit.webp` | Fabrication du cockpit, mai 2019 | 1920 px ✅ | Ancien site Wix hydrogadzkin.wixsite.com, galerie |
+| `galerie-2019-blue-blue-monaco.webp` | Le Blue-Blue « (Blue)² » au port de Monaco, 3 juil. 2019 | 1920 px ✅ | Ancien site Wix, galerie |
+| `galerie-2020-peinture.webp` | Le cockpit repeint en bleu foncé, 2020 | 1920 px ✅ | Ancien site Wix, galerie |
+| `galerie-2020-essais-marseille.webp` | Essais en mer à Marseille, 17 oct. 2020 | 1920 px ✅ | Ancien site Wix, galerie |
+
+Manquent encore : une photo du bateau au MEBC 2024, une au MEBC 2026 et une de l'équipe 2026-2027.
 L'original haute définition de `bateau-05-monaco` est probablement dans la série
 `6 - Dépôt/PHOTO MEBC 2025` (3 juil. 2025) : utile pour le hero.
 
