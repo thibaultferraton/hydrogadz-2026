@@ -26,7 +26,7 @@ HG.site = {
   chiffresCles: [
     { valeur: "Juil.", exposant: " 2027", label: "Monaco · Port Hercule" },
     { valeur: "50 000", exposant: " €", label: "Objectif de financement" },
-    { valeur: "3", exposant: "", label: "Participations au MEBC" },
+    { valeur: "4", exposant: "", label: "Participations au MEBC" }, // 2019, 2024, 2025, 2026
     { valeur: "4", exposant: "", label: "Épreuves en mer" },
     { valeur: "0", exposant: " g", label: "CO₂ autorisé en course" },
   ],
