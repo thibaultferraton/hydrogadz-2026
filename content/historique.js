@@ -47,10 +47,11 @@ HG.historique = {
   // annee : l'été du MEBC visé par le mandat.
   // statut :
   //   "en-cours"    saison en cours (badge « En cours »)
-  //   "termine"     course courue : affiche la ligne Résultats
-  //   "a-confirmer" participation au MEBC pas encore vérifiée
+  //   "termine"     MEBC couru : ligne en couleur + ligne Résultats
+  //   "a-confirmer" participation au MEBC pas attestée par les documents
   //   "sans-course" pas de course cette année-là
   //   "pause"       association en sommeil (pas de photo)
+  // mebc : une ligne visible par tous qui dit si l'équipe a couru le MEBC cette année-là.
   // bureau : null si inconnu, la ligne ne s'affiche pas.
   // photo : null affiche « Photo à venir ». alt : description de la photo.
   saisons: [
@@ -59,6 +60,7 @@ HG.historique = {
       mandat: "225 · 2026-2027",
       titre: "Cap sur Côme et Monaco",
       statut: "en-cours",
+      mebc: "Objectif : présélection au lac de Côme, puis Monaco en juillet 2027",
       texte: "Quinze étudiants en trois PJT (batteries, transmission, cockpit) préparent un bateau plus léger : nouveau cockpit, batteries plus récentes, hélices toroïdales en fonderie ou en impression 3D métal. Nouveauté cette année : une présélection au lac de Côme avant Monaco.",
       resultats: null,
       bureau: "Estève Ponson (président), Anatole Martenot (vice-président), Gabriel Gourgeon (secrétaire), Jules Vaills (trésorier)",
@@ -70,6 +72,7 @@ HG.historique = {
       mandat: "224 · 2025-2026",
       titre: "MEBC 2026",
       statut: "termine",
+      mebc: "Au départ du MEBC 2026",
       texte: "Dix-huit élèves en trois PJT (transmission, hélices, communication). La transmission est recalculée par éléments finis et retournée pour placer les hélices à l'avant, et un nouveau moteur OZO remplace l'ancien, trop juste en 2025. Essais en mer chez Monaco Marine, à La Seyne-sur-Mer, en mai et juin.",
       resultats: null, // TODO : classement du MEBC 2026
       bureau: "Paul Crocquet (président), Antoine Girardot (vice-président), César Astier (secrétaire), Alexandre Rodriguez (trésorier)",
@@ -81,6 +84,7 @@ HG.historique = {
       mandat: "223 · 2024-2025",
       titre: "MEBC 2025",
       statut: "termine",
+      mebc: "Au départ du MEBC 2025",
       texte: "Une saison de transformation : plateforme coulissante pour régler l'assiette, transmission contrarotative conçue et fabriquée par l'équipe, hélices toroïdales développées avec Capgemini, télémétrie 4G/5G. À Monaco, la propulsion surchauffe toute la semaine, mais l'équipe arrache une victoire en finale.",
       // TODO : ajouter le classement final quand on l'a retrouvé
       resultats: "Victoire en duel de finale face à Nereides-UTT. Hélices toroïdales remarquées par Nice-Matin et Monaco-Matin.",
@@ -93,6 +97,7 @@ HG.historique = {
       mandat: "222 · 2023-2024",
       titre: "La relance",
       statut: "termine",
+      mebc: "Au départ du MEBC 2024",
       texte: "Le projet repart après plusieurs années sans équipe. Le règlement a changé : la saison sert à comprendre le bateau et à le remettre à l'eau, avec Capgemini Engineering comme nouveau partenaire technique. L'équipe court le MEBC 2024 sous le nom « Hydrogadz / Monaco Marine ».",
       resultats: null, // TODO : classement du MEBC 2024
       bureau: "Agathe Frémont (team manager et pilote), Roman Frédière-Boiteau (vice-manager), Guilhem Leclère (secrétaire), Benjamin Duportal (trésorier)",
@@ -104,6 +109,7 @@ HG.historique = {
       mandat: "221 · 2022-2023",
       titre: "Mise en sommeil",
       statut: "pause",
+      mebc: "Pas de participation au MEBC",
       texte: "Le Covid a marqué une pause dans le projet : aucun document ne subsiste de cette année-là et le bateau reste à quai. HydroGadz repartira « de zéro » à la rentrée 2023.",
       resultats: null,
       bureau: null,
@@ -115,6 +121,7 @@ HG.historique = {
       mandat: "220 · 2021-2022",
       titre: "Objectif 2022",
       statut: "a-confirmer",
+      mebc: "Participation au MEBC 2022 non confirmée",
       texte: "Pas de course à l'été 2021. Un bureau de douze élèves vise la première place au MEBC de juillet 2022, avec des essais au port et une démonstration à Saint-Tropez au programme.",
       resultats: null,
       bureau: "Thomas Gravier (président), Paul Mosser (vice-président), Yannis Yekken (trésorier), Nicolas Alba (secrétaire)",
@@ -126,7 +133,8 @@ HG.historique = {
       mandat: "219 · 2020-2021",
       titre: "Saint-Tropez et un premier site",
       statut: "sans-course",
-      texte: "Vingt-cinq élèves et dix professeurs sur six sujets. En janvier 2021, le bateau est mis à l'eau à Saint-Tropez devant des élus locaux, avec Sportmer, et le site hydrogadz.fr ouvre le 1er mai. La participation au MEBC 2021 est annulée.",
+      mebc: "Participation au MEBC 2021 annulée",
+      texte: "Vingt-cinq élèves et dix professeurs sur six sujets. En janvier 2021, le bateau est mis à l'eau à Saint-Tropez devant des élus locaux, avec Sportmer, et le site hydrogadz.fr ouvre le 1er mai.",
       resultats: null,
       bureau: "Marianne Julien (présidente et pilote), Adrien Rodriguez (team manager), Chloé Paskoff (trésorière), Fabien Clerc (secrétaire)",
       photo: "assets/photos/saison-2021-saint-tropez.webp", // Photo : Antoine Barbe
@@ -136,8 +144,9 @@ HG.historique = {
       annee: "2020",
       mandat: "218 · 2019-2020",
       titre: "Plus de puissance",
-      statut: "a-confirmer",
-      texte: "Six groupes de PJT (hybridation, stockage d'hydrogène, motorisation, cockpit, acquisition de données) visent un moteur plus puissant pour atteindre 30 km/h. Le Blue-Blue est exposé à la Fête de la science de Gardanne, puis le Covid coupe la saison.",
+      statut: "sans-course",
+      mebc: "Édition 2020 du MEBC annulée (Covid)",
+      texte: "Six groupes de PJT (hybridation, stockage d'hydrogène, motorisation, cockpit, acquisition de données) visent un moteur plus puissant pour atteindre 30 km/h. Le Blue-Blue est exposé à la Fête de la science de Gardanne, puis le Covid entraîne l'annulation de l'édition 2020.",
       resultats: null,
       bureau: "Hugo Aubertin (président), Jérémi Guérin (vice-président), Martin Kao (trésorier), Paul Bonneau (secrétaire)",
       photo: "assets/photos/saison-2020-salon.webp",
@@ -148,6 +157,7 @@ HG.historique = {
       mandat: "217 · 2018-2019",
       titre: "Le Blue-Blue",
       statut: "termine",
+      mebc: "Première participation au MEBC",
       texte: "Première saison : le Blue-Blue, catamaran à pile à hydrogène, est conçu puis fabriqué en six mois par une trentaine d'élèves et dix professeurs. Pour sa toute première participation, l'équipe s'invite en haut du classement.",
       resultats: "4e au classement général, 1er de la catégorie hydrogène et Prix Zéro Émission.",
       bureau: "Thomas Grosjean (président), Joan Roig (vice-président), Camille Bouin (trésorière), Antoine Losito (secrétaire)",

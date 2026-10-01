@@ -237,7 +237,6 @@
       // Ce qui manque ne s'affiche qu'en mode travail (?todo), jamais aux visiteurs.
       const ligneResultats = (s) => {
         if (s.statut === "termine") return s.resultats ? `<p><strong>Résultats :</strong> ${esc(s.resultats)}</p>` : aCompleter("Résultats à compléter");
-        if (s.statut === "a-confirmer") return aCompleter("Participation au MEBC à confirmer");
         return "";
       };
       return HG.historique.saisons
@@ -248,6 +247,7 @@
             <div class="saison__corps">
               <h3>${esc(s.titre)}${badges[s.statut] ? `<span class="saison__statut">${badges[s.statut]}</span>` : ""}</h3>
               <p class="saison__mandat">Mandat ${esc(s.mandat)}</p>
+              ${s.mebc ? `<p class="saison__mebc${s.statut === "termine" ? " saison__mebc--couru" : ""}">${esc(s.mebc)}</p>` : ""}
               ${s.texte ? `<p>${esc(s.texte)}</p>` : aCompleter("Récit de la saison à compléter")}
               ${ligneResultats(s)}
               ${s.bureau ? `<p class="saison__bureau"><strong>Bureau :</strong> ${esc(s.bureau)}</p>` : ""}
