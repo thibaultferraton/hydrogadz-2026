@@ -209,22 +209,76 @@
         .join("");
     },
 
-    // Une saison sans récit affiche juste l'année et sa photo : mieux qu'un
-    // « à compléter » visible par les sponsors.
-    frise: () =>
-      HG.historique
+    // Page historique
+    chiffres: () =>
+      HG.historique.chiffres
         .map(
-          (s) => `
-          <li class="saison apparition">
-            <div class="saison__annee">${esc(s.annee)}</div>
-            <div class="saison__corps">
-              <h3>${esc(s.titre)}${s.statut === "en-cours" ? '<span class="saison__statut">En cours</span>' : ""}</h3>
-              ${s.texte ? `<p>${esc(s.texte)}</p>` : aCompleter("Récit de la saison à compléter")}
-              ${s.resultats ? `<p><strong>Résultats :</strong> ${esc(s.resultats)}</p>` : ""}
-            </div>
-            ${photo(s.photo, s.titre)}
+          (c) => `
+          <div class="apparition">
+            <span class="chiffre__valeur">${esc(c.valeur)}</span>
+            <span class="chiffre__label">${esc(c.label)}</span>
+          </div>`
+        )
+        .join(""),
+
+    genese: () =>
+      HG.historique.genese
+        .map(
+          (j) => `
+          <li class="jalon apparition">
+            <span class="jalon__date">${esc(j.date)}</span>
+            <p>${esc(j.texte)}</p>
           </li>`
         )
+        .join(""),
+
+    frise: () => {
+      const badges = { "en-cours": "En cours", pause: "En sommeil" };
+      // Ce qui manque ne s'affiche qu'en mode travail (?todo), jamais aux visiteurs.
+      const ligneResultats = (s) => {
+        if (s.statut === "termine") return s.resultats ? `<p><strong>Résultats :</strong> ${esc(s.resultats)}</p>` : aCompleter("Résultats à compléter");
+        if (s.statut === "a-confirmer") return aCompleter("Participation au MEBC à confirmer");
+        return "";
+      };
+      return HG.historique.saisons
+        .map(
+          (s) => `
+          <li class="saison${s.statut === "pause" ? " saison--pause" : ""} apparition">
+            <div class="saison__annee">${esc(s.annee)}</div>
+            <div class="saison__corps">
+              <h3>${esc(s.titre)}${badges[s.statut] ? `<span class="saison__statut">${badges[s.statut]}</span>` : ""}</h3>
+              <p class="saison__mandat">Mandat ${esc(s.mandat)}</p>
+              ${s.texte ? `<p>${esc(s.texte)}</p>` : aCompleter("Récit de la saison à compléter")}
+              ${ligneResultats(s)}
+              ${s.bureau ? `<p class="saison__bureau"><strong>Bureau :</strong> ${esc(s.bureau)}</p>` : ""}
+            </div>
+            ${s.statut === "pause" ? "" : photo(s.photo, s.alt || s.titre)}
+          </li>`
+        )
+        .join("");
+    },
+
+    blueblue: () =>
+      HG.historique.blueBlue
+        .filter((l) => l.valeur)
+        .map((l) => `<div><dt>${esc(l.label)}</dt><dd>${esc(l.valeur)}</dd></div>`)
+        .join(""),
+
+    evolutions: () =>
+      HG.historique.evolutions
+        .map(
+          (e) => `
+          <article class="carte apparition">
+            <span class="surtitre">${esc(e.periode)}</span>
+            <h3>${esc(e.titre)}</h3>
+            <p>${esc(e.texte)}</p>
+          </article>`
+        )
+        .join(""),
+
+    "partenaires-passes": () =>
+      HG.historique.partenaires
+        .map((p) => `<article class="carte apparition"><h3>${esc(p.periode)}</h3><p>${esc(p.noms)}</p></article>`)
         .join(""),
 
     galerie: () =>

@@ -13,20 +13,47 @@ Pas de Node sur ton ordi ? Envoie les photos à la personne qui gère le site.
 
 | Fichier | Contenu | Taille | Où |
 | --- | --- | --- | --- |
-| `cockpit-exterieur-large.webp` | Le bateau sur ses tréteaux devant le bâtiment | 1920 px ✅ | **Photo d'accueil**, partage réseaux |
-| `monaco-yachts.webp` | Le bateau 10 et son pilote devant un yacht, à Monaco (photo iPhone) | 1920 px ✅ | Bandeau pleine largeur de l'accueil (cadrage réglé par `--cadrage` dans index.html), partage de la page partenaires |
-| `cockpit-exterieur.webp` | Le cockpit et les coques sur une bâche | 1920 px ✅ | Galerie |
+| `cockpit-exterieur-large.webp` | Le bateau sur ses tréteaux devant le bâtiment | 1920 px ✅ | **Photo d'accueil**, projets, partage réseaux |
+| `monaco-yachts.webp` | Le bateau 10 et son pilote devant un yacht, à Monaco (photo iPhone) | 1920 px ✅ | Bandeau pleine largeur de l'accueil (cadrage réglé par `--cadrage` dans index.html), page partenaires |
+| `cockpit-exterieur.webp` | Le cockpit et les coques sur une bâche | 1920 px ✅ | Projets, galerie de l'historique |
 | `hero-atelier.webp` | Recadrage large de la photo précédente | 1920 px ✅ | Accueil, section bateau |
-| `bateau-05-monaco.webp` | Le bateau 05 en mer devant Monaco | 646 px ⚠️ | Historique 2026, page soutenir |
-| `pilote-et-equipier.webp` | Briefing pilote dans le cockpit | 676 px | Accueil, galerie |
-| `cockpit-hangar.webp` | Cockpit au hangar | 652 px | Accueil, bateau (aperçu 3D) |
-| `bateau-en-course.webp` | Cockpit bleu en course (recadré d'un collage) | 343 px ⚠️ | Historique 2025, galerie |
-| `atelier-cockpit.webp` | L'équipe à l'atelier (recadré d'un collage) | 414 px ⚠️ | Bateau, galerie |
-| `banc-propulsion.webp` | Banc d'essai de la propulsion | 1920 px ✅ | Bateau, historique 2027 |
-| `monaco-port.webp` | Le port de Monaco (recadré d'un collage) | 362 px ⚠️ | Galerie |
+| `pilote-et-equipier.webp` | Briefing pilote dans le cockpit | 676 px | Accueil |
+| `cockpit-hangar.webp` | Cockpit au hangar | 652 px | Projets |
+| `banc-propulsion.webp` | Banc d'essai de la propulsion (date inconnue) | 1920 px ✅ | Projets |
 | `mebc-flotte.webp` | La flotte vue du ciel | 1920 px ✅ | Accueil (section MEBC) |
+| `bateau-05-monaco.webp` | Le bateau 05 en mer devant Monaco (MEBC 2025, pas 2026) | 646 px ⚠️ | Non utilisée pour l'instant |
+| `bateau-en-course.webp` | Cockpit bleu en course (recadré d'un collage) | 343 px ⚠️ | Non utilisée pour l'instant |
+| `atelier-cockpit.webp` | L'équipe à l'atelier (recadré d'un collage) | 414 px ⚠️ | Non utilisée pour l'instant |
+| `monaco-port.webp` | Le port de Monaco (recadré d'un collage) | 362 px ⚠️ | Non utilisée pour l'instant |
 | `mebc-depart.webp` | Départ de course avec le public | 1920 px ✅ | Non utilisée pour l'instant |
-| `mebc-course.webp` | Plusieurs bateaux en course | 675 px | Galerie |
+| `mebc-course.webp` | Plusieurs bateaux en course | 675 px | Non utilisée pour l'instant |
+
+### Page historique
+
+Photos tirées du Drive (`Burss/`). Les originaux convertis en JPG (sans métadonnées GPS) sont dans `_originaux/`.
+
+| Fichier | Contenu | Taille | Source dans le Drive |
+| --- | --- | --- | --- |
+| `saison-2019-blue-blue-monaco.webp` | Le Blue-Blue au port de Monaco, 4 juil. 2019 | 1920 px ✅ | `4-Pôle Com/223/4.11. Site internet/4.11.2/monaco19/IMG_8066.jpg` |
+| `saison-2020-salon.webp` | Stand hydrogène, oct. 2019 | 651 px | `4.11. Site internet/4.11.2/salon_oct19.jpg` |
+| `saison-2021-saint-tropez.webp` | Devant le phare de Saint-Tropez, début 2021 (Antoine Barbe) | 1920 px ✅ | `6 - Dépôt/Photos A.Barbe/FAG02906 2.JPG` |
+| `saison-2022-equipe-bimont.webp` | L'équipe en tenue au lac de Bimont, 12 oct. 2021 | 1920 px ✅ | `4.11.1 - Photos/4.11.1.5 - Équipe bimont/PXL_20211012_110015696.MP.jpg` |
+| `saison-2024-cockpit-blue-blue.webp` | Le cockpit « Blue Blue » à l'atelier, nov. 2024 (recadré 4:3) | 1920 px ✅ | `8-Photos/IMG_4054.HEIC` |
+| `saison-2025-en-course.webp` | En course au large de Monaco, 2 juil. 2025 | 1920 px ✅ | `6 - Dépôt/PHOTO MEBC 2025/IMG_8987.CR2` |
+| `blue-blue-essais-marseille.webp` | Essais du Blue-Blue à Marseille, 22 juin 2019 | 1920 px ✅ | `4.11.2/blue-blue/DSC_0179.jpg` |
+| `galerie-2019-prix-zero-emission.webp` | Remise du Prix Zéro Émission (© YCM / Studio Borlenghi) | 1500 px | `4.11.2/monaco19/218_PRIX-ZERO-EMISSION.jpg` |
+| `galerie-2021-port-saint-tropez.webp` | Port de Saint-Tropez, début 2021 (Antoine Barbe) | 1920 px ✅ | `6 - Dépôt/Photos A.Barbe/FAG02931.jpg` |
+| `galerie-2021-cockpit.webp` | Travail sur le cockpit, 19 oct. 2021 | 1920 px ✅ | `6 - Dépôt/PJT cockpit/IMG_0332.HEIC` |
+| `galerie-2024-demontage.webp` | Le bateau démonté sur le campus, 21 nov. 2024 | 1920 px ✅ | `8-Photos/IMG_4517.HEIC` |
+| `galerie-2024-equipe-bateau.webp` | L'équipe 2024-2025 et son bateau, 14 nov. 2024 | 1920 px ✅ | `8-Photos/IMG_4507.JPG` |
+| `galerie-2025-helice-toroidale.webp` | Hélice toroïdale dans l'eau, MEBC 2025 | 1920 px ✅ | `6 - Dépôt/PHOTO MEBC 2025/IMG_8948.CR2` |
+| `galerie-2025-france-3.webp` | Tournage de France 3, 3 juil. 2025 | 1920 px ✅ | `6 - Dépôt/PHOTO MEBC 2025/IMG_8989.CR2` |
+| `galerie-2025-finale.webp` | Duel de finale, 5 juil. 2025 | 1920 px ✅ | `6 - Dépôt/PHOTO MEBC 2025/IMG_9199.CR2` |
+| `galerie-2025-equipe.webp` | L'équipe au MEBC 2025 | 1920 px ✅ | `6 - Dépôt/PHOTO MEBC 2025/IMG_9226.CR2` |
+
+Manquent encore : une photo du MEBC 2024, une du MEBC 2026 et une de l'équipe 2026-2027.
+L'original haute définition de `bateau-05-monaco` est probablement dans la série
+`6 - Dépôt/PHOTO MEBC 2025` (3 juil. 2025) : utile pour le hero.
 
 ⚠️ = trop petite pour un grand affichage. Pour le hero plein écran, il faut **au moins 1920 px de large**.
 

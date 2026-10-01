@@ -10,7 +10,7 @@ hydrogadz-2026/
 ├── index.html              Accueil : photo, bande de chiffres, projet, MEBC, appel au soutien
 ├── projets.html            Nos trois chantiers : batterie, cockpit, transmission (+ vue 3D)
 ├── equipe.html             L'équipe : pôles, trombinoscope, recrutement
-├── historique.html         Les saisons au MEBC (frise) + galerie
+├── historique.html         Chiffres, genèse, frise des saisons, évolution du bateau, partenaires, galerie
 ├── partenaires.html        Devenir partenaire, formulaire de contact, et faire un don
 ├── mentions-legales.html   Obligatoire en France : éditeur, hébergeur, données, crédits
 ├── 404.html                Page d'erreur (servie automatiquement par GitHub Pages)
@@ -21,7 +21,7 @@ hydrogadz-2026/
 │   ├── roadmap.js          La feuille de route de l'accueil (dates MEBC officielles, le reste en interne)
 │   ├── dons.js             HelloAsso, virement, à quoi sert l'argent
 │   ├── equipe.js           Pôles et membres
-│   ├── historique.js       Saisons + galerie photo
+│   ├── historique.js       Chiffres, genèse, saisons, bateaux, partenaires passés + galerie
 │   └── partenaires.js      Partenaires, objectif de financement, façons de soutenir,
 │                           niveaux de partenariat, budget prévisionnel (repris de la plaquette)
 │
