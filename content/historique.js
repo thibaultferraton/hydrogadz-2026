@@ -61,7 +61,7 @@ HG.historique = {
       titre: "Cap sur Côme et Monaco",
       statut: "en-cours",
       mebc: "Objectif : présélection au lac de Côme, puis Monaco en juillet 2027",
-      texte: "Quinze étudiants en trois PJT (batteries, transmission, cockpit) préparent un bateau plus léger : nouveau cockpit, batteries plus récentes, hélices toroïdales en fonderie ou en impression 3D métal. Nouveauté cette année : une présélection au lac de Côme avant Monaco.",
+      texte: "Quinze étudiants en trois PJT (batteries, transmission, cockpit) préparent un bateau plus léger et plus fiable. Nouveauté cette année : une présélection au lac de Côme avant Monaco.",
       resultats: null,
       bureau: "Estève Ponson (président), Anatole Martenot (vice-président), Gabriel Gourgeon (secrétaire), Jules Vaills (trésorier)",
       photo: null, // TODO : une photo de l'équipe 2026-2027
@@ -73,7 +73,7 @@ HG.historique = {
       titre: "MEBC 2026",
       statut: "termine",
       mebc: "Au départ du MEBC 2026",
-      texte: "Dix-huit élèves en trois PJT (transmission, hélices, communication). La transmission est recalculée par éléments finis et retournée pour placer les hélices à l'avant, et un nouveau moteur OZO remplace l'ancien, trop juste en 2025. Essais en mer chez Monaco Marine, à La Seyne-sur-Mer, en mai et juin.",
+      texte: "Dix-huit élèves en trois PJT (transmission, hélices, communication) retravaillent la propulsion pour fiabiliser le bateau après 2025. Essais en mer chez Monaco Marine, à La Seyne-sur-Mer, en mai et juin.",
       resultats: "12e sur 21 au classement général (slalom 10e, endurance 12e, vitesse 13e, championnat 15e).",
       bureau: "Paul Crocquet (président), Antoine Girardot (vice-président), César Astier (secrétaire), Alexandre Rodriguez (trésorier)",
       photo: "assets/photos/saison-2026-equipe.webp", // TODO : une photo du bateau au MEBC 2026
@@ -202,12 +202,13 @@ HG.historique = {
     {
       periode: "2025-2026",
       titre: "Gagner en rendement",
-      texte: "32 batteries, 48 V, 9,6 kWh montées sur rail, hélices devant le bulbe, moteur OZO. Les panneaux solaires, étudiés, sont écartés : +1,3 % de vitesse seulement.",
+      // Confidentialité : pas de specs (batteries, moteur, hélices) des deux dernières saisons.
+      texte: "Une propulsion retravaillée pour gagner en fiabilité et en rendement. Les panneaux solaires, étudiés, sont écartés : le gain de vitesse était trop faible.",
     },
     {
       periode: "2026-2027",
       titre: "Alléger",
-      texte: "Nouveau cockpit, batteries plus récentes et plus légères, hélices toroïdales en fonderie ou en impression 3D métal.",
+      texte: "Un bateau plus léger et plus fiable pour la qualification au lac de Côme, puis Monaco.",
     },
   ],
 
