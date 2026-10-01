@@ -134,7 +134,7 @@ HG.historique = {
       titre: "Saint-Tropez et un premier site",
       statut: "sans-course",
       mebc: "Participation au MEBC 2021 annulée",
-      texte: "Vingt-cinq élèves et dix professeurs sur six sujets. Après des essais en mer à Marseille à l'automne 2020, le bateau est mis à l'eau à Saint-Tropez en janvier 2021 devant des élus locaux, avec Sportmer, et le site hydrogadz.fr ouvre le 1er mai.",
+      texte: "Vingt-cinq élèves et dix professeurs sur six sujets. Après des essais en mer à l'Union nautique de Marseille en octobre 2020, sur batteries puis à l'hydrogène, le bateau est mis à l'eau à Saint-Tropez les 27 et 28 janvier 2021 devant des élus locaux, à l'invitation de Sportmer, et le site hydrogadz.fr ouvre le 1er mai.",
       resultats: null,
       bureau: "Marianne Julien (présidente et pilote), Adrien Rodriguez (team manager), Chloé Paskoff (trésorière), Fabien Clerc (secrétaire)",
       photo: "assets/photos/saison-2021-saint-tropez.webp", // Photo : Antoine Barbe
@@ -146,7 +146,7 @@ HG.historique = {
       titre: "Plus de puissance",
       statut: "sans-course",
       mebc: "Édition 2020 du MEBC annulée (Covid)",
-      texte: "Six groupes de PJT (hybridation, stockage d'hydrogène, motorisation, cockpit, acquisition de données) visent un moteur plus puissant pour atteindre 30 km/h. Le Blue-Blue est exposé à la Fête de la science de Gardanne, puis le Covid entraîne l'annulation de l'édition 2020.",
+      texte: "Six groupes de PJT (hybridation, stockage d'hydrogène, motorisation, cockpit, acquisition de données) visent un moteur plus puissant pour atteindre 30 km/h. En octobre 2019, le Blue-Blue est exposé à la Fête de la science de Gardanne et l'équipe participe au salon Studyrama. Le Covid entraîne l'annulation de l'édition 2020 ; en juin, le bateau est perfectionné et repeint.",
       resultats: null,
       bureau: "Hugo Aubertin (président), Jérémi Guérin (vice-président), Martin Kao (trésorier), Paul Bonneau (secrétaire)",
       photo: "assets/photos/saison-2020-salon.webp",
@@ -169,12 +169,15 @@ HG.historique = {
   // Le premier bateau, en fiche technique.
   blueBlue: [
     { label: "Énergie", valeur: "Pile à hydrogène + batterie tampon" },
-    { label: "Pile à combustible", valeur: "5,2 kW, prêtée par Hélion" },
+    { label: "Pile à combustible", valeur: "5,2 kW, 68 cellules, prêtée par Hélion" },
+    { label: "Hydrogène", valeur: "2 bouteilles en carbone de 7,2 L, à 350 bars" },
     { label: "Énergie embarquée", valeur: "5 kWh (limite du règlement)" },
+    // L'ancien site Wix indique « Torqeedo électrique, 5 kW, rendement global 56 % » :
+    // à vérifier (moteur changé en 2020 ?). En attendant, on garde la valeur du dossier.
     { label: "Moteur", valeur: "Synchrone, 4 kW" },
     { label: "Masse", valeur: "260 kg" },
-    { label: "Vitesse de croisière", valeur: "7 à 8 nœuds" },
-    { label: "Vitesse max", valeur: "11 à 12 nœuds" }, // 11 dans le dossier partenaires, 12 sur l'ancien site
+    { label: "Vitesse de croisière", valeur: "7 à 8 nœuds (13 à 15 km/h)" }, // 7 nœuds sur l'ancien site Wix
+    { label: "Vitesse max", valeur: "11 à 12 nœuds (20 à 22 km/h)" }, // 11 dans le dossier partenaires, 12 sur l'ancien site
     { label: "Autonomie", valeur: "20 km" },
     { label: "Cockpit", valeur: "Récupéré sur un planeur" },
   ],
@@ -233,11 +236,33 @@ HG.historique = {
   ],
 };
 
+// Vidéos de la page historique (chaîne YouTube de l'asso, reprises de l'ancien site Wix).
+// Elles ne se chargent qu'au clic, depuis youtube-nocookie.com (voir js/main.js).
+// youtube : l'identifiant de la vidéo, ce qui suit « v= » dans son adresse YouTube.
+// vignette : une image du site, pour ne rien charger chez YouTube avant le clic.
+HG.videos = [
+  { youtube: "T2fTD6Joj-Y", titre: "HydroGadz au Monaco Energy Boat Challenge 2019", duree: "1:01", vignette: "assets/photos/video-mebc-2019.webp" },
+  { youtube: "cWm4v0EP0Zc", titre: "Le Blue-Blue en navigation", duree: "1:11", vignette: "assets/photos/video-navigation-blue-blue.webp" },
+  { youtube: "jJpA1hdYpwU", titre: "Démonstration à Saint-Tropez, janvier 2021", duree: "3:45", vignette: "assets/photos/video-saint-tropez-2021.webp" },
+];
+
 // Galerie photo en bas de la page historique, dans l'ordre chronologique.
+// Les photos de 2019 viennent pour la plupart de l'ancien site Wix de l'asso.
+// Sur grand écran, les photos n°1, 4, 5, 8, 9, 12… sont affichées en large (16:9) :
+// garder les photos verticales aux autres places.
 HG.galerie = [
+  { photo: "assets/photos/galerie-2019-local-cockpit.webp", legende: "Le cockpit de planeur au local d'HydroGadz, avril 2019" },
+  { photo: "assets/photos/galerie-2019-poncage-cockpit.webp", legende: "Ponçage du cockpit, récupéré sur un planeur, avril 2019" },
   { photo: "assets/photos/galerie-2019-fabrication-cockpit.webp", legende: "Fabrication du cockpit, mai 2019" },
+  { photo: "assets/photos/galerie-2019-electronique.webp", legende: "Travail sur l'électronique, mai 2019" },
+  { photo: "assets/photos/galerie-2019-essais-pharo.webp", legende: "Essais en mer devant le palais du Pharo, Marseille, juin 2019" },
+  { photo: "assets/photos/galerie-2019-essais-marseille-large.webp", legende: "Essais en mer au large de Marseille, juin 2019" },
+  { photo: "assets/photos/galerie-2019-preparatifs-nuit.webp", legende: "Derniers réglages à la nuit tombée, Monaco, juillet 2019" },
   { photo: "assets/photos/galerie-2019-blue-blue-monaco.webp", legende: "Le Blue-Blue, baptisé « (Blue)² » sur sa coque, au port de Monaco le 3 juillet 2019" },
+  { photo: "assets/photos/galerie-2019-port-monaco.webp", legende: "Le Blue-Blue entre les yachts du port de Monaco, juillet 2019" },
+  { photo: "assets/photos/galerie-2019-slalom.webp", legende: "Entre les bouées, Monaco 2019 (© YCM / Studio Borlenghi)" },
   { photo: "assets/photos/galerie-2019-prix-zero-emission.webp", legende: "Remise du Prix Zéro Émission à Monaco, 2019 (© YCM / Studio Borlenghi)" },
+  { photo: "assets/photos/galerie-2019-equipe.webp", legende: "L'équipe en tenue, septembre 2019" },
   { photo: "assets/photos/galerie-2020-peinture.webp", legende: "Le cockpit repeint en bleu foncé, 2020" },
   { photo: "assets/photos/galerie-2020-essais-marseille.webp", legende: "Essais en mer à Marseille, octobre 2020" },
   { photo: "assets/photos/galerie-2021-port-saint-tropez.webp", legende: "Démonstration dans le port de Saint-Tropez, début 2021 (photo : Antoine Barbe)" },
