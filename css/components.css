@@ -32,8 +32,10 @@
   height: 100%;
 }
 
+/* Le logo (ampoule et ancre) est haut : on le montre assez grand pour que
+   le nom reste lisible. */
 .header__logo img {
-  height: 32px;
+  height: 56px;
   width: auto;
 }
 
@@ -418,6 +420,79 @@
   background: rgba(23, 63, 83, 0.7);
   color: var(--texte-sur-sombre);
   font-size: var(--taille-xs);
+}
+
+/* ---------- Vidéos ----------
+   Une vignette avec un bouton lecture ; le lecteur YouTube la remplace au clic. */
+
+.video {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--rayon-l);
+  background: var(--petrole);
+}
+
+.video img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.video:hover img {
+  transform: scale(1.03);
+}
+
+.video__lecture {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  width: 68px;
+  height: 68px;
+  margin: auto;
+  border-radius: 50%;
+  background: rgba(23, 63, 83, 0.82);
+  box-shadow: 0 0 0 6px rgba(162, 212, 213, 0.35);
+  color: #fff;
+  transition: background 0.2s ease;
+}
+
+.video__lecture svg {
+  width: 30px;
+  height: 30px;
+  margin-left: 3px;
+}
+
+.video:hover .video__lecture,
+.video:focus-visible .video__lecture {
+  background: var(--turquoise);
+}
+
+.video:focus-visible {
+  outline: 3px solid var(--sable);
+  outline-offset: 3px;
+}
+
+.video__duree {
+  position: absolute;
+  right: var(--esp-3);
+  bottom: var(--esp-3);
+  padding: 0.2em 0.7em;
+  border-radius: var(--rayon-bouton);
+  background: rgba(23, 63, 83, 0.8);
+  color: var(--texte-sur-sombre);
+  font-size: var(--taille-xs);
+}
+
+.video iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 /* ---------- Repères de travail ----------
@@ -875,7 +950,7 @@
 }
 
 .footer img {
-  height: 30px;
+  height: 56px;
   width: auto;
   margin-bottom: var(--esp-3);
 }
@@ -936,10 +1011,11 @@
 /* ---------- Logo dans la photo d'accueil ---------- */
 
 .hero__logo {
-  height: clamp(44px, 6vw, 68px);
+  height: clamp(96px, 12vw, 150px);
   width: auto;
   margin-bottom: var(--esp-5);
-  filter: drop-shadow(0 2px 16px rgba(23, 63, 83, 0.55));
+  /* Le logo a des traits fins : une ombre plus marquée le détache de la photo */
+  filter: drop-shadow(0 1px 3px rgba(23, 63, 83, 0.8)) drop-shadow(0 2px 18px rgba(23, 63, 83, 0.7));
 }
 
 /* Le logo est déjà en grand dans la photo : on masque celui du header

@@ -26,4 +26,27 @@
   );
 
   document.querySelectorAll(".apparition").forEach((el) => observateur.observe(el));
+
+  // Vidéos YouTube : la vignette est remplacée par le lecteur au clic seulement,
+  // en mode « confidentialité renforcée » (youtube-nocookie.com). Avant le clic,
+  // aucune requête ne part chez YouTube.
+  document.addEventListener("click", (e) => {
+    const lien = e.target.closest("a.video[data-video]");
+    // Ctrl/Cmd + clic : on laisse le navigateur ouvrir YouTube dans un onglet
+    if (!lien || e.ctrlKey || e.metaKey || e.shiftKey || e.button !== 0) return;
+    e.preventDefault();
+
+    const lecteur = document.createElement("iframe");
+    lecteur.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(lien.dataset.video)}?autoplay=1&rel=0`;
+    lecteur.title = lien.dataset.titre || "Vidéo YouTube";
+    lecteur.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    lecteur.allowFullscreen = true;
+    lecteur.referrerPolicy = "strict-origin-when-cross-origin";
+
+    const cadre = document.createElement("div");
+    cadre.className = "video";
+    cadre.append(lecteur);
+    lien.replaceWith(cadre);
+    lecteur.focus();
+  });
 })();

@@ -37,7 +37,7 @@ HG.site = {
 
   reseaux: {
     instagram: "https://www.instagram.com/hydrogadz/",
-    linkedin: null, // TODO : coller l'adresse de la page LinkedIn de l'asso (citée dans la plaquette)
+    linkedin: "https://www.linkedin.com/company/hydrogadz/", // repris de l'ancien site Wix
   },
 
   // Le formulaire partenaires (clé Web3Forms, choix proposés) est directement

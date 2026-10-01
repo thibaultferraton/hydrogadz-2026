@@ -50,12 +50,35 @@ Photos tirées du Drive (`Burss/`). Les originaux convertis en JPG (sans métado
 | `galerie-2025-france-3.webp` | Tournage de France 3, 3 juil. 2025 | 1920 px ✅ | `6 - Dépôt/PHOTO MEBC 2025/IMG_8989.CR2` |
 | `galerie-2025-finale.webp` | Duel de finale, 5 juil. 2025 | 1920 px ✅ | `6 - Dépôt/PHOTO MEBC 2025/IMG_9199.CR2` |
 | `galerie-2025-equipe.webp` | L'équipe au MEBC 2025 | 1920 px ✅ | `6 - Dépôt/PHOTO MEBC 2025/IMG_9226.CR2` |
-
 | `saison-2026-equipe.webp` | L'équipe 2025-2026 en tenue sur le campus | 1920 px ✅ | Fiche HydroGadz du site du MEBC (`phototeamsourir`, fournie par l'équipe) |
 | `galerie-2019-fabrication-cockpit.webp` | Fabrication du cockpit, mai 2019 | 1920 px ✅ | Ancien site Wix hydrogadzkin.wixsite.com, galerie |
 | `galerie-2019-blue-blue-monaco.webp` | Le Blue-Blue « (Blue)² » au port de Monaco, 3 juil. 2019 | 1920 px ✅ | Ancien site Wix, galerie |
 | `galerie-2020-peinture.webp` | Le cockpit repeint en bleu foncé, 2020 | 1920 px ✅ | Ancien site Wix, galerie |
 | `galerie-2020-essais-marseille.webp` | Essais en mer à Marseille, 17 oct. 2020 | 1920 px ✅ | Ancien site Wix, galerie |
+
+### Repris de l'ancien site Wix (hydrogadzkin.wixsite.com)
+
+Téléchargées en pleine résolution depuis static.wixstatic.com. Les dates viennent des métadonnées
+des photos : plusieurs légendes du Wix étaient fausses (photos de Monaco légendées « Marseille »).
+
+| Fichier | Contenu | Taille | Où |
+| --- | --- | --- | --- |
+| `blue-blue-musee-oceanographique.webp` | Le Blue-Blue devant le Musée océanographique, Monaco 2019 (crédit inconnu) | 1920 px ✅ | Accueil : vignette de la vidéo MEBC 2019 |
+| `galerie-2019-poncage-cockpit.webp` | Ponçage du cockpit de planeur, 27 avr. 2019 | 1920 px ✅ | Galerie de l'historique |
+| `galerie-2019-local-cockpit.webp` | Le cockpit au local de l'asso, 27 avr. 2019 | 1920 px ✅ | Galerie |
+| `galerie-2019-electronique.webp` | Soudure de l'électronique, 23 mai 2019 | 1920 px ✅ | Galerie |
+| `galerie-2019-essais-pharo.webp` | Essais devant le palais du Pharo, Marseille, 22 juin 2019 | 1920 px ✅ | Galerie |
+| `galerie-2019-essais-marseille-large.webp` | Essais au large de Marseille, 22 juin 2019 | 1920 px ✅ | Galerie |
+| `galerie-2019-preparatifs-nuit.webp` | Réglages de nuit sur le ponton, Monaco, 3 juil. 2019 | 1920 px ✅ | Galerie |
+| `galerie-2019-port-monaco.webp` | Le Blue-Blue entre les yachts, port de Monaco, 4 juil. 2019 | 1920 px ✅ | Galerie |
+| `galerie-2019-slalom.webp` | Le Blue-Blue entre les bouées, Monaco 2019 (© YCM / Studio Borlenghi, verticale) | 999 px | Galerie |
+| `galerie-2019-equipe.webp` | L'équipe en tenue, 12 sept. 2019 | 1920 px ✅ | Galerie |
+| `video-mebc-2019.webp` | Vignette de la vidéo « HydroGadz Energy Boat Challenge 2019 » | 1280 px | Historique, vidéos |
+| `video-navigation-blue-blue.webp` | Vignette de la vidéo « navigation du bateau (blue)² » | 1280 px | Historique, vidéos |
+| `video-saint-tropez-2021.webp` | Vignette de la vidéo « Saint-Tropez janvier 2021 » (bandes noires retirées) | 1080 px | Historique, vidéos |
+
+Restent sur le Wix, non reprises : photos de labo et d'atelier 2020, autres photos d'équipe 2019,
+d'autres vues de Saint-Tropez (série Antoine Barbe), logos des anciens partenaires, schémas de la pile à combustible.
 
 Manquent encore : une photo du bateau au MEBC 2024, une au MEBC 2026 et une de l'équipe 2026-2027.
 L'original haute définition de `bateau-05-monaco` est probablement dans la série

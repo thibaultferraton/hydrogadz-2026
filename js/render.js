@@ -5,7 +5,7 @@
 // ============================================================================
 
 (function () {
-  const { esc, aCompleter, photo } = HG.outils;
+  const { esc, aCompleter, photo, video } = HG.outils;
 
   const RENDUS = {
     // Bande de chiffres sous la photo d'accueil
@@ -279,6 +279,17 @@
     "partenaires-passes": () =>
       HG.historique.partenaires
         .map((p) => `<article class="carte apparition"><h3>${esc(p.periode)}</h3><p>${esc(p.noms)}</p></article>`)
+        .join(""),
+
+    videos: () =>
+      HG.videos
+        .map(
+          (v) => `
+          <figure class="figure-legendee apparition">
+            ${video(v)}
+            <figcaption>${esc(v.titre)}</figcaption>
+          </figure>`
+        )
         .join(""),
 
     galerie: () =>
