@@ -650,13 +650,16 @@
   aspect-ratio: 4 / 3;
 }
 
-/* Une photo sur trois prend deux colonnes : la grille respire */
+/* Une grande photo par rangée, à gauche puis à droite (1re, 4e, 5e, 8e, 9e…) :
+   la grille respire et chaque rangée de trois colonnes reste pleine */
 @media (min-width: 900px) {
-  .galerie figure:nth-child(3n + 1) {
+  .galerie figure:nth-child(4n + 1),
+  .galerie figure:nth-child(4n) {
     grid-column: span 2;
   }
 
-  .galerie figure:nth-child(3n + 1) .photo {
+  .galerie figure:nth-child(4n + 1) .photo,
+  .galerie figure:nth-child(4n) .photo {
     aspect-ratio: 16 / 9;
   }
 }
