@@ -110,8 +110,15 @@ zoom, rotation automatique. Aucune autre modification de code n'est nécessaire.
 
 Il passe par [Web3Forms](https://web3forms.com) : les messages arrivent par email, sans serveur.
 La clé dans `partenaires.html` est **publique par conception** (elle identifie la boîte de réception,
-elle ne donne accès à rien). Le domaine déclaré côté Web3Forms est `thibaultferraton.github.io` :
-à mettre à jour le jour où l'asso prend un nom de domaine.
+elle ne donne accès à rien). Le domaine déclaré côté Web3Forms doit être `hydrogadz.fr`.
+
+## Le nom de domaine
+
+Le site est servi sur **https://hydrogadz.fr** (domaine acheté chez OVH, site toujours hébergé
+par GitHub Pages). Le fichier `CNAME` à la racine indique le domaine à GitHub : ne pas le supprimer.
+Dans la zone DNS OVH : 4 enregistrements A et 4 AAAA vers les serveurs de GitHub Pages pour
+`hydrogadz.fr`, et un CNAME `www` → `thibaultferraton.github.io`. Les enregistrements MX et SPF
+(emails OVH) ne doivent pas être touchés.
 
 ## Prochaines étapes prévues
 

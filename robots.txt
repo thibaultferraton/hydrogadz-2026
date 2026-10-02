@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://thibaultferraton.github.io/hydrogadz-2026/sitemap.xml
+Sitemap: https://hydrogadz.fr/sitemap.xml
