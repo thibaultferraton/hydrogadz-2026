@@ -110,7 +110,8 @@ zoom, rotation automatique. Aucune autre modification de code n'est nécessaire.
 
 Il passe par [Web3Forms](https://web3forms.com) : les messages arrivent par email, sans serveur.
 La clé dans `partenaires.html` est **publique par conception** (elle identifie la boîte de réception,
-elle ne donne accès à rien). Le domaine déclaré côté Web3Forms doit être `hydrogadz.fr`.
+elle ne donne accès à rien). La clé a été créée sans compte Web3Forms (juste avec une adresse email) : aucun domaine
+n'est enregistré chez eux, il n'y a donc rien à régler quand l'adresse du site change.
 
 ## Le nom de domaine
 
