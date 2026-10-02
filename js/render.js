@@ -7,6 +7,19 @@
 (function () {
   const { esc, aCompleter, photo, video } = HG.outils;
 
+  // Carte d'une personne (bureau, membres) : la photo, ou ses initiales en attendant.
+  const carteMembre = (m) => {
+    const initiales = `${m.prenom?.[0] ?? ""}${m.nom?.[0] ?? ""}`;
+    const visuel = m.photo ? `<img src="${esc(m.photo)}" alt="" loading="lazy">` : esc(initiales);
+    return `
+      <article class="membre apparition">
+        <div class="membre__photo">${visuel}</div>
+        <h3>${esc(m.prenom)} ${esc(m.nom)}</h3>
+        <p class="membre__role">${esc(m.role)}</p>
+        ${m.pole ? `<p class="texte-doux">${esc(m.pole)}</p>` : ""}
+      </article>`;
+  };
+
   const RENDUS = {
     // Bande de chiffres sous la photo d'accueil
     "chiffres-cles": () =>
@@ -187,6 +200,8 @@
         .map((p) => `<article class="carte apparition"><h3>${esc(p.titre)}</h3><p>${esc(p.texte)}</p></article>`)
         .join(""),
 
+    bureau: () => HG.equipe.bureau.map(carteMembre).join(""),
+
     membres: () => {
       // Pas de membres renseignés : on masque toute la section plutôt que
       // d'afficher une grille vide au visiteur.
@@ -194,19 +209,7 @@
         document.querySelector("[data-section-membres]")?.remove();
         return "";
       }
-      return HG.equipe.membres
-        .map((m) => {
-          const initiales = `${m.prenom?.[0] ?? ""}${m.nom?.[0] ?? ""}`;
-          const visuel = m.photo ? `<img src="${esc(m.photo)}" alt="" loading="lazy">` : esc(initiales);
-          return `
-            <article class="membre apparition">
-              <div class="membre__photo">${visuel}</div>
-              <h3>${esc(m.prenom)} ${esc(m.nom)}</h3>
-              <p class="membre__role">${esc(m.role)}</p>
-              <p class="texte-doux">${esc(m.pole)}</p>
-            </article>`;
-        })
-        .join("");
+      return HG.equipe.membres.map(carteMembre).join("");
     },
 
     // Page historique
