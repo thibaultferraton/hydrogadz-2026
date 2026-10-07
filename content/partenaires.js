@@ -16,7 +16,7 @@ HG.partenaires = {
       nom: "Capgemini Engineering",
       type: "Partenaire technologique",
       logo: "assets/logos/capgemini-engineering.png",
-      lien: "https://www.capgemini.com/fr-fr/about-us/who-we-are/capgemini-engineering/",
+      lien: "https://www.capgemini.com/fr-fr/notre-groupe/nous-connaitre/nos-marques/capgemini-engineering/",
     },
     {
       nom: "Arts et Métiers",
@@ -63,7 +63,7 @@ HG.partenaires = {
       niveau: "Partenaire principal",
       apports: ["Expertise", "Équipement"],
       logo: "assets/logos/capgemini-engineering.png",
-      lien: "https://www.capgemini.com/fr-fr/about-us/who-we-are/capgemini-engineering/",
+      lien: "https://www.capgemini.com/fr-fr/notre-groupe/nous-connaitre/nos-marques/capgemini-engineering/",
     },
     {
       nom: "Fondation Arts et Métiers",
