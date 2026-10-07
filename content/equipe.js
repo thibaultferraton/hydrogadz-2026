@@ -39,4 +39,29 @@ HG.equipe = {
     //   photo: null,
     // },
   ],
+
+  // Les PJT (projets d'expertise) : les élèves qui travaillent sur chaque chantier,
+  // affichés sous les membres.
+  // photo : "assets/photos/pjt-nom.webp", ou null (l'emplacement n'apparaît qu'avec ?todo).
+  // membres : liste de noms, par exemple ["Camille Martin", "Léo Durand"].
+  pjt: [
+    {
+      titre: "PJT Transmission",
+      texte: "Ils amènent la puissance du moteur jusqu'à l'hélice.",
+      photo: null, // TODO : photo de l'équipe PJT Transmission
+      membres: [],
+    },
+    {
+      titre: "PJT Batteries",
+      texte: "Ils s'occupent du stockage de l'énergie embarquée.",
+      photo: null, // TODO : photo de l'équipe PJT Batteries
+      membres: [],
+    },
+    {
+      titre: "PJT Cockpit",
+      texte: "Ils conçoivent et fabriquent la place du pilote.",
+      photo: null, // TODO : photo de l'équipe PJT Cockpit
+      membres: [],
+    },
+  ],
 };

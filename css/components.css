@@ -845,6 +845,30 @@
   font-weight: 700;
 }
 
+/* ---------- PJT ---------- */
+
+.pjt .photo,
+.pjt .emplacement {
+  aspect-ratio: 4 / 3;
+  margin-bottom: var(--esp-3);
+}
+
+.pjt h3 {
+  margin-bottom: var(--esp-1);
+  font-size: var(--taille-m);
+}
+
+.pjt__membres {
+  margin-top: var(--esp-3);
+  padding: 0;
+  list-style: none;
+  font-size: var(--taille-s);
+}
+
+.pjt__membres li + li {
+  margin-top: var(--esp-1);
+}
+
 /* ---------- Formulaire ---------- */
 
 .formulaire {
