@@ -110,9 +110,9 @@ zoom, rotation automatique. Aucune autre modification de code n'est nécessaire.
 
 Il passe par [Web3Forms](https://web3forms.com) : les messages arrivent par email, sans serveur.
 La clé dans `partenaires.html` est **publique par conception** (elle identifie la boîte de réception,
-elle ne donne accès à rien). La clé vient du formulaire « Partenaires Hydrogadz » d'un compte Web3Forms :
-l'adresse qui reçoit les messages se règle dans les réglages de ce formulaire, sur web3forms.com.
-Pour envoyer vers une autre boîte sans ce compte, créer une nouvelle clé et remplacer `access_key`.
+elle ne donne accès à rien). Les messages arrivent sur **bureau@hydrogadz.fr** (adresse du domaine, gérée chez OVH).
+Pour changer de boîte : créer une nouvelle clé sur web3forms.com avec la nouvelle adresse
+(la clé y est envoyée par email), puis remplacer `access_key`. Aucun domaine n'est à déclarer chez Web3Forms.
 
 ## Le nom de domaine
 

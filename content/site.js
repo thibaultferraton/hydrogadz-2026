@@ -32,7 +32,7 @@ HG.site = {
   ],
 
   contact: {
-    email: "hydrogadz@gmail.com",
+    email: "bureau@hydrogadz.fr",
   },
 
   reseaux: {
