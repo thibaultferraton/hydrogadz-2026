@@ -317,7 +317,13 @@
         .map(
           (g) => `
           <article class="pjt apparition">
-            ${photo(g.photo, g.titre, "photo photo--paysage")}
+            ${
+              g.photo
+                ? photo(g.photo, g.titre, "photo photo--paysage")
+                : // Pas encore de photo : un bloc marine, comme les initiales du bureau,
+                  // pour que les cartes restent alignées.
+                  `<div class="pjt__sans-photo" aria-hidden="true">${esc(g.titre.replace(/^PJT\s+/, ""))}</div>`
+            }
             <h3>${esc(g.titre)}</h3>
             <p class="texte-doux">${esc(g.texte)}</p>
             ${

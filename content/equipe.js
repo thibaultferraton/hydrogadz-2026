@@ -45,7 +45,7 @@ HG.equipe = {
     {
       titre: "PJT Transmission",
       texte: "Réparation de la transmission, du moteur à l'hélice.",
-      photo: null, // TODO : photo de l'équipe PJT Transmission
+      photo: "assets/photos/pjt-transmission.webp",
       membres: [],
     },
     {

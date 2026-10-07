@@ -27,6 +27,7 @@ Pas de Node sur ton ordi ? Envoie les photos à la personne qui gère le site.
 | `monaco-port.webp` | Le port de Monaco (recadré d'un collage) | 362 px ⚠️ | Non utilisée pour l'instant |
 | `mebc-depart.webp` | Départ de course avec le public | 1920 px ✅ | Non utilisée pour l'instant |
 | `mebc-course.webp` | Plusieurs bateaux en course | 675 px | Non utilisée pour l'instant |
+| `pjt-transmission.webp` | L'équipe PJT Transmission en uniforme devant le bâtiment, 7 oct. 2026 (recadré 4:3) | 1200 px | Équipe, carte PJT Transmission |
 
 ### Page historique
 

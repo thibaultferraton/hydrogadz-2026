@@ -851,9 +851,20 @@
 /* ---------- PJT ---------- */
 
 .pjt .photo,
-.pjt .emplacement {
+.pjt__sans-photo {
   aspect-ratio: 4 / 3;
   margin-bottom: var(--esp-3);
+}
+
+.pjt__sans-photo {
+  display: grid;
+  place-items: center;
+  border-radius: var(--rayon-l);
+  background: var(--marine);
+  color: var(--texte-sur-sombre);
+  font-family: var(--police-titre);
+  font-size: var(--taille-xl);
+  font-weight: 300;
 }
 
 .pjt h3 {
