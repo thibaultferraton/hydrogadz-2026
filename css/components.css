@@ -32,10 +32,10 @@
   height: 100%;
 }
 
-/* Le logo (ampoule et ancre) est haut : on le montre assez grand pour que
-   le nom reste lisible. */
+/* Le logo (ampoule et nom côte à côte) est très large : 40 px de haut
+   suffisent pour que le nom reste lisible sans écraser le menu. */
 .header__logo img {
-  height: 56px;
+  height: 40px;
   width: auto;
 }
 
@@ -974,7 +974,7 @@
 }
 
 .footer img {
-  height: 56px;
+  height: 40px;
   width: auto;
   margin-bottom: var(--esp-3);
 }
@@ -1035,10 +1035,10 @@
 /* ---------- Logo dans la photo d'accueil ---------- */
 
 .hero__logo {
-  height: clamp(96px, 12vw, 150px);
+  height: clamp(56px, 7vw, 88px);
   width: auto;
   margin-bottom: var(--esp-5);
-  /* Le logo a des traits fins : une ombre plus marquée le détache de la photo */
+  /* Le bleu de « GADZ » se perd sur le mur clair : une ombre marquée le détache de la photo */
   filter: drop-shadow(0 1px 3px rgba(23, 63, 83, 0.8)) drop-shadow(0 2px 18px rgba(23, 63, 83, 0.7));
 }
 
