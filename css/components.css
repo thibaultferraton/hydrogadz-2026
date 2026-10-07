@@ -422,6 +422,30 @@
   }
 }
 
+.carte .pole__role {
+  margin-top: var(--esp-4);
+  color: var(--accent);
+  font-size: var(--taille-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pole__membres {
+  margin-top: var(--esp-3);
+  padding: 0;
+  list-style: none;
+  font-size: var(--taille-s);
+}
+
+.pole__role + .pole__membres {
+  margin-top: var(--esp-2);
+}
+
+.pole__membres li + li {
+  margin-top: var(--esp-1);
+}
+
 /* ---------- Photos ---------- */
 
 .photo {

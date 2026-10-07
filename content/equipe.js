@@ -17,11 +17,27 @@ HG.equipe = {
     { prenom: "Gabriel", nom: "Gourgeon", role: "Secrétaire", photo: null },
   ],
 
-  // Les pôles de l'asso.
+  // Les pôles de l'asso, affichés en trois colonnes.
+  // membres : les noms du pôle. groupes : des noms classés par rôle, si besoin.
   poles: [
-    { titre: "Partenariats", texte: "Relation avec les sponsors et recherche de financement." },
-    { titre: "Communication", texte: "Réseaux sociaux, site internet et image de l'association." },
-    { titre: "Logistique", texte: "Transport, matériel et organisation des déplacements." },
+    {
+      titre: "Partenariats",
+      texte: "Relation avec les sponsors et recherche de financement.",
+      membres: ["Esteve Ponson", "Anatole Martenot", "Jules Vails", "Gabriel Gourgeon", "Martin Vallayer"],
+    },
+    {
+      titre: "Communication",
+      texte: "Réseaux sociaux, site internet et image de l'association.",
+      groupes: [
+        { role: "Responsable réseaux sociaux", membres: ["Lou Laclef"] },
+        { role: "Responsables site internet", membres: ["Thibaut Ferraton", "Dylan Pain", "Gaspard Honoré"] },
+      ],
+    },
+    {
+      titre: "Logistique",
+      texte: "Transport, matériel et organisation des déplacements.",
+      membres: ["Vincent Keller", "Enzo Girerd", "Axel Munto", "Antoine Gauthier"],
+    },
   ],
 
   // Les membres. Pour ajouter quelqu'un, copier le bloc d'exemple, enlever les //
