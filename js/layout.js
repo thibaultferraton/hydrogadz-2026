@@ -18,7 +18,7 @@
     <header class="header">
       <div class="conteneur header__barre">
         <a class="header__logo" href="index.html" aria-label="${esc(site.nom)} — accueil">
-          <img src="assets/logos/hydrogadz-clair.png" alt="${esc(site.nom)}" width="126" height="56">
+          <img src="assets/logos/hydrogadz-clair.png" alt="${esc(site.nom)}" width="194" height="40">
         </a>
         <nav class="nav" aria-label="Navigation principale">
           <button class="nav__bouton-menu" type="button" aria-expanded="false" aria-controls="menu-principal">
@@ -44,7 +44,7 @@
       <div class="conteneur">
         <div class="footer__grille">
           <div>
-            <img src="assets/logos/hydrogadz-clair.png" alt="${esc(site.nom)}" width="126" height="56">
+            <img src="assets/logos/hydrogadz-clair.png" alt="${esc(site.nom)}" width="194" height="40">
             <p>${esc(site.campus)}</p>
             <p>Objectif ${esc(site.objectif)}</p>
           </div>
