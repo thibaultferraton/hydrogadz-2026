@@ -15,6 +15,11 @@ HG.outils = {
       .replace(/"/g, "&quot;");
   },
 
+  // Un montant en euros à la française : 15000 → « 15 000 € » (espaces insécables).
+  euros(montant) {
+    return `${Number(montant).toLocaleString("fr-FR")} €`;
+  },
+
   // Étiquette visible pour un contenu pas encore rempli.
   aCompleter(quoi = "À compléter") {
     return `<span class="a-completer">${HG.outils.esc(quoi)}</span>`;

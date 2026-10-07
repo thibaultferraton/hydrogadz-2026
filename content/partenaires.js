@@ -36,6 +36,58 @@ HG.partenaires = {
       "réduisent d'autant les dépenses correspondantes.",
   },
 
+  // ---------------------------------------------------------------------------
+  //  PAGE PARTENARIAT (partenariat.html) : les partenaires de la saison et la
+  //  frise du financement réuni. Indépendant des logos de l'accueil et de la
+  //  page « Devenir partenaire » (liste « actuels » ci-dessus).
+  // ---------------------------------------------------------------------------
+
+  // Le financement réuni pour la saison, sur l'objectif de 50 000 €. À mettre à jour
+  // à chaque partenariat signé, avec la date du jour. Montants en euros, sans espace
+  // ni symbole : 15000, pas « 15 000 € ». Les apports en expertise et en équipement
+  // n'y sont pas comptés : ils réduisent nos dépenses, la frise montre l'argent réuni.
+  collecte: {
+    objectif: 50000,
+    reuni: 15000,
+    miseAJour: "7 octobre 2026",
+  },
+
+  // Les partenaires de la saison 2026-2027.
+  //   niveau  : le nom exact d'un des niveaux plus bas (ceux de « Devenir partenaire »).
+  //             Pas de niveau = un soutien hors grille, présenté à part (l'école).
+  //   apports : ce que le partenaire nous apporte : "Financement", "Expertise", "Équipement".
+  //   logo    : PNG ou SVG à fond transparent dans assets/logos/ (null = le nom seul).
+  saison: [
+    {
+      nom: "Capgemini Engineering",
+      niveau: "Partenaire principal",
+      apports: ["Expertise", "Équipement"],
+      logo: "assets/logos/capgemini-engineering.png",
+      lien: "https://www.capgemini.com/fr-fr/about-us/who-we-are/capgemini-engineering/",
+    },
+    {
+      nom: "Fondation Arts et Métiers",
+      niveau: "Partenaire majeur",
+      apports: ["Financement"],
+      logo: "assets/logos/fondation-arts-et-metiers.png",
+      lien: "https://fondationartsetmetiers.org/",
+    },
+    {
+      nom: "Bertin Technologies",
+      niveau: "Partenaire supérieur",
+      apports: ["Financement"],
+      logo: "assets/logos/bertin-technologies.svg",
+      lien: "https://www.bertin-technologies.com/",
+    },
+    {
+      nom: "Arts et Métiers",
+      type: "École",
+      texte: "L'école met à disposition ses enseignants, ses locaux et ses ateliers.",
+      logo: "assets/logos/arts-et-metiers.png",
+      lien: "https://artsetmetiers.fr/",
+    },
+  ],
+
   // Les façons de nous soutenir (accueil + page partenaires).
   // don: true = le don libre, présenté à part sur la page partenaires.
   moyens: [

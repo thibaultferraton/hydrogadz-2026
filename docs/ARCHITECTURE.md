@@ -12,6 +12,7 @@ hydrogadz-2026/
 ├── equipe.html             L'équipe : pôles, trombinoscope, recrutement
 ├── historique.html         Chiffres, genèse, frise des saisons, évolution du bateau, partenaires, galerie
 ├── partenaires.html        Devenir partenaire, formulaire de contact, et faire un don
+├── partenariat.html        Partenaires de la saison par niveau + frise du financement réuni
 ├── mentions-legales.html   Obligatoire en France : éditeur, hébergeur, données, crédits
 ├── 404.html                Page d'erreur (servie automatiquement par GitHub Pages)
 │
@@ -23,7 +24,8 @@ hydrogadz-2026/
 │   ├── equipe.js           Pôles et membres
 │   ├── historique.js       Chiffres, genèse, saisons, bateaux, partenaires passés + galerie
 │   └── partenaires.js      Partenaires, objectif de financement, façons de soutenir,
-│                           niveaux de partenariat, budget prévisionnel (repris de la plaquette)
+│                           niveaux de partenariat, budget prévisionnel (repris de la plaquette),
+│                           partenaires de la saison et financement réuni (page Partenariat)
 │
 ├── css/                    Chargés dans cet ordre dans chaque page :
 │   ├── tokens.css          Couleurs, polices, tailles, espacements (charte de la plaquette partenaires)
@@ -86,6 +88,8 @@ et mieux pour le référencement Google.
 | Le menu                              | `content/site.js` → `menu`       |
 | Le header ou le footer               | `js/layout.js`                   |
 | La clé du formulaire                 | `partenaires.html` → `access_key` |
+| Le financement réuni (frise)         | `content/partenaires.js` → `collecte` |
+| Les partenaires de la page Partenariat | `content/partenaires.js` → `saison` |
 
 ## Ajouter une page
 
