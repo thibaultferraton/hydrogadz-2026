@@ -5,7 +5,7 @@
 // ============================================================================
 
 (function () {
-  const { esc, aCompleter, photo, video } = HG.outils;
+  const { esc, euros, aCompleter, photo, video } = HG.outils;
 
   // Carte d'une personne (bureau, membres) : la photo, ou ses initiales en attendant.
   const carteMembre = (m) => {
@@ -19,6 +19,28 @@
         ${m.pole ? `<p class="texte-doux">${esc(m.pole)}</p>` : ""}
       </article>`;
   };
+
+  // Carte d'un partenaire (page partenariat) : logo, nom, puis ses apports
+  // ou, pour un soutien hors grille, une phrase. Sans logo, le nom suffit.
+  const cartePartenaire = (p) => `
+    <article class="partenaire">
+      ${
+        p.logo
+          ? `<a class="partenaire__logo" href="${esc(p.lien)}" target="_blank" rel="noopener" aria-label="${esc(p.nom)}, site officiel">
+               <img src="${esc(p.logo)}" alt="${esc(p.nom)}" loading="lazy">
+             </a>`
+          : ""
+      }
+      <div>
+        <h4 class="partenaire__nom">${esc(p.nom)}</h4>
+        ${
+          p.apports?.length
+            ? `<ul class="partenaire__apports" aria-label="Ce que ${esc(p.nom)} nous apporte">${p.apports.map((a) => `<li>${esc(a)}</li>`).join("")}</ul>`
+            : ""
+        }
+        ${p.texte ? `<p class="partenaire__texte">${esc(p.texte)}</p>` : ""}
+      </div>
+    </article>`;
 
   const RENDUS = {
     // Bande de chiffres sous la photo d'accueil
@@ -59,6 +81,83 @@
           </a>`
         )
         .join(""),
+
+    // Frise en haut de la page partenariat : l'argent réuni sur l'objectif de la saison
+    collecte: () => {
+      const { objectif: montant, reuni, miseAJour } = HG.partenaires.collecte;
+      const part = Math.min(reuni / montant, 1);
+      const pourcent = `${Math.round(part * 100)} %`;
+      const resume = `${euros(reuni)} réunis sur ${euros(montant)}, soit ${pourcent}`;
+      // Une graduation tous les 10 000 € : « 0 € », « 10 k€ »… « 50 k€ »
+      const pas = 10000;
+      const graduations = Array.from({ length: Math.floor(montant / pas) + 1 }, (_, i) => i * pas);
+      return `
+        <div class="collecte__chiffres">
+          <div>
+            <span class="collecte__reuni">${euros(reuni)}</span>
+            <span class="collecte__sur">réunis sur un objectif de <strong>${euros(montant)}</strong></span>
+          </div>
+          <span class="collecte__pourcent">${pourcent}</span>
+        </div>
+        <div class="collecte__piste" role="progressbar" aria-label="Financement réuni pour la saison"
+             aria-valuemin="0" aria-valuemax="${montant}" aria-valuenow="${reuni}" aria-valuetext="${esc(resume)}"
+             title="${esc(resume)}">
+          <span class="collecte__barre" style="--part: ${(part * 100).toFixed(1)}%"></span>
+        </div>
+        <ol class="collecte__graduations" aria-hidden="true">
+          ${graduations
+            .map((g) => `<li style="--position: ${((g / montant) * 100).toFixed(1)}%">${g === 0 ? "0 €" : `${g / 1000} k€`}</li>`)
+            .join("")}
+        </ol>
+        <p class="collecte__note">
+          Financement réuni au ${esc(miseAJour)}. Les apports en expertise et en équipement
+          n'y sont pas comptés : ils s'y ajoutent et réduisent d'autant nos dépenses.
+        </p>`;
+    },
+
+    // Les partenaires de la saison, rangés par niveau, du plus haut au plus bas.
+    // Seuls les niveaux qui ont au moins un partenaire s'affichent ; les points
+    // (1 à 5) situent le niveau dans la grille de la page « Devenir partenaire ».
+    paliers: () => {
+      const { niveaux, saison } = HG.partenaires;
+      return niveaux
+        .map((n, i) => ({ n, rang: i + 1, partenaires: saison.filter((p) => p.niveau === n.nom) }))
+        .filter((palier) => palier.partenaires.length)
+        .reverse()
+        .map(({ n, rang, partenaires }) => {
+          const points = niveaux.map((_, i) => `<span${i < rang ? ' class="plein"' : ""}></span>`).join("");
+          return `
+          <li class="palier palier--rang-${rang} apparition">
+            <div class="palier__niveau">
+              <span class="palier__points" aria-hidden="true">${points}</span>
+              <h3 class="palier__nom">${esc(n.nom)}</h3>
+            </div>
+            <div class="palier__partenaires">${partenaires.map(cartePartenaire).join("")}</div>
+          </li>`;
+        })
+        .join("");
+    },
+
+    // Les soutiens hors grille de partenariat (l'école), sous les niveaux
+    soutiens: () =>
+      HG.partenaires.saison
+        .filter((p) => !p.niveau)
+        .map(
+          (p) => `
+          <li class="palier palier--hors-grille apparition">
+            <div class="palier__niveau">
+              <h3 class="palier__nom">${esc(p.type ?? "Avec le soutien de")}</h3>
+            </div>
+            <div class="palier__partenaires">${cartePartenaire(p)}</div>
+          </li>`
+        )
+        .join(""),
+
+    // Ce qu'il reste à réunir, dans l'appel au soutien de la page partenariat
+    reste: () => {
+      const { objectif, reuni } = HG.partenaires.collecte;
+      return esc(euros(Math.max(objectif - reuni, 0)));
+    },
 
     avantages: () =>
       HG.partenaires.avantages

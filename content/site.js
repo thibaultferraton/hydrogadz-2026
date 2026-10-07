@@ -16,6 +16,7 @@ HG.site = {
   menu: [
     { titre: "Nos projets", lien: "projets.html" },
     { titre: "L'équipe", lien: "equipe.html" },
+    { titre: "Partenariat", lien: "partenariat.html" },
     { titre: "Historique", lien: "historique.html" },
   ],
   // Bouton mis en avant à droite du menu.

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr" class="sans-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Partenariat — Hydrogadz</title>
+  <meta name="description" content="Les partenaires d'Hydrogadz pour la saison 2026-2027 et le financement déjà réuni sur notre objectif de 50 000 € pour le Monaco Energy Boat Challenge 2027.">
+  <meta property="og:title" content="Partenariat — Hydrogadz">
+  <meta property="og:description" content="Ils embarquent avec nous vers le Monaco Energy Boat Challenge 2027.">
+  <meta property="og:image" content="https://hydrogadz.fr/assets/photos/monaco-yachts.webp">
+  <meta property="og:url" content="https://hydrogadz.fr/partenariat.html">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/icons/favicon-32.png" sizes="32x32">
+  <link rel="apple-touch-icon" href="assets/icons/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body class="page-interieure">
+  <a class="lien-evitement" href="#contenu">Aller au contenu</a>
+  <div data-layout="header"></div>
+
+  <main id="contenu">
+
+    <!-- EN-TÊTE + FRISE DU FINANCEMENT RÉUNI (montants dans content/partenaires.js → objectif) -->
+    <header class="page-tete">
+      <div class="conteneur">
+        <span class="surtitre">Partenariat · saison 2026-2027</span>
+        <h1>Ils embarquent avec nous</h1>
+        <p>Les entreprises et fondations qui nous mènent vers le Monaco Energy Boat Challenge 2027.</p>
+        <div class="collecte apparition" data-render="collecte"></div>
+      </div>
+    </header>
+
+    <!-- PARTENAIRES DE LA SAISON, PAR NIVEAU -->
+    <section class="section">
+      <div class="conteneur">
+        <div class="section__tete">
+          <span class="surtitre">Nos partenaires</span>
+          <h2>La saison 2026-2027</h2>
+          <p class="texte-doux">
+            Chaque partenaire est présenté selon son <a href="partenaires.html#niveaux">niveau de partenariat</a>,
+            avec ce qu'il apporte au projet : financement, expertise ou équipement.
+          </p>
+        </div>
+        <ol class="paliers" data-render="paliers"></ol>
+        <!-- Les soutiens hors grille de partenariat : l'école -->
+        <ul class="paliers paliers--hors-grille" data-render="soutiens"></ul>
+      </div>
+    </section>
+
+    <!-- APPEL AU SOUTIEN -->
+    <section class="section section--sombre">
+      <div class="conteneur">
+        <div class="section__tete">
+          <span class="surtitre">Rejoignez-les</span>
+          <h2>Il reste <span data-render="reste"></span> à réunir</h2>
+          <p class="texte-doux">
+            Financement, expertise, équipement ou don libre : chaque apport fait avancer le bateau.
+            Cinq niveaux de partenariat, ou un partenariat technique construit avec vous.
+          </p>
+        </div>
+        <div class="groupe-boutons">
+          <a class="bouton bouton--principal" href="partenaires.html#contact">Devenir partenaire</a>
+          <a class="bouton bouton--contour" href="partenaires.html#niveaux">Voir les niveaux de partenariat</a>
+          <a class="bouton bouton--contour" href="partenaires.html#don">Faire un don</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div data-layout="footer"></div>
+
+  <script src="content/site.js"></script>
+  <script src="content/partenaires.js"></script>
+  <script src="js/outils.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

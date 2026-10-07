@@ -126,10 +126,13 @@
 }
 
 @media (min-width: 900px) {
+  /* L'écart se resserre sur les écrans moyens pour que les liens et le bouton
+     tiennent chacun sur une ligne à côté du logo. */
   .nav__liste {
     display: flex;
     align-items: center;
-    gap: var(--esp-5);
+    gap: clamp(1.25rem, 5vw - 1.25rem, 2.5rem);
+    white-space: nowrap;
   }
 }
 
@@ -1634,4 +1637,289 @@
 .contacts__email:hover {
   text-decoration: underline;
   text-underline-offset: 4px;
+}
+
+/* ============================================================================
+   BLOCS DE LA PAGE PARTENARIAT
+   ========================================================================= */
+
+/* ---------- Frise du financement réuni (dans l'en-tête sombre) ----------
+   Une seule valeur face à un objectif : une jauge, la piste dans un ton plus
+   clair de la même couleur, et des graduations tous les 10 000 €. */
+
+.collecte {
+  max-width: 880px;
+  margin-top: var(--esp-5);
+  padding: clamp(1.25rem, 0.9rem + 1.8vw, 2.25rem);
+  border: 1px solid rgba(162, 212, 213, 0.22);
+  border-radius: var(--rayon-l);
+  background: rgba(162, 212, 213, 0.08);
+}
+
+.collecte__chiffres {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--esp-2) var(--esp-4);
+}
+
+.collecte__reuni {
+  display: block;
+  font-family: var(--police-titre);
+  font-size: clamp(2.6rem, 1.6rem + 3.4vw, 4.4rem);
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--texte-sur-sombre);
+}
+
+.collecte__sur {
+  display: block;
+  margin-top: var(--esp-2);
+  color: var(--texte-doux-sur-sombre);
+}
+
+.collecte__sur strong {
+  color: var(--texte-sur-sombre);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.collecte__pourcent {
+  font-family: var(--police-titre);
+  font-size: var(--taille-xl);
+  font-weight: 300;
+  line-height: 1;
+  color: var(--lagon);
+}
+
+.collecte__piste {
+  height: 16px;
+  margin-top: var(--esp-4);
+  border-radius: 4px;
+  background: rgba(162, 212, 213, 0.18);
+  overflow: hidden;
+}
+
+/* La barre se remplit quand la frise apparaît à l'écran (voir js/main.js) */
+.collecte__barre {
+  display: block;
+  width: 0;
+  height: 100%;
+  border-radius: 4px;
+  background: var(--lagon);
+  transition: width 1.4s cubic-bezier(0.2, 0.7, 0.2, 1) 0.3s;
+}
+
+.collecte.est-visible .collecte__barre {
+  width: var(--part);
+}
+
+.collecte__graduations {
+  position: relative;
+  height: 2.2em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  color: var(--texte-doux-sur-sombre);
+  font-size: var(--taille-xs);
+  font-variant-numeric: tabular-nums;
+}
+
+.collecte__graduations li {
+  position: absolute;
+  top: 0;
+  left: var(--position);
+  padding-top: 10px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+/* Le petit trait de chaque graduation, sous la jauge */
+.collecte__graduations li::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 50%;
+  width: 1px;
+  height: 6px;
+  background: rgba(162, 212, 213, 0.5);
+}
+
+.collecte__graduations li:first-child {
+  transform: none;
+}
+
+.collecte__graduations li:first-child::before {
+  left: 0;
+}
+
+.collecte__graduations li:last-child {
+  transform: translateX(-100%);
+}
+
+.collecte__graduations li:last-child::before {
+  left: auto;
+  right: 0;
+}
+
+.page-tete .collecte__note {
+  max-width: 68ch;
+  margin-top: var(--esp-3);
+  font-size: var(--taille-s);
+}
+
+/* ---------- Partenaires de la saison, par niveau ----------
+   Mêmes bandes menthe / sable que les niveaux de la page « Devenir partenaire ».
+   Plus le niveau est haut, plus le cadre du logo est grand. */
+
+.paliers {
+  display: grid;
+  gap: var(--esp-3);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.paliers--hors-grille {
+  margin-top: var(--esp-5);
+}
+
+.palier {
+  --logo-largeur: 240px;
+  --logo-hauteur: 96px;
+  display: grid;
+  gap: var(--esp-3) var(--esp-5);
+  padding: var(--esp-4) clamp(1.25rem, 0.8rem + 2vw, 2.5rem);
+  border-radius: var(--rayon-l);
+  background: var(--menthe);
+}
+
+.palier:nth-child(even) {
+  background: var(--sable-clair);
+}
+
+.palier--rang-5 { --logo-largeur: 400px; --logo-hauteur: 140px; }
+.palier--rang-4 { --logo-largeur: 300px; --logo-hauteur: 116px; }
+.palier--rang-3 { --logo-largeur: 250px; --logo-hauteur: 100px; }
+.palier--rang-2 { --logo-largeur: 210px; --logo-hauteur: 88px; }
+.palier--rang-1 { --logo-largeur: 180px; --logo-hauteur: 76px; }
+
+/* L'école, hors grille : un simple filet au lieu d'un fond */
+.palier--hors-grille {
+  background: none;
+  box-shadow: inset 0 0 0 1px var(--bordure);
+}
+
+@media (min-width: 760px) {
+  .palier {
+    grid-template-columns: 260px 1fr;
+    align-items: center;
+  }
+}
+
+.palier__nom {
+  font-family: var(--police-texte);
+  font-size: var(--taille-m);
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.palier--rang-5 .palier__nom {
+  font-family: var(--police-titre);
+  font-size: var(--taille-l);
+  font-weight: 400;
+  color: var(--titre);
+}
+
+/* Cinq points, comme les cinq niveaux : autant de points pleins que le rang */
+.palier__points {
+  display: flex;
+  gap: 6px;
+  margin-bottom: var(--esp-2);
+}
+
+.palier__points span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 1.5px var(--accent);
+}
+
+.palier__points .plein {
+  background: var(--accent);
+}
+
+.palier__partenaires {
+  display: grid;
+  gap: var(--esp-4);
+}
+
+.partenaire {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--esp-3) var(--esp-5);
+}
+
+.partenaire > div {
+  flex: 1 1 15rem;
+  min-width: 0;
+}
+
+.partenaire__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: min(100%, var(--logo-largeur));
+  height: var(--logo-hauteur);
+  padding: var(--esp-3) var(--esp-4);
+  border-radius: var(--rayon);
+  background: #fff;
+  text-decoration: none;
+  transition: box-shadow 0.2s;
+}
+
+.partenaire__logo:hover {
+  box-shadow: 0 0 0 2px var(--lagon);
+}
+
+.partenaire__logo img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.partenaire__nom {
+  font-size: var(--taille-l);
+}
+
+.partenaire__apports {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--esp-2);
+  padding: 0;
+  margin-top: var(--esp-2);
+  list-style: none;
+}
+
+.partenaire__apports li {
+  padding: 2px 12px;
+  border: 1px solid var(--bordure);
+  border-radius: var(--rayon-bouton);
+  background: var(--fond);
+  color: var(--turquoise-fonce);
+  font-size: var(--taille-xs);
+  font-weight: 700;
+}
+
+.partenaire__texte {
+  max-width: 52ch;
+  margin-top: var(--esp-1);
+  color: var(--texte-doux);
+  font-size: var(--taille-s);
 }
