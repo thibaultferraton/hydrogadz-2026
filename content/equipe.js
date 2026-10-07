@@ -72,7 +72,7 @@ HG.equipe = {
     },
     {
       titre: "PJT Cockpit",
-      texte: "Création d'un nouveau cockpit.",
+      texte: "Création d'un nouveau cockpit et conception d'une nouvelle direction.",
       photo: null, // TODO : photo de l'équipe PJT Cockpit
       membres: [],
     },
