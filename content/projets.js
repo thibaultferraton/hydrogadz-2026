@@ -23,12 +23,13 @@ HG.projets = {
     },
     {
       numero: "02",
-      titre: "Le cockpit",
+      titre: "Le cockpit et la direction",
       accroche: "La place du pilote",
       texte:
         "C'est la partie que l'on fabrique entièrement : la coque du cockpit, le poste de pilotage, " +
         "l'ergonomie et la sécurité. Le pilote doit tenir trois heures de course, voir où il va, " +
-        "et pouvoir sortir vite en cas de problème.",
+        "et pouvoir sortir vite en cas de problème. En plus du cockpit, l'équipe conçoit " +
+        "un nouveau système de direction, baptisé « drosse ».",
       photo: "assets/photos/cockpit-exterieur.webp",
     },
     {
