@@ -47,19 +47,19 @@ HG.equipe = {
   pjt: [
     {
       titre: "PJT Transmission",
-      texte: "Ils amènent la puissance du moteur jusqu'à l'hélice.",
+      texte: "Réparer la transmission, du moteur à l'hélice.",
       photo: null, // TODO : photo de l'équipe PJT Transmission
       membres: [],
     },
     {
       titre: "PJT Batteries",
-      texte: "Ils s'occupent du stockage de l'énergie embarquée.",
+      texte: "Redimensionnement des batteries.",
       photo: null, // TODO : photo de l'équipe PJT Batteries
       membres: [],
     },
     {
       titre: "PJT Cockpit",
-      texte: "Ils conçoivent et fabriquent la place du pilote.",
+      texte: "Création d'un nouveau cockpit.",
       photo: null, // TODO : photo de l'équipe PJT Cockpit
       membres: [],
     },
