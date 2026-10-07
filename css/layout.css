@@ -148,3 +148,14 @@ main {
 .grille--compacte {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr));
 }
+
+/* Quatre cartes (le bureau) : 2 × 2, puis une seule rangée sur grand écran */
+.grille--4 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 900px) {
+  .grille--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

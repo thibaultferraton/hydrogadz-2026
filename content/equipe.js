@@ -8,6 +8,15 @@
 window.HG = window.HG || {};
 
 HG.equipe = {
+  // Le bureau de l'association, affiché en haut de la page.
+  // photo : "assets/photos/equipe/prenom-nom.webp", ou null (les initiales s'affichent).
+  bureau: [
+    { prenom: "Esteve", nom: "Ponson", role: "Président", photo: null },
+    { prenom: "Anatole", nom: "Martenot", role: "Vice-président", photo: null },
+    { prenom: "Jules", nom: "Vails", role: "Trésorier", photo: null },
+    { prenom: "Gabriel", nom: "Gourgeon", role: "Secrétaire", photo: null },
+  ],
+
   // Les pôles de l'asso.
   poles: [
     { titre: "Technique", texte: "Conception, fabrication et essais du bateau." },
