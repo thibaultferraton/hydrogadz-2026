@@ -294,10 +294,23 @@
       return blocs.join("");
     },
 
-    poles: () =>
-      HG.equipe.poles
-        .map((p) => `<article class="carte apparition"><h3>${esc(p.titre)}</h3><p>${esc(p.texte)}</p></article>`)
-        .join(""),
+    poles: () => {
+      const noms = (liste = []) =>
+        liste.length ? `<ul class="pole__membres">${liste.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>` : "";
+      return HG.equipe.poles
+        .map(
+          (p) => `
+          <article class="carte apparition">
+            <h3>${esc(p.titre)}</h3>
+            <p>${esc(p.texte)}</p>
+            ${noms(p.membres)}
+            ${(p.groupes ?? [])
+              .map((g) => `<p class="pole__role">${esc(g.role)}</p>${noms(g.membres)}`)
+              .join("")}
+          </article>`
+        )
+        .join("");
+    },
 
     bureau: () => HG.equipe.bureau.map(carteMembre).join(""),
 

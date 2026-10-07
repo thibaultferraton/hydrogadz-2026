@@ -381,6 +381,71 @@
   color: var(--texte-doux-sur-sombre);
 }
 
+/* Cartes séparées par des traits, façon colonnes (les pôles) :
+   empilées et séparées par un trait horizontal sur mobile,
+   côte à côte et séparées par un trait vertical sur grand écran. */
+.colonnes {
+  display: grid;
+}
+
+.colonnes .carte {
+  padding-left: 0;
+  border-radius: 0;
+  background: none;
+}
+
+.colonnes .carte::before {
+  left: 0;
+}
+
+.colonnes .carte + .carte {
+  border-top: 1px solid var(--bordure-forte);
+}
+
+@media (min-width: 760px) {
+  .colonnes {
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  }
+
+  .colonnes .carte + .carte {
+    border-top: 0;
+    border-left: 1px solid var(--bordure-forte);
+  }
+
+  /* Le texte des colonnes suivantes se décale du trait */
+  .colonnes .carte + .carte {
+    padding-left: var(--esp-4);
+  }
+
+  .colonnes .carte + .carte::before {
+    left: var(--esp-4);
+  }
+}
+
+.carte .pole__role {
+  margin-top: var(--esp-4);
+  color: var(--accent);
+  font-size: var(--taille-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.pole__membres {
+  margin-top: var(--esp-3);
+  padding: 0;
+  list-style: none;
+  font-size: var(--taille-s);
+}
+
+.pole__role + .pole__membres {
+  margin-top: var(--esp-2);
+}
+
+.pole__membres li + li {
+  margin-top: var(--esp-1);
+}
+
 /* ---------- Photos ---------- */
 
 .photo {
