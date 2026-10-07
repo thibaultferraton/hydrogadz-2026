@@ -212,6 +212,24 @@
       return HG.equipe.membres.map(carteMembre).join("");
     },
 
+    // Les PJT : une photo de groupe, le chantier et ses membres.
+    pjt: () =>
+      HG.equipe.pjt
+        .map(
+          (g) => `
+          <article class="pjt apparition">
+            ${photo(g.photo, g.titre, "photo photo--paysage")}
+            <h3>${esc(g.titre)}</h3>
+            <p class="texte-doux">${esc(g.texte)}</p>
+            ${
+              g.membres?.length
+                ? `<ul class="pjt__membres">${g.membres.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>`
+                : aCompleter("Membres à compléter")
+            }
+          </article>`
+        )
+        .join(""),
+
     // Page historique
     chiffres: () =>
       HG.historique.chiffres
