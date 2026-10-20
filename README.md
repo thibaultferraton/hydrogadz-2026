@@ -56,3 +56,7 @@ Les visiteurs, eux, ne voient jamais ces repères : une info absente est simplem
 ## Contribuer
 
 Lire [CONTRIBUTING.md](CONTRIBUTING.md) avant de commencer : on ne pousse jamais directement sur `main`.
+
+> ⚠️ **À chaque fois, avant de travailler, on récupère la dernière version depuis GitHub**
+> (`git checkout main` puis `git pull`), et seulement ensuite on crée sa branche.
+> Sinon on travaille sur une vieille version et on s'emmêle les pinceaux.

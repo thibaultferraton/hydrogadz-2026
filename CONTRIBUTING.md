@@ -1,5 +1,26 @@
 # Travailler ensemble sur Hydrogadz 2026
 
+## ⚠️ La règle d'or : toujours repartir de la version GitHub
+
+C'est un petit site : on touche tous aux mêmes fichiers (`index.html`, `style.css`…).
+Si quelqu'un travaille sur une vieille version, on va s'emmêler les pinceaux et créer des conflits.
+
+**GitHub est la seule version de référence.** Avant **chaque** session de travail, sans exception :
+
+```bash
+git checkout main
+git pull
+git checkout -b feature/ma-tache
+```
+
+- **Avant de commencer** : `git pull` sur `main`, puis nouvelle branche.
+- **Pendant la tâche**, si quelqu'un a mergé quelque chose entre-temps : récupérer ses changements
+  (`git checkout main`, `git pull`, `git checkout feature/ma-tache`, `git merge main`).
+- **Après un merge** : tout le monde refait `git checkout main` puis `git pull`.
+- **On se prévient** sur le groupe quand on attaque une partie du site (« je fais la section équipe »)
+  pour ne pas modifier la même chose à deux.
+- **On ne garde pas une branche des jours** : petite tâche, PR rapide, merge, et on repart de `main` à jour.
+
 ## Les règles
 
 1. **Jamais de push direct sur `main`.** GitHub le bloque de toute façon.
