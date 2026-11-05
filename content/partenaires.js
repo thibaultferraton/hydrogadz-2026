@@ -48,8 +48,8 @@ HG.partenaires = {
   // n'y sont pas comptés : ils réduisent nos dépenses, la frise montre l'argent réuni.
   collecte: {
     objectif: 50000,
-    reuni: 15000,
-    miseAJour: "7 octobre 2026",
+    reuni: 33500,
+    miseAJour: "5 novembre 2026",
   },
 
   // Les partenaires de la saison 2026-2027.
@@ -73,11 +73,31 @@ HG.partenaires = {
       lien: "https://fondationartsetmetiers.org/",
     },
     {
+      nom: "Intermarché",
+      niveau: "Partenaire majeur",
+      apports: ["Financement"],
+      logo: "assets/logos/intermarche.svg",
+      lien: "https://www.intermarche.com/",
+    },
+    {
       nom: "Bertin Technologies",
       niveau: "Partenaire supérieur",
       apports: ["Financement"],
       logo: "assets/logos/bertin-technologies.svg",
       lien: "https://www.bertin-technologies.com/",
+    },
+    {
+      nom: "C2M",
+      niveau: "Supporter HydroGadz",
+      apports: ["Financement"],
+      logo: null,
+    },
+    {
+      nom: "Groupe Vaills",
+      niveau: "Supporter HydroGadz",
+      apports: ["Financement"],
+      logo: "assets/logos/vaills.png",
+      lien: "https://www.vaills.com/",
     },
     {
       nom: "Arts et Métiers",
