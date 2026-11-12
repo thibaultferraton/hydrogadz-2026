@@ -201,12 +201,21 @@
           return `
             <article class="membre apparition">
               <div class="membre__photo">${visuel}</div>
-              <h3>${esc(m.prenom)} ${esc(m.nom)}</h3>
-              <p class="membre__role">${esc(m.role)}</p>
-              <p class="texte-doux">${esc(m.pole)}</p>
+              <h3>${esc(m.prenom)} ${esc(m.nom ?? "")}</h3>
+              ${m.role ? `<p class="membre__role">${esc(m.role)}</p>` : ""}
+              ${m.pole ? `<p class="texte-doux">${esc(m.pole)}</p>` : ""}
             </article>`;
         })
         .join("");
+    },
+
+    groupe: () => {
+      const g = HG.equipe.photoGroupe;
+      if (!g) return "";
+      return `<figure class="figure-legendee photo-groupe apparition">
+        <div class="photo"><img src="${esc(g.src)}" alt="${esc(g.alt)}" decoding="async"></div>
+        <figcaption>${esc(g.legende)}</figcaption>
+      </figure>`;
     },
 
     // Page historique

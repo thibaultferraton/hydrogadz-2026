@@ -813,11 +813,23 @@
 
 /* ---------- Membres ---------- */
 
+.photo-groupe {
+  margin-bottom: var(--esp-6);
+}
+
+.photo-groupe .photo {
+  aspect-ratio: 16 / 9;
+}
+
+.grille--membres {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 190px), 1fr));
+}
+
 .membre__photo {
   display: grid;
   place-items: center;
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
   margin-bottom: var(--esp-3);
   overflow: hidden;
   border-radius: var(--rayon-l);
