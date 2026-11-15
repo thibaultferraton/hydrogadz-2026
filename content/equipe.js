@@ -13,7 +13,7 @@ HG.equipe = {
   bureau: [
     { prenom: "Esteve", nom: "Ponson", role: "Président", photo: "assets/photos/equipe/esteve-ponson.webp" },
     { prenom: "Anatole", nom: "Martenot", role: "Vice-président", photo: "assets/photos/equipe/anatole-martenot.webp" },
-    { prenom: "Jules", nom: "Vails", role: "Trésorier", photo: "assets/photos/equipe/jules-vaills.webp" },
+    { prenom: "Jules", nom: "Vaills", role: "Trésorier", photo: "assets/photos/equipe/jules-vaills.webp" },
     { prenom: "Gabriel", nom: "Gourgeon", role: "Secrétaire", photo: "assets/photos/equipe/gabriel-gourgeon.webp" },
   ],
 
@@ -23,7 +23,7 @@ HG.equipe = {
     {
       titre: "Partenariats",
       texte: "Relation avec les sponsors et recherche de financement.",
-      membres: ["Esteve Ponson", "Anatole Martenot", "Jules Vails", "Gabriel Gourgeon", "Martin Vallayer"],
+      membres: ["Esteve Ponson", "Anatole Martenot", "Jules Vaills", "Gabriel Gourgeon", "Martin Vallayer"],
     },
     {
       titre: "Communication",
