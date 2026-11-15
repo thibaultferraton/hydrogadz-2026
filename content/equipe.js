@@ -78,7 +78,7 @@ HG.equipe = {
       titre: "PJT Batteries",
       texte: "Redimensionnement des batteries.",
       photo: "assets/photos/equipe/pjt-batteries.webp",
-      membres: [],
+      membres: ["Thibault Ferraton", "Lou Laclef", "Esteve Ponson", "Dylan Pain", "Lubin Tassou"],
     },
     {
       titre: "PJT Cockpit",
