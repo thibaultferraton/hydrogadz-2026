@@ -72,7 +72,7 @@ HG.equipe = {
       titre: "PJT Transmission",
       texte: "Réparation de la transmission, du moteur à l'hélice.",
       photo: "assets/photos/equipe/pjt-transmission.webp",
-      membres: [],
+      membres: ["Achille Bantignies Le Bars", "Anatole Martenot", "Axel Munto", "Gaspard Honoré", "Jules Vaills", "Vincent Keller"],
     },
     {
       titre: "PJT Batteries",
@@ -84,7 +84,7 @@ HG.equipe = {
       titre: "PJT Cockpit",
       texte: "Création d'un nouveau cockpit et conception d'une nouvelle direction.",
       photo: "assets/photos/equipe/pjt-cockpit.webp",
-      membres: [],
+      membres: ["Enzo Girerd", "Gabriel Gourgeon", "Martin Vallayer", "Antoine Gauthier"],
     },
   ],
 };
