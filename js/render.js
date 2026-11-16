@@ -237,16 +237,23 @@
     chantiers: () =>
       HG.projets.chantiers
         .map(
-          (c) => `
+          (c) => {
+            const pjt = HG.equipe?.pjt?.find((g) => g.titre === c.pjt);
+            const equipe = pjt?.membres?.length
+              ? `<p class="chantier__equipe"><strong>${esc(pjt.titre)} :</strong> ${esc(pjt.membres.join(", "))}</p>`
+              : "";
+            return `
           <article class="chantier${c.photo ? "" : " chantier--sans-photo"} apparition">
             <div class="chantier__texte">
               <span class="chantier__numero">${esc(c.numero)}</span>
               <h2>${esc(c.titre)}</h2>
               <p class="chantier__accroche">${esc(c.accroche)}</p>
               <p class="texte-doux">${esc(c.texte)}</p>
+              ${equipe}
             </div>
             ${c.photo ? photo(c.photo, c.titre, "photo chantier__photo") : ""}
-          </article>`
+          </article>`;
+          }
         )
         .join(""),
 

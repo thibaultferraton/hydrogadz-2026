@@ -19,7 +19,8 @@ HG.projets = {
         "Le règlement impose une quantité d'énergie embarquée limitée et identique pour tous. " +
         "Tout se joue donc sur la façon dont on la stocke, dont on la protège et dont on la " +
         "distribue pendant les trois heures d'endurance. C'est le cœur électrique du bateau.",
-      photo: null, // TODO : une photo du pack batterie (sans détail de câblage)
+      photo: "assets/photos/equipe/pjt-batteries.webp",
+      pjt: "PJT Batteries",
     },
     {
       numero: "02",
@@ -31,6 +32,7 @@ HG.projets = {
         "et pouvoir sortir vite en cas de problème. En plus du cockpit, l'équipe conçoit " +
         "un nouveau système de direction, baptisé « drosse ».",
       photo: "assets/photos/cockpit-exterieur.webp",
+      pjt: "PJT Cockpit",
     },
     {
       numero: "03",
@@ -41,6 +43,7 @@ HG.projets = {
         "Chaque point de rendement gagné ici, c'est de la distance en plus à l'arrivée " +
         "de l'épreuve d'endurance.",
       photo: "assets/photos/banc-propulsion.webp",
+      pjt: "PJT Transmission",
     },
   ],
 

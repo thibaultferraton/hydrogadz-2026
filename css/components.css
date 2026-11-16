@@ -1245,6 +1245,16 @@
   }
 }
 
+.chantier__equipe {
+  margin-top: var(--esp-3);
+  font-size: var(--taille-s);
+  color: var(--texte-doux);
+}
+
+.chantier__equipe strong {
+  color: var(--accent);
+}
+
 .chantier__numero {
   display: block;
   margin-bottom: var(--esp-3);
