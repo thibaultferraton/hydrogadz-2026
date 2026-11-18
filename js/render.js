@@ -82,6 +82,21 @@
         )
         .join(""),
 
+    // Bandeau de logos de l'accueil : tous les partenaires de la saison (liste « saison »).
+    // Sans logo, on affiche le nom ; sans lien, pas de lien.
+    logosSaison: () =>
+      HG.partenaires.saison
+        .map((p) => {
+          const titre = `${p.nom} — ${p.niveau ?? p.type ?? "Partenaire"}`;
+          const contenu = p.logo
+            ? `<img src="${esc(p.logo)}" alt="${esc(p.nom)}" loading="lazy">`
+            : `<span class="logos__nom">${esc(p.nom)}</span>`;
+          return p.lien
+            ? `<a href="${esc(p.lien)}" target="_blank" rel="noopener" title="${esc(titre)}">${contenu}</a>`
+            : `<span class="logos__item" title="${esc(titre)}">${contenu}</span>`;
+        })
+        .join(""),
+
     // Frise en haut de la page partenariat : l'argent réuni sur l'objectif de la saison
     collecte: () => {
       const { objectif: montant, reuni, miseAJour } = HG.partenaires.collecte;
