@@ -628,6 +628,16 @@
   object-fit: contain;
 }
 
+/* Partenaire sans logo : son nom à la place */
+.logos__nom {
+  display: block;
+  font-family: var(--police-titre);
+  font-size: var(--taille-l, 1.5rem);
+  font-weight: 600;
+  color: var(--texte);
+  line-height: 46px;
+}
+
 /* ---------- Frise historique ---------- */
 
 .frise {
